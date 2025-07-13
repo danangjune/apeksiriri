@@ -199,9 +199,6 @@
     }
   </style>
 
-
-
-
   <script>
     // Date navigation logic (To highlight selected date and update content title)
     const dateItems = document.querySelectorAll('.date-item');
@@ -346,3 +343,5 @@
       nestedDetails.forEach(d => collapseNested(d));
     }
   </script>
+
+</div>
