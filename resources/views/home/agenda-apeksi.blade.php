@@ -80,6 +80,47 @@
     @endforeach
   </section>
 
+  <!-- Section: Teaser Video -->
+  <div class="container teaser-video-modern mt-5">
+    <h4 class="mb-3 fw-bold border-bottom title-border">Teaser APEKSI Kota Kediri</h4>
+    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg teaser-video-box" style="max-width: 900px; margin: 0 auto;">
+      <iframe
+        src="https://drive.google.com/file/d/1VjjOSZ_TtOeuivaiaXyDLBq3GTyK36yM/preview"
+        allowfullscreen
+        frameborder="0"
+        style="transition:box-shadow 0.3s;">
+      </iframe>
+    </div>
+  </div>
+  <style>
+    .teaser-video-box {
+      animation: fadeInUp 0.7s;
+      border: 2px solid #21808c;
+      box-shadow: 0 8px 32px rgba(22, 90, 99, 0.13);
+    }
+  </style>
+  <script>
+    // Autoplay Google Drive video on scroll (Intersection Observer)
+    document.addEventListener('DOMContentLoaded', function() {
+      const teaserVideo = document.getElementById('teaserVideo');
+      let hasPlayed = false;
+      if (teaserVideo) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !hasPlayed) {
+              // Reload iframe to trigger autoplay
+              teaserVideo.src += "&autoplay=1";
+              hasPlayed = true;
+            }
+          });
+        }, {
+          threshold: 0.5
+        });
+        observer.observe(teaserVideo);
+      }
+    });
+  </script>
+
   <!-- Section: Informasi Kota Kediri -->
   <div class="container informasi-kediri-modern mt-5">
     <h4 class="mb-5 fw-bold border-bottom title-border">Informasi Kota Kediri</h4>
@@ -158,150 +199,150 @@
     }
   </style>
 
-</div>
 
 
-<script>
-  // Date navigation logic (To highlight selected date and update content title)
-  const dateItems = document.querySelectorAll('.date-item');
-  const sectionTitle = document.querySelector('.section-title');
-  const dayContent = document.querySelector('.day-content');
 
-  // Dummy content titles for days
-  const dayTitles = {
-    day1: "Hari Ke 1",
-    day2: "Hari Ke Dua",
-    day3: "Hari Ke Tiga",
-    day4: "Hari Ke Empat",
-    day5: "Hari Ke Lima",
-    day6: "Hari Ke Enam"
-  };
+  <script>
+    // Date navigation logic (To highlight selected date and update content title)
+    const dateItems = document.querySelectorAll('.date-item');
+    const sectionTitle = document.querySelector('.section-title');
+    const dayContent = document.querySelector('.day-content');
 
-  dateItems.forEach(item => {
-    item.addEventListener('click', () => {
-      if (item.classList.contains('active')) return;
+    // Dummy content titles for days
+    const dayTitles = {
+      day1: "Hari Ke 1",
+      day2: "Hari Ke Dua",
+      day3: "Hari Ke Tiga",
+      day4: "Hari Ke Empat",
+      day5: "Hari Ke Lima",
+      day6: "Hari Ke Enam"
+    };
 
-      // Reset tab state
-      dateItems.forEach(i => {
-        i.classList.remove('active');
-        i.classList.add('inactive');
-        i.setAttribute('aria-selected', 'false');
-        i.setAttribute('tabindex', '-1');
+    dateItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.classList.contains('active')) return;
+
+        // Reset tab state
+        dateItems.forEach(i => {
+          i.classList.remove('active');
+          i.classList.add('inactive');
+          i.setAttribute('aria-selected', 'false');
+          i.setAttribute('tabindex', '-1');
+        });
+
+        // Set active tab
+        item.classList.remove('inactive');
+        item.classList.add('active');
+        item.setAttribute('aria-selected', 'true');
+        item.setAttribute('tabindex', '0');
+        item.focus();
+
+        const dayId = item.getAttribute('aria-controls');
+        sectionTitle.textContent = dayTitles[dayId] || "Hari";
+        sectionTitle.setAttribute('id', dayId);
+        dayContent.setAttribute('aria-labelledby', dayId);
+
+        // Tampilkan konten yang sesuai
+        document.querySelectorAll('.day-pane').forEach(pane => {
+          pane.classList.add('d-none');
+          pane.classList.remove('active');
+        });
+
+        const targetPane = document.querySelector(`#dayPane${dayId.replace('day', '')}`);
+        if (targetPane) {
+          targetPane.classList.remove('d-none');
+          targetPane.classList.add('active');
+        }
+
+        // Reset accordion & nested detail
+        closeAllAccordions();
+        closeAllNestedDetails();
       });
+    });
 
-      // Set active tab
-      item.classList.remove('inactive');
-      item.classList.add('active');
-      item.setAttribute('aria-selected', 'true');
-      item.setAttribute('tabindex', '0');
-      item.focus();
 
-      const dayId = item.getAttribute('aria-controls');
-      sectionTitle.textContent = dayTitles[dayId] || "Hari";
-      sectionTitle.setAttribute('id', dayId);
-      dayContent.setAttribute('aria-labelledby', dayId);
-
-      // Tampilkan konten yang sesuai
-      document.querySelectorAll('.day-pane').forEach(pane => {
-        pane.classList.add('d-none');
-        pane.classList.remove('active');
+    // Accordion toggles
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const expanded = header.getAttribute('aria-expanded') === 'true';
+        if (expanded) {
+          collapseAccordion(header);
+        } else {
+          // Close others
+          accordionHeaders.forEach(h => collapseAccordion(h));
+          expandAccordion(header);
+        }
       });
-
-      const targetPane = document.querySelector(`#dayPane${dayId.replace('day', '')}`);
-      if (targetPane) {
-        targetPane.classList.remove('d-none');
-        targetPane.classList.add('active');
-      }
-
-      // Reset accordion & nested detail
-      closeAllAccordions();
-      closeAllNestedDetails();
+      // Keyboard accessibility enter/space
+      header.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
     });
-  });
 
-
-  // Accordion toggles
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const expanded = header.getAttribute('aria-expanded') === 'true';
-      if (expanded) {
-        collapseAccordion(header);
-      } else {
-        // Close others
-        accordionHeaders.forEach(h => collapseAccordion(h));
-        expandAccordion(header);
+    function expandAccordion(header) {
+      header.setAttribute('aria-expanded', 'true');
+      header.classList.add('open');
+      const content = document.getElementById(header.getAttribute('aria-controls'));
+      if (content) {
+        content.classList.add('open');
       }
-    });
-    // Keyboard accessibility enter/space
-    header.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        header.click();
-      }
-    });
-  });
-
-  function expandAccordion(header) {
-    header.setAttribute('aria-expanded', 'true');
-    header.classList.add('open');
-    const content = document.getElementById(header.getAttribute('aria-controls'));
-    if (content) {
-      content.classList.add('open');
     }
-  }
 
-  function collapseAccordion(header) {
-    header.setAttribute('aria-expanded', 'false');
-    header.classList.remove('open');
-    const content = document.getElementById(header.getAttribute('aria-controls'));
-    if (content) {
-      content.classList.remove('open');
-    }
-  }
-
-  function closeAllAccordions() {
-    accordionHeaders.forEach(h => collapseAccordion(h));
-  }
-
-  // Nested detail toggles
-  const nestedDetails = document.querySelectorAll('.nested-detail');
-  nestedDetails.forEach(detail => {
-    detail.addEventListener('click', () => {
-      const expanded = detail.getAttribute('aria-expanded') === 'true';
-      if (expanded) {
-        collapseNested(detail);
-      } else {
-        expandNested(detail);
+    function collapseAccordion(header) {
+      header.setAttribute('aria-expanded', 'false');
+      header.classList.remove('open');
+      const content = document.getElementById(header.getAttribute('aria-controls'));
+      if (content) {
+        content.classList.remove('open');
       }
+    }
+
+    function closeAllAccordions() {
+      accordionHeaders.forEach(h => collapseAccordion(h));
+    }
+
+    // Nested detail toggles
+    const nestedDetails = document.querySelectorAll('.nested-detail');
+    nestedDetails.forEach(detail => {
+      detail.addEventListener('click', () => {
+        const expanded = detail.getAttribute('aria-expanded') === 'true';
+        if (expanded) {
+          collapseNested(detail);
+        } else {
+          expandNested(detail);
+        }
+      });
+      detail.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          detail.click();
+        }
+      });
     });
-    detail.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        detail.click();
+
+    function expandNested(detail) {
+      detail.setAttribute('aria-expanded', 'true');
+      detail.classList.add('open');
+      const content = document.getElementById(detail.getAttribute('aria-controls'));
+      if (content) {
+        content.classList.add('open');
       }
-    });
-  });
-
-  function expandNested(detail) {
-    detail.setAttribute('aria-expanded', 'true');
-    detail.classList.add('open');
-    const content = document.getElementById(detail.getAttribute('aria-controls'));
-    if (content) {
-      content.classList.add('open');
     }
-  }
 
-  function collapseNested(detail) {
-    detail.setAttribute('aria-expanded', 'false');
-    detail.classList.remove('open');
-    const content = document.getElementById(detail.getAttribute('aria-controls'));
-    if (content) {
-      content.classList.remove('open');
+    function collapseNested(detail) {
+      detail.setAttribute('aria-expanded', 'false');
+      detail.classList.remove('open');
+      const content = document.getElementById(detail.getAttribute('aria-controls'));
+      if (content) {
+        content.classList.remove('open');
+      }
     }
-  }
 
-  function closeAllNestedDetails() {
-    nestedDetails.forEach(d => collapseNested(d));
-  }
-</script>
+    function closeAllNestedDetails() {
+      nestedDetails.forEach(d => collapseNested(d));
+    }
+  </script>
