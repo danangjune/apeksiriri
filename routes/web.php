@@ -26,6 +26,9 @@ use App\Http\Controllers\ArtikelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\BeritaApiController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\ProgressHarianController;
+use App\Http\Controllers\LiveReportController;
+use App\Http\Controllers\DataPICController;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -330,6 +333,27 @@ Route::middleware('auth')->group(function () {
     Route::controller(FeedbackController::class)->group(function(){
         Route::get('/list-feedback', 'list_feedback')->name('list_feedback');
     });
+
+    Route::controller(ProgressHarianController::class)->group(function(){
+        Route::get('/rangkaian-acara', 'rangkaianAcara')->name('rangkaian-acara');
+        Route::get('/detail-rangkaian-acara/{id}', 'detailRangkaianAcara')->name('detail-rangkaian-acara');
+        Route::post('/store-progress', 'storeProgress');
+        Route::get('/histori-progress/{id}', 'historiProgress')->name('histori-progress');
+        Route::delete('/del-progress/{id}', 'deleteProgress');
+    });
+
+    Route::controller(LiveReportController::class)->group(function(){
+        Route::get('/live-report', 'liveReport')->name('liveReport');
+        Route::post('/live-report', 'store');
+    });
+
+    Route::controller(DataPICController::class)->group(function(){
+        Route::get('/data-pic', 'dataPIC')->name('data-pic');
+        Route::post('/store-pic', 'store');
+        Route::put('/update-pic/{id}', 'update');
+        Route::delete('/delete-pic/{id}', 'delete');
+    });
+
 });
 
 require __DIR__.'/auth.php';
