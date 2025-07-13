@@ -20,6 +20,7 @@ use App\Models\Feedback;
 use App\Models\Dokumen;
 use App\Models\BannerPromo;
 use App\Models\Artikel;
+use App\Models\ProfilPesertaApeksi;
 use Illuminate\Support\Str;
 use DataTables;
 
@@ -66,8 +67,90 @@ class HomeController extends Controller
         $banner_promo = BannerPromo::where('status_enabled', 1)->orderBy('id', 'DESC')->limit(10)->get();
         $artikel = Artikel::where([['status_enabled', 1], ['status_published', 1], ['hits', 1]])->orderBy('id', 'DESC')->limit(4)->get();
 
-        return view('home.index', compact('meta', 'layanan', 'wisata', 'belanja','kategori', 'berita_terkini', 'banners', 'layanan_digital', 'produk', 'dokumen', 'banner_promo', 'artikel'));
+      $eventSchedules = [
+        [
+            'event_name' => 'Pra Muskowil APEKSI',
+            'venue' => 'Ruang Joyoboyo, Balai Kota Kediri',
+            'date' => '16 April 2025',
+            'attendees' => 'Anggota KOMWIL IV APEKSI',
+            'dresscode' => 'Batik / Tenun Khas Daerah Anggota Komwil IV APEKSI',
+            'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+            'schedule' => [
+                ['time' => '07:00 - 08:00', 'activity' => 'Registrasi Peserta'],
+                ['time' => '08:00 - 08:10', 'activity' => 'Tarian Pembuka'],
+                ['time' => '08:10 - 08:15', 'activity' => 'Pembukaan oleh MC'],
+                ['time' => '08:15 - 08:20', 'activity' => 'Menyanyikan lagu Indonesia Raya'],
+                ['time' => '08:20 - 08:25', 'activity' => 'Menyanyikan lagu Mars APEKSI dilanjutkan Hymne APEKSI'],
+                ['time' => '08:25 - 08:30', 'activity' => 'Pembacaan Do’a'],
+                ['time' => '08:30 - 08:45', 'activity' => 'Laporan Kegiatan Pra MUSKOMWIL'],
+                ['time' => '08:45 - 09:00', 'activity' => 'Sambutan Walikota Kediri sekaligus membuka kegiatan'],
+                ['time' => '09:00 - 09:30', 'activity' => 'Paparan Sekda Kediri'],
+                ['time' => '09:30 - 10:00', 'activity' => 'Pembahasan Rekomendasi KOMWIL IV APEKSI'],
+                ['time' => '10:00 - 11:00', 'activity' => 'Penutupan dan ramah tamah'],
+            ]
+        ],
+        [
+            'event_name' => 'Workshop Smart City',
+            'venue' => 'Hotel Grand Surya, Kediri',
+            'date' => '17 April 2025',
+            'attendees' => 'Perwakilan Dinas Kominfo se-KOMWIL IV',
+            'dresscode' => 'Pakaian Dinas Harian (PDH)',
+             'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+            'schedule' => [
+                ['time' => '08:00 - 08:30', 'activity' => 'Registrasi'],
+                ['time' => '08:30 - 09:00', 'activity' => 'Pembukaan dan sambutan'],
+                ['time' => '09:00 - 10:30', 'activity' => 'Sesi I: Penerapan Smart Governance'],
+                ['time' => '10:30 - 10:45', 'activity' => 'Coffee Break'],
+                ['time' => '10:45 - 12:00', 'activity' => 'Sesi II: Infrastruktur Teknologi'],
+                ['time' => '12:00 - 13:00', 'activity' => 'Makan Siang'],
+                ['time' => '13:00 - 15:00', 'activity' => 'Diskusi dan Tanya Jawab'],
+                ['time' => '15:00 - 15:30', 'activity' => 'Penutupan'],
+            ]
+            ],
+            [
+            'event_name' => 'Workshop Smart City 2',
+            'venue' => 'Hotel Grand Surya, Kediri',
+            'date' => '18 April 2025',
+            'attendees' => 'Perwakilan Dinas Kominfo se-KOMWIL IV',
+            'dresscode' => 'Pakaian Dinas Harian (PDH)',
+             'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+            'schedule' => [
+                ['time' => '08:00 - 08:30', 'activity' => 'Registrasi'],
+                ['time' => '08:30 - 09:00', 'activity' => 'Pembukaan dan sambutan'],
+                ['time' => '09:00 - 10:30', 'activity' => 'Sesi I: Penerapan Smart Governance'],
+                ['time' => '10:30 - 10:45', 'activity' => 'Coffee Break'],
+                ['time' => '10:45 - 12:00', 'activity' => 'Sesi II: Infrastruktur Teknologi'],
+                ['time' => '12:00 - 13:00', 'activity' => 'Makan Siang'],
+                ['time' => '13:00 - 15:00', 'activity' => 'Diskusi dan Tanya Jawab'],
+                ['time' => '15:00 - 15:30', 'activity' => 'Penutupan'],
+            ]
+            ],
+            [
+            'event_name' => 'Workshop Smart City 4',
+            'venue' => 'Hotel Grand Surya, Kediri',
+            'date' => '19 April 2025',
+            'attendees' => 'Perwakilan Dinas Kominfo se-KOMWIL IV',
+            'dresscode' => 'Pakaian Dinas Harian (PDH)',
+            'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+            'schedule' => [
+                ['time' => '08:00 - 08:30', 'activity' => 'Registrasi'],
+                ['time' => '08:30 - 09:00', 'activity' => 'Pembukaan dan sambutan'],
+                ['time' => '09:00 - 10:30', 'activity' => 'Sesi I: Penerapan Smart Governance'],
+                ['time' => '10:30 - 10:45', 'activity' => 'Coffee Break'],
+                ['time' => '10:45 - 12:00', 'activity' => 'Sesi II: Infrastruktur Teknologi'],
+                ['time' => '12:00 - 13:00', 'activity' => 'Makan Siang'],
+                ['time' => '13:00 - 15:00', 'activity' => 'Diskusi dan Tanya Jawab'],
+                ['time' => '15:00 - 15:30', 'activity' => 'Penutupan'],
+            ]
+        ]
+    ];
+
+        $profil_apeksi = ProfilPesertaApeksi::all();
+        $slides = $profil_apeksi->chunk(7);
+    
+        return view('home.index', compact('eventSchedules', 'profil_apeksi', 'slides', 'meta', 'layanan', 'wisata', 'belanja','kategori', 'berita_terkini', 'banners', 'layanan_digital', 'produk', 'dokumen', 'banner_promo', 'artikel'));
     }
+    
 
     public function get_content_hero(Request $request)
     {
