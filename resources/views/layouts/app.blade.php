@@ -62,7 +62,7 @@
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="{{ asset('assets/animate/wow.min.js') }}"></script>
-  
+
   <!-- FullCalendar JS -->
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.global.min.js"></script>
@@ -87,7 +87,7 @@
   <!-- Additional Scripts -->
   <script>
     new WOW().init();
-    
+
     // Toastr Settings
     toastr.options = {
       "closeButton": true,
