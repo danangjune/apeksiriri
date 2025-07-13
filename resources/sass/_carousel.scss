@@ -1,0 +1,59 @@
+.slick-arrow-dark {
+  .slick-arrow {
+    &::before {
+      color: $dark !important;
+    }
+  }
+}
+
+.slick-arrow {
+  &::before {
+    font-size: 40px !important;
+  }
+}
+
+.slick-prev {
+  left: -5px !important;
+}
+
+.slick-next {
+  right: 0px !important;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .slick-arrow {
+    &::before {
+      font-size: 30px !important;
+    }
+  }
+}
+
+.slick-wisata {
+  .slick-dots {
+    li {
+      button {
+        width: 15px;       // Adjust size of the dots
+        height: 15px;      // Adjust size of the dots
+        border-radius: 50%;  // Make the dots circular
+
+        // Optional: Customize dot appearance
+        background-color: #ccc;  // Default dot color
+        transition: background-color 0.3s ease;  // Add a smooth transition
+      }
+
+      // Customize the spacing between dots
+      margin: 0 8px;
+
+      &.slick-active {
+        button {
+          background-color: var(--bs-primary);;  // Change the color of the active dot
+        }
+      }
+    }
+  }
+}

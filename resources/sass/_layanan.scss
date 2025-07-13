@@ -1,0 +1,99 @@
+.content-layanan{
+    padding-top: 100px;
+
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        overflow: hidden;
+    }
+
+    .carousel {
+        display: flex;
+        width: 50%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-transportasi {
+        flex: 0 0 50%; /* Set setiap card mengambil 50% dari container */
+        text-align: center;
+        padding: 20px;
+        font-size: 24px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgb(21, 79, 71);
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 229, 190, 0.5);
+        color: var(--bs-primary);
+        border: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .carousel-btn.prev {
+        left: 0px;
+    }
+
+    .carousel-btn.next {
+    right: 0px;
+    }
+
+    .carousel-btn:hover {
+    background-color:  var(--bs-primary);
+    color: white;
+    }
+    .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgb(21, 79, 71);
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            background: #f8f9fa;
+        }
+
+}
+
+.shadow-layanan{
+    box-shadow: 0px 4px 8px var(--bs-primary);
+    .border-start-primary {
+        border-left: 2px solid var(--bs-primary);
+        transition: 0.5s;
+      }
+      .border-start-primary:hover {
+        left: 20px;
+      }
+      .border-start-primary span {
+        z-index: 1;
+        transition: 0.5s;
+      }
+      
+      .border-start-primary:before {
+        content: "";
+        position: absolute;
+        width: 102%;
+        height: 100%;
+        background: var(--bs-primary-bg-subtle);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 0.5s;
+      }
+      .border-start-primary:hover:before {
+        transform: scaleX(1);
+      }
+}

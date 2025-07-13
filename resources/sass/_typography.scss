@@ -1,0 +1,195 @@
+.title-border {
+  @extend .position-relative;
+  @extend .pb-2;
+  &::after {
+    content: '';
+    @extend .position-absolute;
+    @extend .start-0;
+    bottom: -1px;
+    width: 100px;
+    border-bottom: 4px solid $primary;
+  }
+}
+
+.bg-event {
+  // background-color: #EA231D;
+  // background-color: $warning;
+  background-color: #da6212;
+}
+
+button.nav-link {
+  &.active, &[aria-selected="true"] {
+    background-color: var($primary) !important; // Ensures color changes when active or selected
+  }
+}
+
+// button.nav-link {
+//   &.active-navbar, &[aria-selected="true"] {
+//     color: #F4A261 !important; // Ensures color changes when active or selected
+//   }
+// }
+
+.harmoni-iframe {
+  width: 100%;
+  height: 450px;
+
+  @media (max-width: 768px) {
+    height: 200px; // Adjust the height for mobile screens
+  }
+}
+
+.profil-content {
+  margin-top: 50px;
+  font-size: 16px;
+  text-align: justify;
+  font-weight: 500;
+}
+
+.program-unggulan-image {
+  padding-right: 35px;
+  vertical-align: center;
+  width: 250px;
+
+  @media (max-width: 768px) {
+    width: 150px;
+  }
+}
+
+.judul-program {
+  color: black;
+  font-size: 22px;
+  transition: color 0.3s ease; // Optional for smooth transition
+  cursor: pointer;
+  margin-bottom: 15px;
+
+  &:hover {
+    color: $primary;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+.program-desc {
+  text-align: justify;
+  font-size: 15px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.program-calender {
+  text-align: right;
+  margin-top: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+}
+
+.lokasi-fasilitas {
+  text-align: justify;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.judul-fasilitas {
+  color: black;
+  font-size: 22px;
+  transition: color 0.3s ease; // Optional for smooth transition
+  margin-bottom: 15px;
+
+  &:hover {
+    color: $primary;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 17px;
+  }
+}
+
+.detil-fasilitas {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 3rem;    
+
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+}
+
+.iframe-berita {
+  height: 620px; 
+  width: 100%;
+
+  @media (max-width: 768px) {
+    height: 620px;
+    width: 100%; 
+    
+  }
+}
+
+.nav-pills .nav-link {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) { /* Sesuaikan ukuran sesuai kebutuhan */
+  .agenda-tanggal {
+      display: none;
+  }
+}
+
+.underline {
+  width: 300px; /* Panjang garis */
+  height: 4px; /* Ketebalan garis */
+  background-color: var(--bs-primary); /* Warna garis, pakai warna primary */
+  // margin-bottom: 10px; /* Jarak antara garis dan konten deskripsi */
+}
+
+#searchInput {
+  background-color: rgba(255, 255, 255, 0.5); /* Transparan dengan sedikit abu-abu */
+  border: 1px solid white; /* Border putih */
+  color: white; /* Teks putih */
+  border-radius: 8px; /* Membuat sudut melengkung */
+  // padding: 10px 15px; /* Memberikan padding yang proporsional */
+  font-size: 1.25rem; /* Ukuran font besar (sesuai .form-control-lg) */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+#searchInput::placeholder {
+  color: black; /* Warna placeholder hitam */
+  opacity: 0.7; /* Tambahkan sedikit transparansi jika diinginkan */
+}
+
+#searchInput:focus {
+  background-color: rgba(255, 255, 255, 0.2); /* Lebih cerah saat fokus */
+  outline: none; /* Menghilangkan outline default */
+  border-color: white; /* Tetap border putih */
+}
+
+/* Sembunyikan glyphicon bawaan */
+.calendar-month-navigation .glyphicon {
+  display: none !important;
+}
+
+/* Ganti isi dengan Bootstrap Icons (setelah init) */
+.calendar-month-navigation#zabuto_calendar_sn0_nav-prev::before {
+  content: "\f284"; /* Bootstrap Icons chevron-left (hex code) */
+  font-family: "bootstrap-icons";
+  font-size: 1.5rem;
+  color: #333;
+}
+.calendar-month-navigation#zabuto_calendar_sn0_nav-next::before {
+  content: "\f285"; /* Bootstrap Icons chevron-right (hex code) */
+  font-family: "bootstrap-icons";
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.header-artikel {
+  background-image: url('../../public/assets/images/hero_artikel.png');
+}
+

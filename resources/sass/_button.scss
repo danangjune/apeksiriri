@@ -1,0 +1,29 @@
+.btn-kecamatan {
+    background-color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+
+    &:hover{
+        background-color: var(--bs-primary-bg-subtle);
+    }
+}
+
+.btn-kecamatan.active {
+    background-color: var(--bs-primary-bg-subtle);
+    color: black;
+    border-color: var(--bs-primary-bg-subtle);
+}
+
+.btn-transparent {
+    background-color: rgba(255, 255, 255, 0.5); /* Transparan dengan sedikit abu-abu */
+    border: 1px solid white; /* Border lebih tebal */
+    color: white;
+    // padding: 5px 15px; /* Sesuaikan padding agar tidak terlalu besar */
+    border-radius: 8px; /* Tambahkan border-radius jika diperlukan */
+}
+
+.btn-transparent:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lebih cerah saat hover */
+    color: white;
+}

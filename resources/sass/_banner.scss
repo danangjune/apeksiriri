@@ -1,0 +1,232 @@
+.banner-hero {
+  @extend .position-relative;
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .justify-content-between;
+  height: 800px;
+  background: linear-gradient(to bottom, #008ed6 0%, white 50%);
+  
+  .img-hero {
+    @extend .position-relative;
+    width: 100%;
+    @extend .object-fit-cover;
+  }
+
+}
+
+.layanan{
+  background-image: url('../../public/assets/images/balai\ kota.png');
+  background-repeat: no-repeat; 
+  background-size:cover; 
+  // margin-top:120px;
+  background-position: center top;
+}
+
+// .hero{
+//  height: 220px; 
+//  background-image: url('../../public/assets/images/jembatan-brawijaya.png');
+//   // background-image: url('../../public/assets/images/brawijaya\ \(1\).jpg');
+//   background-repeat:no-repeat; 
+//   background-size:cover; 
+//   // top:60px;
+
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: rgba(67, 22, 94, 0.3);
+//     z-index: 1; 
+//   }
+
+//   h1, p{
+//     position: relative;
+//     z-index: 2;
+//   }
+// }
+
+.hero-detail {
+  height: 400px; 
+  background-repeat:no-repeat; 
+  background-size:cover; 
+  // top:60px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(67, 22, 94, 0.3);
+    z-index: 1; 
+  }
+  h1, p{
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.header-kelurahan {
+  background-image: url('../../public/assets/images/hero_kelurahan.png');
+}
+
+.hero-detil-penghargaan {
+  //background-image: url('../../public/assets/images/hero.png');
+  background-image: url('../../public/assets/images/detil-penghargaan2.png');
+}
+
+.hero-detil-pengumuman {
+  background-image: url('../../public/assets/images/detil.png');
+}
+
+.hero-detil-wisata {
+  background-image: url('../../public/assets/images/hero_holiday.png');
+}
+
+.header-jembatan {
+  background-image: url('../../public/assets/images/brawijaya\ \(1\).jpg');
+}
+
+.header-perangkat {
+  background-image: url('../../public/assets/images/perangkat.png');
+}
+
+.header-fasilitas {
+  background-image: url('../../public/assets/images/hero_fasilitas.png');
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+// .wave {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   height: auto;
+//   z-index: 1; /* Adjusts layering if needed */
+// }
+
+.pecut{
+  height: 330px;
+}
+
+@include media-breakpoint-down(md) {
+  .banner-hero {
+    min-height: 200px;
+    max-height: 250px;
+    .logo-landing{
+      top: -60px;
+      left: -50px;
+      img{
+        height: 20px;
+      }
+      .company-name{
+        // font-size: 14px;
+        position: absolute;
+        top: 80px;
+        right: -40px;
+      }
+      .company-name2{
+        // font-size: 10px;
+        position: absolute;
+        top: 95px;
+        right: -40px;
+        letter-spacing: 3px;
+      }
+    }
+    .div-btn-landing{
+      bottom: 0px;
+    }
+    .btn-landing{
+      font-size: 12px;
+      width: 60%;
+      margin-left: 15px;
+    }
+    overflow: hidden;
+    .img-hero {
+      width: unset;
+    }
+  }
+  .layanan{
+      margin-top:0px;
+      background-image: none;
+  }
+  .pecut{
+    height: auto;
+    img{
+      width: 50%;
+    }
+  }
+}
+.aplikasi{
+  background-image: url('../../public/assets/images/bg-aplikasi.png');
+  height: 360px;
+  background-size: cover;
+  background-position: center center;
+  .img{
+    background-image: url('../../public/assets/images/img-aplikasi2.png'); 
+    background-size:cover; 
+    height:350px
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1919px) {
+  .div-btn-landing {
+    bottom: -2%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .div-btn-landing {
+    bottom: -15%;
+  }
+}
+
+.banner-tv {
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden; /* Ensures content within doesn't overflow */
+  padding-top: 20px;
+
+  .hero-waves {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Perbesar tinggi wave agar terlihat */
+    z-index: 10; /* Pastikan lebih tinggi dari gambar */
+    fill: #F8FAFC; /* Warna lebih kontras */
+    pointer-events: none; /* Pastikan wave tidak mengganggu interaksi */
+    // bottom: 20%;
+  }
+  
+  /* Animasi untuk setiap layer wave */
+  .wave1, .wave2, .wave3 {
+    animation: waveMove 8s linear infinite;
+  }
+  
+  .wave1 {
+    // opacity: 0.7;
+    animation-delay: 0s;
+  }
+  
+  .wave2 {
+    // opacity: 0.5;
+    animation-delay: 1s;
+  }
+  
+  .wave3 {
+    // opacity: 0.3;
+    animation-delay: 2s;
+  }
+}

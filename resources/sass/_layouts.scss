@@ -1,0 +1,19 @@
+.navbar-brand {
+  @extend .d-flex;
+  @extend .align-items-center;
+  @extend .gap-3;
+  .navbar-brand-label {
+    @extend .d-block;
+    max-width: 150px;
+    @extend .text-wrap;
+    @extend .fw-bold;
+    line-height: 22px;
+    letter-spacing: 2px;
+    font-size: 16px;
+  }
+}
+
+.nav-item{
+  max-height: 500px;
+  overflow-y: auto;
+}

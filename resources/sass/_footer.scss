@@ -1,0 +1,88 @@
+footer.landing {
+  @extend .position-relative;
+  @extend .d-flex;
+  @extend .overflow-hidden;
+   background-image:url('../../public/assets/images/hero\ banner\ footer\ \ \(4\).png');
+   background-size: cover; 
+   background-repeat: no-repeat;
+
+  .gate {
+    @extend .position-relative;
+    z-index: 500;
+    position: relative
+  }
+
+  .img-transportation {
+    @extend .position-absolute;
+    left: 0;
+    top: 54%;
+    width: 120%;
+    z-index: 4;
+    animation: run 25s ease-in-out 0s infinite backwards;
+  }
+}
+
+@keyframes run {
+  0% {
+    left: -120%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -120%;
+    transform: rotateY(180deg);
+  }
+}
+
+.app-footer {
+  @extend .position-relative;
+  @extend .overflow-hidden;
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .align-items-center;
+  @extend .justify-content-between;
+  background-image: url('../../public/assets/images/footer_bg.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .cover {
+    @extend .position-absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .navigation-wrapper {
+    @extend .rounded;
+    @extend .p-3;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+    
+    .plr{
+      padding: 0 3rem;
+      .contact{
+        padding-top: 20px;
+      }
+    }
+  }
+  .bg{
+    background: linear-gradient(to bottom, rgba(92, 41, 126, 0) 0%, #154F5B 100%);
+    width: 100%; width:100%; height: 200px; bottom: 0; z-index:0
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .app-footer {
+    .cover {
+      width: unset;
+    }
+  }
+  .sosmed{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+
+
+

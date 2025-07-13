@@ -1,0 +1,157 @@
+#intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  padding: 50px;
+  padding-top: 150px;
+  min-height: 90dvh;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 50px;
+  // background-image: url('../../public/assets/images/corner2.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size:70%;
+}
+
+.info h1 {
+  font-family: "Young Serif", serif;
+  text-align: center;
+  font-size: 3rem;
+  // margin-top:120px;
+  // margin-left:60px;
+}
+
+.info p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.split-beer {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.beer {
+  max-width: 100%;
+  width: 250px;
+  border-radius: 20px;
+  // margin-left: 15px;
+  border: 2px solid orange;
+}
+
+.beer:nth-child(2) {
+  transform: translateY(-1.5rem);
+}
+
+/* ------ */
+/* MEDIA QUERIES */
+
+@media (max-width: 1100px) {
+  .beer {
+    width: 200px;
+  }
+
+  #content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .info{
+    h1{
+       font-size: 2rem;
+    }
+   
+  }
+  .beer {
+    width: 180px;
+  }
+  
+}
+
+@media (max-width: 800px) {
+  #intro {
+    padding: 30px;
+  }
+
+  .beer {
+    width: 150px;
+  }
+
+  .info {
+    gap: 20px;
+    padding: 5px 5px;
+  }
+
+  .info h1 {
+    font-size: 2.5rem;
+  }
+
+  .info p {
+    font-size: 1rem;
+  }
+
+  #content {
+    gap: 30px;
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  #intro {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "split-beer"
+      "info";
+  }
+
+  .info {
+    grid-area: info;
+    background-image: none;
+  }
+
+  .split-beer {
+    grid-area: split-beer;
+    margin-top: 100px;  
+  }
+
+  .beer {
+    width: 100px;
+  }
+
+  #content {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 40px 40px;
+  }
+
+  .text-gif {
+    width: 100%;
+  }
+}
+
+.min-vh-50-pesona {
+  position: relative;
+  background-image: linear-gradient(to bottom, #154F5B, rgba(34, 139, 34, 0) 10%), /* Gradasi hijau */
+  url('../../public/assets/images/patren.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.min-vh-50-kelurahan {
+  position: relative;
+  background: url('../../public/assets/images/pattern5.png') repeat;
+  background-size: cover;
+  background-position: center;
+}

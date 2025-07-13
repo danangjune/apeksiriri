@@ -1,0 +1,35 @@
+/* Gaya untuk wave-box dengan bentuk kotak dan animasi */
+.wave-box {
+    position: relative;
+    width: 80%;
+    max-width: 350px;
+    overflow: hidden;
+    border-radius: 12px; /* Ubah menjadi kotak dengan sudut melengkung sedikit */
+    transition: transform 0.5s;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wave-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.wave-box:hover {
+    transform: scale(1.05); /* Animasi perbesaran ringan tanpa rotasi */
+}
+
+.sorotan-video-wrapper {
+    position: relative;
+    background: url('../../public/assets/images/pattern5.png') repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+}
+
+.video-container {
+    border-radius: 12px; /* Konsisten dengan gaya kotak */
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}

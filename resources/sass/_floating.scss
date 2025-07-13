@@ -1,0 +1,165 @@
+$floating-btn-size: 3.75rem; // Ukuran tombol
+$icon-size: 1.25rem; // Ukuran ikon dalam tombol
+
+@keyframes shake {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(-10deg);
+    }
+    80% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+}
+
+.floating-share {
+    position: fixed;
+    bottom: 40%;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Menambahkan jarak antar tombol */
+
+    /* Style Umum untuk Tombol (Share & Feedback) */
+    .floating-btn {
+        position: relative; /* Untuk posisi tooltip */
+        width: $floating-btn-size;
+        height: $floating-btn-size;
+        border-radius: 50%;
+        // background: var(--bs-primary);
+        background: var(--bs-warning);
+        color: white;
+        font-size: $icon-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.3s, background 0.3s;
+
+        &:hover {
+            background: var(--bs-primary);
+            transform: scale(1.1);
+        }
+        
+        /* Tooltip label */
+        &::after {
+            content: attr(data-label);
+            position: absolute;
+            right: calc(100% + 0.5rem); /* tampil di sebelah kiri tombol */
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bs-primary);
+            color: #fff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            opacity: 0;
+            white-space: nowrap;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            font-size: 1rem;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+
+    /* Tombol Feedback */
+    .feedback-btn {
+        @extend .floating-btn;
+        /* Animasi goyang untuk ikon di dalam tombol feedback */
+        i {
+            animation: shake 1s infinite ease-in-out;
+        }
+    }
+
+    /* Tombol Share */
+    .share-toggle {
+        @extend .floating-btn;
+    }
+}
+
+/* Container untuk tombol sosial media */
+.share-options {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 9.375rem;
+    height: 9.375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    &.active {
+        .share-btn {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+}
+
+/* Child Button Sosmed */
+.share-btn {
+    position: absolute;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+/* Warna Sosial Media */
+$colors: (
+    facebook: #1877f2,
+    twitter: #000000,
+    whatsapp: #25d366,
+    telegram: #0088cc,
+    instagram: #e1306c,
+);
+
+@each $name, $color in $colors {
+    .#{$name} {
+        background: $color;
+    }
+}
+
+/* Menyusun tombol sosial media dalam arc ke kiri */
+$positions: (
+    facebook: (-2rem, -8rem),  
+    twitter: (-2rem, -4rem),    
+    whatsapp: (-2rem, 0),   
+    instagram: (-2rem, 4rem),    
+    telegram: (-2rem, 8rem)     
+);
+
+.share-options.active {
+    @each $name, $pos in $positions {
+        .#{$name} {
+            transform: translate(nth($pos, 1), nth($pos, 2));
+        }
+    }
+}

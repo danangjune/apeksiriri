@@ -1,0 +1,23 @@
+.breadcrumb {
+    background-color: transparent; // Keeps the breadcrumb background transparent (optional)
+
+    .breadcrumb-item {
+        a {
+            color: black; // Sets the link color to black
+            text-decoration: none; // Removes underline by default
+            font-size: medium;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: underline; // Adds underline on hover
+            }
+        }
+
+        &.active {
+            color: $primary; // Sets the active item color to black
+            font-size: medium;
+            font-weight: bold;
+
+        }
+    }
+}

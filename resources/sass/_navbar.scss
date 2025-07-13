@@ -1,0 +1,41 @@
+.navbar {
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0) !important;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.navbar:hover{
+    background-color: var(--bs-primary) !important;
+}
+  
+.navbar.scrolled {
+    background-color: var(--bs-primary) !important;
+}
+
+/* Ubah warna teks navbar saat di-scroll */
+.navbar a,
+.navbar button {
+    color: white !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar.scrolled a,
+.navbar.scrolled button {
+    color: white !important; /* Sesuaikan warna jika perlu */
+}
+
+/* Hover & Klik Dropdown */
+// .navbar .dropdown:hover .dropdown-menu,
+// .navbar .dropdown-menu.show {
+//     background-color: var(--bs-primary) !important;
+// }
+
+/* Responsif: Navbar selalu warna primary di layar kecil */
+@media (max-width: 768px) {
+    .navbar {
+        background-color: var(--bs-primary) !important;
+    }
+    .navbar a, 
+    .navbar button {
+        color: white !important;
+    }
+}

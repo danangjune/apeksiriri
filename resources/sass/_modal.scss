@@ -1,0 +1,19 @@
+/* Ensure the modal is centered vertically and horizontally */
+.modal-dialog {
+    max-height: 90%;
+    margin: 100px auto; /* Centers modal vertically and horizontally */
+}
+
+.modal-content {
+    height: 60%; /* Ensures modal content expands to full height */
+}
+
+/* Optional: Darken backdrop */
+.modal-backdrop {
+    z-index: 1 !important;
+    background-color: #fff !important; /* Darken the backdrop */
+}
+
+body.modal-open {
+    overflow: hidden; /* Prevent scrolling when modal is open */
+}

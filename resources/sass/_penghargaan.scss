@@ -1,0 +1,210 @@
+.header-penghargaan {
+  background-image: url('../../public/assets/images/hero_penghargaan.png');
+}
+
+.inner-header {
+  height: 360px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
+}
+
+.card-slider {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 20px; /* Spacing between cards */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.card-slider::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.label-container {
+  display: flex;
+  align-items: center;
+}
+
+.label-container h2 {
+  color: #111;
+  font-family: Poppins, serif;
+  margin-right: auto;
+  font-weight: 600;
+}
+
+.label-container .bi {
+  font-size: 18px;
+}
+
+.label-container button {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  color: #111;
+  cursor: pointer;
+  padding: 10px;
+  width: fit-content;
+  margin-left: 5px;
+}
+
+.label-container button:disabled {
+  background-color: whitesmoke;
+  cursor: not-allowed;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Spacing between cards */
+  justify-content: center; /* Center cards in the container */
+}
+
+.restaurant-card {
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  width: calc(33.33% - 13px); /* 3 cards per slide */
+  height: 400px; /* Fixed height for uniform cards */
+  padding: 1rem;
+  border: 1px solid $primary;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: white;
+  scroll-snap-align: start; /* Ensure each card aligns correctly during scrolling */
+}
+
+.restaurant-card:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 240px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  width: 100%; /* Responsive width */
+  height: 240px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.discount-badge {
+  position: absolute;
+  color: #fff;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.restaurant-name {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  margin: 0;
+  padding: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.info-container {
+  text-align: center;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.review-count {
+  margin-left: 5px;
+}
+
+.delivery-info {
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+}
+
+.bi-star-fill {
+  color: green;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 767px) {
+  .container {
+    max-width: 350px;
+  }
+
+  .image-container img {
+    width: 180px;
+    height: 140px;
+  }
+
+  .discount-badge {
+    font-size: 12px;
+  }
+
+  .restaurant-name {
+    font-size: 16px;
+  }
+
+  .restaurant-card {
+    width: 100%; /* Show only 1 card per slide on mobile */
+  }
+
+  .card-slider {
+    gap: 10px; /* Reduce gap between cards on mobile */
+  }
+}

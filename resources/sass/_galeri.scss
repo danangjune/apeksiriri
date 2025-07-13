@@ -1,0 +1,56 @@
+.header-galeri {
+    background-image: url('../../public/assets/images/hero_galeri.png');
+}
+
+//Galeri
+.galeri, .galeri-detail{
+  .hover-effect:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: var(--bs-primary);
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    transition: width 2s ease; 
+    border-radius: 5px;
+  }
+
+  .hover-effect {
+    position: relative;
+  }
+
+  .hover-effect:hover::after {
+        width: 100%;
+  }
+
+  /* Grid container for gallery cards */
+  .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+        gap: 20px; /* space between grid items */
+  }
+    
+  .grid-item{
+        height: 400px;
+  }
+
+  .img-galeri img{
+    height: 250px;
+  }
+
+  @media (max-width: 768px) {
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+    .grid-item{
+        height: 300px;
+    }
+    .img-galeri img{
+      height: 150px;
+      width: 100%;
+    }
+  }
+}

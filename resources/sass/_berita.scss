@@ -1,0 +1,70 @@
+.banner-berita{
+  .swiper-pagination-bullet {
+    background-color: white !important;
+  }
+  .swiper-pagination-bullet-active {
+      background-color: var(--bs-yellow) !important; /* Warna bullet aktif */
+  }
+  .berita-utama-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(156, 149, 149, 0.1));
+    z-index: 100;
+  }
+}
+
+.berita-left{
+    padding-right:50px
+}
+.section-header .berita {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+.berita.active h6 {
+  color: white; 
+  background-color: var(--bs-primary); 
+  padding: 10px;
+  border-radius: 5px; 
+}
+
+hr.gradient {
+  border: none; 
+  height: 3px;
+  background-image: linear-gradient(to right, #75005c, rgb(186, 156, 189)); 
+}
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+  z-index: 1;
+}
+
+  @media (max-width: 768px) {
+    .berita {
+      display: none;
+    }
+
+    .berita-left{
+        padding: 0;
+    }
+    .profil-content{
+      .deskripsi img {
+        width:100%;
+      }
+    }
+  }
+  
