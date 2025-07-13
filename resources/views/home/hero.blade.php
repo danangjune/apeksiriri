@@ -144,7 +144,7 @@
     .countdown-number-modern {
       font-size: 3.2rem;
       font-weight: 900;
-      color: #21808c;
+      color: #165a63;
       letter-spacing: 2px;
       margin-bottom: 10px;
       font-family: 'Montserrat', Arial, sans-serif;
