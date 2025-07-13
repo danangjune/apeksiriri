@@ -18,9 +18,9 @@
 <div class="banner-home d-flex flex-column align-items-center justify-content-end position-relative overflow-hidden">
   <!-- Background image -->
   @foreach($banners as $key => $banner)
-    <img src="{{ asset('storage/banner/' . $banner->gambar) }}" 
-         class="banner-slide {{ $key == 0 ? 'active' : '' }} position-absolute w-100 h-75 object-fit-cover" 
-         style="object-position: bottom;" alt="Pemerintah Kota Kediri">
+  <img src="{{ asset('storage/banner/' . $banner->gambar) }}"
+    class="banner-slide {{ $key == 0 ? 'active' : '' }} position-absolute w-100 h-75 object-fit-cover"
+    style="object-position: bottom;" alt="Pemerintah Kota Kediri">
   @endforeach
 
   <!-- <div class="banner-content text-center">
@@ -28,97 +28,233 @@
     <p class="fs-5 fs-md-6 fs-sm-small">
         Keindahan yang memikat, pengalaman yang tak terlupakan. Datang sekali, ingin kembali lagi!
     </p>
-    
+
   </div> -->
 
-  <div class="banner-card px-3">
-    @php
-        $menus = [
-            ['id' => 1, 'nama_kategori' => 'Promo Warga', 'icon' => 'bi-tags'],
-            ['id' => 2, 'nama_kategori' => 'Hits di Kediri', 'icon' => 'bi-fire'],
-            ['id' => 3, 'nama_kategori' => 'Layanan Warga', 'icon' => 'bi-people'],
-            ['id' => 4, 'nama_kategori' => 'Akses Cepat', 'icon' => 'bi-grid']
-        ];
-    @endphp
-
-    <div class="header-card-hero d-flex flex-column flex-lg-row justify-content-between align-items-center">
-        <!-- Menu & Dropdown di Mobile -->
-        <div class="d-flex align-items-center flex-grow-1 order-0 mt-2">
-            <div class="d-lg-none mb-2 w-100 mt-3 mt-lg-0">
-                <select class="form-select" id="mobileMenu">
-                    @foreach ($menus as $item)
-                        <option value="{{ $item['id'] }}">{{ $item['nama_kategori'] }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <ul class="hero-menu nav nav-pills d-none d-lg-flex p-2 mb-0" id="parentTabGroup">
-                @foreach ($menus as $item)
-                    <li class="nav-item ms-1 me-3">
-                        <a class="nav-link-hero {{ $loop->first ? 'active' : '' }}"
-                           id="tab{{ $item['id'] }}" 
-                           href="#" 
-                           data-id="{{ $item['id'] }}">
-                            <span class="fw-bold fs-6"><i class="bi {{ $item['icon'] }}"></i> {{ $item['nama_kategori'] }}</span>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-
-        <!-- Search Box -->
-        <div class="position-relative w-lg-auto order-1 me-0 me-lg-3">
-            <div class="input-group">
-                <input type="search" class="form-control text-grey bg-light fs-6" id="searchInput" placeholder="Ada apa di Kediri" aria-label="Search" style="color: #6c757d;">
-                <span class="input-group-text bg-primary text-white" id="searchButton" style="cursor: pointer;">
-                    <i class="bi bi-search"></i>
-                </span>
-            </div>
-        </div>
+  <div class="banner-card px-3 text-center py-5 modern-glass">
+    <h2 class="countdown-title-modern mb-2">
+      <span class="countdown-gradient">MENUJU APEKSI MUSKOMWIL IV KE 13 / 2025 - KOTA KEDIRI</span>
+    </h2>
+    <div class="countdown-subtitle-modern mb-4">
+      Kota Kediri | 13th Edition
     </div>
-
-    <div class="container">
-        <div class="tab-content" id="tabContent">
-            <div class="tab-pane fade show active" id="content1">
-                @include('home.hero-promo')
-            </div>
-        </div>
+    <div id="countdown-modern" class="d-flex justify-content-center gap-3 flex-wrap modern-countdown-row">
+      <div class="countdown-item-modern">
+        <div class="countdown-number-modern" id="days">00</div>
+        <div class="countdown-label-modern">Hari</div>
+      </div>
+      <div class="countdown-separator-modern">:</div>
+      <div class="countdown-item-modern">
+        <div class="countdown-number-modern" id="hours">00</div>
+        <div class="countdown-label-modern">Jam</div>
+      </div>
+      <div class="countdown-separator-modern">:</div>
+      <div class="countdown-item-modern">
+        <div class="countdown-number-modern" id="minutes">00</div>
+        <div class="countdown-label-modern">Menit</div>
+      </div>
+      <div class="countdown-separator-modern">:</div>
+      <div class="countdown-item-modern">
+        <div class="countdown-number-modern" id="seconds">00</div>
+        <div class="countdown-label-modern">Detik</div>
+      </div>
     </div>
+    <div id="countdown-message" class="mt-4 fs-5 fw-semibold text-success"></div>
   </div>
+  <style>
+    .countdown-title-modern {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #165a63;
+      font-family: 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
 
-    <!-- SVG Wave sebagai overlay -->
-    <svg class="hero-waves position-absolute top-75 start-0 w-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-      </defs>
-      <g class="parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
-        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(249,250,252,255)" />
-      </g>
-    </svg>
-  
-  </div>
+    .countdown-title-modern .countdown-gradient {
+      background: linear-gradient(90deg, #165a63 30%, #21808c 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.6rem;
+      display: inline-block;
+    }
+
+    .countdown-subtitle-modern {
+      font-size: 1rem;
+      color: #21808c;
+      font-family: 'Montserrat', Arial, sans-serif;
+      opacity: 0.85;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+
+    .modern-glass {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 28px;
+      box-shadow: 0 8px 32px rgba(22, 90, 99, 0.08), 0 1.5px 6px rgba(0, 0, 0, 0.04);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(22, 90, 99, 0.08);
+    }
+
+    .modern-countdown-row {
+      margin-top: 10px;
+    }
+
+    .countdown-item-modern {
+      background: linear-gradient(135deg, #e6f4f1 60%, #f8fafc 100%);
+      border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(22, 90, 99, 0.07), 0 1.5px 6px rgba(0, 0, 0, 0.04);
+      padding: 32px 26px;
+      min-width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 2px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #d2e7e4;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .countdown-item-modern::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, #21808c 0%, transparent 70%);
+      opacity: 0.08;
+      z-index: 0;
+    }
+
+    .countdown-item-modern:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 12px 32px rgba(22, 90, 99, 0.13), 0 2px 8px rgba(0, 0, 0, 0.06);
+      background: linear-gradient(135deg, #e6f4f1 40%, #c2e2db 100%);
+    }
+
+    .countdown-number-modern {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #21808c;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      text-shadow: 0 2px 16px rgba(22, 90, 99, 0.10);
+      transition: color 0.2s;
+      z-index: 1;
+    }
+
+    .countdown-label-modern {
+      font-size: 1.1rem;
+      color: #165a63;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      opacity: 0.85;
+      z-index: 1;
+    }
+
+    .countdown-separator-modern {
+      font-size: 2.7rem;
+      font-weight: bold;
+      color: #21808c;
+      align-self: center;
+      margin: 0 8px;
+      user-select: none;
+      opacity: 0.7;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    @media (max-width: 600px) {
+      .banner-card {
+        padding: 1.5rem 0.5rem !important;
+      }
+
+      .countdown-item-modern {
+        padding: 14px 8px;
+        min-width: 55px;
+      }
+
+      .countdown-number-modern {
+        font-size: 1.5rem;
+      }
+
+      .countdown-label-modern {
+        font-size: 0.8rem;
+      }
+
+      .countdown-separator-modern {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+  <script>
+    const eventDate = new Date("2025-07-15T23:59:59").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      if (distance < 0) {
+        document.getElementById("countdown-modern").style.display = "none";
+        document.getElementById("countdown-message").innerHTML = "Event telah dimulai!";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("days").textContent = String(days).padStart(2, '0');
+      document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+  <!-- SVG Wave sebagai overlay -->
+  <svg class="hero-waves position-absolute top-75 start-0 w-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+    <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(249,250,252,255)" />
+    </g>
+  </svg>
+
+</div>
 
 
-  <!-- Modal Banner Promo -->
-  <div class="modal fade" id="agendaModal" tabindex="-1" role="dialog" aria-labelledby="agendaModalLabel" aria-hidden="true" data-backdrop="true" data-keyboard="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div id="modal-content">
-          </div>
+<!-- Modal Banner Promo -->
+<div class="modal fade" id="agendaModal" tabindex="-1" role="dialog" aria-labelledby="agendaModalLabel" aria-hidden="true" data-backdrop="true" data-keyboard="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div id="modal-content">
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     let slides = document.querySelectorAll(".banner-slide");
     let index = 0;
 
@@ -133,43 +269,44 @@
 </script>
 
 <script>
- document.getElementById('mobileMenu').addEventListener('change', function() {
+  document.getElementById('mobileMenu').addEventListener('change', function() {
     let selectedTab = this.value;
     let targetTab = document.getElementById('tab' + selectedTab); // Cari tab berdasarkan ID
 
     if (targetTab) {
-        targetTab.click(); // Simulasikan klik pada tab
+      targetTab.click(); // Simulasikan klik pada tab
     }
-});
-
+  });
 </script>
 <script>
-$(document).ready(function () {
-    $(".nav-link-hero").on("click", function (e) {
-        e.preventDefault();
-        
-        let kategoriId = $(this).data("id"); // Ambil ID kategori
-        let contentId = "#content" + kategoriId; // Target div untuk isi konten
+  $(document).ready(function() {
+    $(".nav-link-hero").on("click", function(e) {
+      e.preventDefault();
 
-        // Tambahkan efek loading
-        $("#tabContent").html('<div class="text-center py-4"><i class="bi bi-arrow-repeat fa-spin"></i> Memuat...</div>');
+      let kategoriId = $(this).data("id"); // Ambil ID kategori
+      let contentId = "#content" + kategoriId; // Target div untuk isi konten
 
-        // Panggil AJAX untuk mengambil data berdasarkan kategori
-        $.ajax({
-            url: "/get-content-hero",
-            type: "GET",
-            data: { id: kategoriId },
-            success: function (response) {
-                $("#tabContent").html('<div class="tab-pane fade show active">' + response + '</div>');
-            },
-            error: function () {
-                $("#tabContent").html('<div class="text-danger text-center">Gagal memuat data.</div>');
-            }
-        });
+      // Tambahkan efek loading
+      $("#tabContent").html('<div class="text-center py-4"><i class="bi bi-arrow-repeat fa-spin"></i> Memuat...</div>');
 
-        // Update active class
-        $(".nav-link-hero").removeClass("active");
-        $(this).addClass("active");
+      // Panggil AJAX untuk mengambil data berdasarkan kategori
+      $.ajax({
+        url: "/get-content-hero",
+        type: "GET",
+        data: {
+          id: kategoriId
+        },
+        success: function(response) {
+          $("#tabContent").html('<div class="tab-pane fade show active">' + response + '</div>');
+        },
+        error: function() {
+          $("#tabContent").html('<div class="text-danger text-center">Gagal memuat data.</div>');
+        }
+      });
+
+      // Update active class
+      $(".nav-link-hero").removeClass("active");
+      $(this).addClass("active");
     });
-});
+  });
 </script>

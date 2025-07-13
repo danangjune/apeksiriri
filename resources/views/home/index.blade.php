@@ -10,15 +10,16 @@
   @endpush
   
   @include('home.hero')
-  @include('home.agenda')
+  @include('home.agenda-apeksi')
+  {{-- @include('home.agenda')
   @include('home.wisata')
   @include('home.produk')
-  @include('home.sejarah')
+  @include('home.sejarah') --}}
   <!-- @include('home.pendidikan') -->
-  @include('home.berita')
+  {{-- @include('home.berita')
   @include('home.program')
   @include('home.layanan')
-  @include('home.dokumen')
+  @include('home.dokumen') --}}
 
   
   <!-- Modal -->
