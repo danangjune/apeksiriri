@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             KategoriBeritaSeeder::class,
             JabatanSeeder::class,
             TentangKotaSeeder::class,
+            ProfilPesertaApeksi::class,
         ]);
     }
 }

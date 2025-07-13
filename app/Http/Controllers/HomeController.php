@@ -20,6 +20,7 @@ use App\Models\Feedback;
 use App\Models\Dokumen;
 use App\Models\BannerPromo;
 use App\Models\Artikel;
+use App\Models\ProfilPesertaApeksi;
 use Illuminate\Support\Str;
 use DataTables;
 
@@ -144,8 +145,12 @@ class HomeController extends Controller
         ]
     ];
 
-        return view('home.index', compact('eventSchedules', 'meta', 'layanan', 'wisata', 'belanja','kategori', 'berita_terkini', 'banners', 'layanan_digital', 'produk', 'dokumen', 'banner_promo', 'artikel'));
+        $profil_apeksi = ProfilPesertaApeksi::all();
+        $slides = $profil_apeksi->chunk(7);
+    
+        return view('home.index', compact('eventSchedules', 'profil_apeksi', 'slides', 'meta', 'layanan', 'wisata', 'belanja','kategori', 'berita_terkini', 'banners', 'layanan_digital', 'produk', 'dokumen', 'banner_promo', 'artikel'));
     }
+    
 
     public function get_content_hero(Request $request)
     {

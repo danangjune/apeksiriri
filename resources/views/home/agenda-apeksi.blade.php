@@ -9,7 +9,9 @@
 
 </style>
 <div class="container agenda-apeksi">
-  <h4 class="mb-5 fw-bold border-bottom title-border">Agenda APEKSI Kota Kediri</h4>
+  <h2 class="countdown-title-modern mb-4 mt-4">
+      <span class="countdown-gradient">AGENDA APEKSI MUSKOMWIL IV KE 13 / 2025 - KOTA KEDIRI</span>
+  </h2>
 
   <div class="date-picker" role="tablist" aria-label="Pilih tanggal kegiatan">
     @foreach($eventSchedules as $index => $event)

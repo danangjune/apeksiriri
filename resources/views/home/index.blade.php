@@ -11,6 +11,7 @@
   
   @include('home.hero')
   @include('home.agenda-apeksi')
+  @include('home.profil-pemerintah')
   {{-- @include('home.agenda')
   @include('home.wisata')
   @include('home.produk')
