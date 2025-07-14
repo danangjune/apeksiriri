@@ -57,11 +57,7 @@
                                 </div>
                             </div>
 
-                            <!-- Navigation buttons -->
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-
-                            <!-- Pagination -->
+                            <!-- Pagination only -->
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
@@ -73,13 +69,14 @@
 
 <!-- CSS untuk section Wamendag -->
 <style>
+    /* Profile styling with gradient overlay */
     .profile-img-container {
         position: relative;
         overflow: hidden;
     }
 
     .profile-img {
-        object-fit: contain;
+        object-fit: cover;
         height: 500px;
         width: 100%;
         display: block;
@@ -92,6 +89,12 @@
         right: 0;
         height: 40%;
         background: linear-gradient(to top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+    }
+
+    /* Swiper styling */
+    .swiper-pagination {
+        position: relative;
+        margin-top: 15px;
     }
 
     /* Responsive adjustments */
@@ -127,10 +130,7 @@
                 clickable: true,
                 dynamicBullets: true,
             },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            }
+            // Navigation arrows removed
         });
     });
 </script>

@@ -6,22 +6,29 @@
   .day-pane.active {
     display: block;
   }
-  .nested-detail-content {
-  display: none;
-  padding-left: 20px; /* Agar terlihat seperti nested list */
-}
 
-.nested-detail.open + .nested-detail-content {
-  display: block;
-}
+  .nested-detail-content {
+    display: none;
+    padding-left: 20px;
+    /* Agar terlihat seperti nested list */
+  }
+
+  .nested-detail.open+.nested-detail-content {
+    display: block;
+  }
 </style>
 <div class="container agenda-apeksi">
-  <h2 class="countdown-title-modern mb-4 mt-4">
-    <span class="countdown-gradient">AGENDA APEKSI MUSKOMWIL IV KE 13 / 2025 - KOTA KEDIRI</span>
-  </h2>
+  <div class="row mb-4 mt-4">
+    <div class="col-12 text-center">
+      <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">
+        Agenda APEKSI MUSKOMWIL IV Kota Kediri
+      </h2>
+      <p class="lead">Berikut adalah jadwal lengkap rangkaian acara MUSKOMWIL IV APEKSI ke-13 tahun 2025 di Kota Kediri.</p>
+    </div>
+  </div>
 
   <div class="date-picker">
-  @foreach($groupedEvents as $date => $events)
+    @foreach($groupedEvents as $date => $events)
     <button
       class="date-item {{ $loop->first ? 'active' : 'inactive' }}"
       aria-selected="{{ $loop->first ? 'true' : 'false' }}"
@@ -30,20 +37,20 @@
       <span>{{ \Carbon\Carbon::parse($date)->format('j M') }}</span>
       <span>{{ \Carbon\Carbon::parse($date)->translatedFormat('l') }}</span>
     </button>
-  @endforeach
-</div>
+    @endforeach
+  </div>
 
 
   <section class="day-content">
-  @foreach($groupedEvents as $date => $events)
+    @foreach($groupedEvents as $date => $events)
     <div class="day-pane {{ $loop->first ? 'active' : 'd-none' }}" id="dayPane{{ $loop->index + 1 }}">
       <h4 class="section-title">Agenda Tanggal {{ \Carbon\Carbon::parse($date)->translatedFormat('d F Y') }}</h4>
 
       @foreach($events as $event)
-        <article class="accordion-item mb-2">
-          <header class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
-            {{ $event['event_name'] }}
-          </header>
+      <article class="accordion-item mb-2">
+        <header class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
+          {{ $event['event_name'] }}
+        </header>
 
           <div class="accordion-content" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" role="region" aria-labelledby="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
             <ul class="text-black">
@@ -57,21 +64,21 @@
               
             </ul>
 
-            <div class="nested-detail">Jadwal Kegiatan</div>
-            <div class="nested-detail-content">
-              <ul>
-                @foreach($event['schedule'] as $item)
-                  <li><strong>{{ $item['time'] }}:</strong> {{ $item['activity'] }}</li>
-                @endforeach
-              </ul>
-            </div>
+          <div class="nested-detail">Jadwal Kegiatan</div>
+          <div class="nested-detail-content">
+            <ul>
+              @foreach($event['schedule'] as $item)
+              <li><strong>{{ $item['time'] }}:</strong> {{ $item['activity'] }}</li>
+              @endforeach
+            </ul>
           </div>
-        </article>
+        </div>
+      </article>
       @endforeach
 
     </div>
-  @endforeach
-</section>
+    @endforeach
+  </section>
 
 
   <script>
@@ -161,6 +168,11 @@
       const content = document.getElementById(header.getAttribute('aria-controls'));
       if (content) {
         content.classList.add('open');
+        // Automatically open the nested detail
+        const nestedDetail = content.querySelector('.nested-detail');
+        if (nestedDetail) {
+          expandNested(nestedDetail);
+        }
       }
     }
 
@@ -170,6 +182,11 @@
       const content = document.getElementById(header.getAttribute('aria-controls'));
       if (content) {
         content.classList.remove('open');
+        // Also collapse the nested detail
+        const nestedDetail = content.querySelector('.nested-detail');
+        if (nestedDetail) {
+          collapseNested(nestedDetail);
+        }
       }
     }
 
@@ -177,44 +194,23 @@
       accordionHeaders.forEach(h => collapseAccordion(h));
     }
 
-    // Nested detail toggles
-   // Nested detail toggles
-const nestedDetails = document.querySelectorAll('.nested-detail');
-nestedDetails.forEach(detail => {
-  detail.addEventListener('click', () => {
-    const expanded = detail.getAttribute('aria-expanded') === 'true';
-    if (expanded) {
-      collapseNested(detail);
-    } else {
-      expandNested(detail);
+    function expandNested(detail) {
+      detail.setAttribute('aria-expanded', 'true');
+      detail.classList.add('open');
+      const content = detail.nextElementSibling; // Mendapatkan elemen berikutnya, yaitu nested-detail-content
+      if (content) {
+        content.classList.add('open');
+      }
     }
-  });
-  detail.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      detail.click();
+
+    function collapseNested(detail) {
+      detail.setAttribute('aria-expanded', 'false');
+      detail.classList.remove('open');
+      const content = detail.nextElementSibling;
+      if (content) {
+        content.classList.remove('open');
+      }
     }
-  });
-});
-
-function expandNested(detail) {
-  detail.setAttribute('aria-expanded', 'true');
-  detail.classList.add('open');
-  const content = detail.nextElementSibling; // Mendapatkan elemen berikutnya, yaitu nested-detail-content
-  if (content) {
-    content.classList.add('open');
-  }
-}
-
-function collapseNested(detail) {
-  detail.setAttribute('aria-expanded', 'false');
-  detail.classList.remove('open');
-  const content = detail.nextElementSibling;
-  if (content) {
-    content.classList.remove('open');
-  }
-}
-
   </script>
 
 </div>

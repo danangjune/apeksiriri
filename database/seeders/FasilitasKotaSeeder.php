@@ -14,8 +14,8 @@ class FasilitasKotaSeeder extends Seeder
     public function run(): void
     {
         $files = [
-            'seeders/kategorifasilitas.sql',
-            'seeders/sub_fasilitas_kota.sql',
+            // 'seeders/kategori_fasilitas.sql',
+            // 'seeders/sub_fasilitas_kota.sql',
             'seeders/fasilitas_kota.sql',
         ];
 
