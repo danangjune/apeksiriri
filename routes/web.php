@@ -25,6 +25,10 @@ Route::controller(LandingController::class)->group(function() {
     Route::get('events-card', 'getCardData')->name('getCardData');
 });
 
+ Route::controller(FasilitasController::class)->group(function() {
+        Route::get('/fasilitas-kota', 'fasilitas_kota')->name('fasilitas-kota');
+    });
+
 //*************************************** HOME PAGE *************************************************
 Route::controller(HomeController::class)->group(function() {
     Route::get('/', 'index')->name('landing');
@@ -54,9 +58,6 @@ Route::middleware('auth')->group(function () {
         Route::post('change-password', 'changePassword');
     });    
 
-    Route::controller(FasilitasController::class)->group(function() {
-        Route::get('/fasilitas-kota', 'fasilitas_kota')->name('fasilitas-kota');
-    });
     //*************************************** HOME PAGE *************************************************    
     Route::controller(HomeController::class)->group(function(){
         Route::get('banner-beranda', 'banner_beranda')->name('banner_beranda');
