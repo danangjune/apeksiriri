@@ -52,17 +52,17 @@
           {{ $event['event_name'] }}
         </header>
 
-          <div class="accordion-content" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" role="region" aria-labelledby="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
-            <ul class="text-black">
-              <li><strong>Tempat:</strong> {{ $event['venue'] }}</li>
-              <li><strong>Peserta:</strong> {{ $event['attendees'] }}</li>
-              <li><strong>Dresscode:</strong> {{ $event['dresscode'] }}</li>
-              <div class="d-flex">
-                <div class="col-md-8">{!! $event['map'] !!}</div>
-                <div class="col-md-4"><img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100"></div>
-              </div>
-              
-            </ul>
+        <div class="accordion-content" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" role="region" aria-labelledby="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
+          <ul class="text-black">
+            <li><strong>Tempat:</strong> {{ $event['venue'] }}</li>
+            <li><strong>Peserta:</strong> {{ $event['attendees'] }}</li>
+            <li><strong>Dresscode:</strong> {{ $event['dresscode'] }}</li>
+            <div class="d-flex">
+              <div class="col-md-8">{!! $event['map'] !!}</div>
+              <div class="col-md-4"><img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100"></div>
+            </div>
+
+          </ul>
 
           <div class="nested-detail">Jadwal Kegiatan</div>
           <div class="nested-detail-content">
