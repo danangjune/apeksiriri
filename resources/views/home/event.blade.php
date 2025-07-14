@@ -25,9 +25,6 @@
                                     <span><i class="fas fa-clock me-2"></i>09:00 - 17:00</span>
                                 </div>
                             </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <a href="#" class="btn btn-primary w-100">Selengkapnya</a>
-                            </div>
                         </div>
                     </div>
 
@@ -48,9 +45,6 @@
                                     <span><i class="fas fa-map-marker-alt me-2"></i>Grand Ballroom</span>
                                     <span><i class="fas fa-clock me-2"></i>19:00 - 22:00</span>
                                 </div>
-                            </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <a href="#" class="btn btn-primary w-100">Selengkapnya</a>
                             </div>
                         </div>
                     </div>
@@ -73,9 +67,6 @@
                                     <span><i class="fas fa-clock me-2"></i>08:00 - 16:00</span>
                                 </div>
                             </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <a href="#" class="btn btn-primary w-100">Selengkapnya</a>
-                            </div>
                         </div>
                     </div>
 
@@ -96,9 +87,6 @@
                                     <span><i class="fas fa-map-marker-alt me-2"></i>Meeting Point</span>
                                     <span><i class="fas fa-clock me-2"></i>08:00 - 15:00</span>
                                 </div>
-                            </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <a href="#" class="btn btn-primary w-100">Selengkapnya</a>
                             </div>
                         </div>
                     </div>
@@ -121,9 +109,6 @@
                                     <span><i class="fas fa-clock me-2"></i>19:00 - 22:00</span>
                                 </div>
                             </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <a href="#" class="btn btn-primary w-100">Selengkapnya</a>
-                            </div>
                         </div>
                     </div>
 
@@ -145,9 +130,6 @@
                                     <span><i class="fas fa-clock me-2"></i>07:00 - 09:00</span>
                                 </div>
                             </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <a href="#" class="btn btn-primary w-100">Selengkapnya</a>
-                            </div>
                         </div>
                     </div>
 
@@ -168,9 +150,6 @@
                                     <span><i class="fas fa-map-marker-alt me-2"></i>Sungai Brantas</span>
                                     <span><i class="fas fa-clock me-2"></i>08:00 - 10:00</span>
                                 </div>
-                            </div>
-                            <div class="card-footer bg-transparent border-0">
-                                <a href="#" class="btn btn-primary w-100">Selengkapnya</a>
                             </div>
                         </div>
                     </div>
