@@ -10,6 +10,9 @@ class PesertaApeksiController extends Controller
     public function index ($id)
     {
         $peserta = ProfilPesertaApeksi::where('id', $id)->first();
+        $firstId = ProfilPesertaApeksi::orderBy('id', 'asc')->first()?->id;
+        $lastId = ProfilPesertaApeksi::orderBy('id', 'desc')->first()?->id;
+
 
         $titlepage = 'Profil Peserta Apeksi';
         $breadcrumb  = [
@@ -18,6 +21,6 @@ class PesertaApeksiController extends Controller
             'detailpage' => false
         ];
 
-        return view ('peserta-apeksi.detil', compact('titlepage', 'breadcrumb', 'peserta'));
+        return view ('peserta-apeksi.detil', compact('titlepage', 'breadcrumb', 'peserta', 'firstId', 'lastId'));
     }
 }

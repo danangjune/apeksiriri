@@ -113,9 +113,8 @@
 
     <!-- Datatables -->
     {{-- <script src="{{ asset('assets/js/plugin/datatables/datatables.min.js') }}"></script> --}}
-    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
-    @stack('datatable')
+    <script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/js/dataTables.bootstrap5.min.js') }}"></script>
     <!-- Dropzone -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
     @stack('foto-dropzone')
@@ -142,6 +141,8 @@
 
     <!-- Tinymce -->
     <script src="{{ asset('assets/tinymce/tinymce.min.js') }}"></script>
+    @stack('datatable')
+    @stack('scripts')
 
     <script>
         tinymce.init({

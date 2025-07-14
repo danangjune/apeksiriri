@@ -53,7 +53,7 @@
         </header>
 
           <div class="accordion-content" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" role="region" aria-labelledby="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
-            <ul class="text-black">
+            <!-- <ul class="text-black">
               <li><strong>Tempat:</strong> {{ $event['venue'] }}</li>
               <li><strong>Peserta:</strong> {{ $event['attendees'] }}</li>
               <li><strong>Dresscode:</strong> {{ $event['dresscode'] }}</li>
@@ -63,15 +63,56 @@
                   <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
                 </div>
               </div>
-            </ul>
+            </ul> -->
+           <ul class="text-black list-unstyled" style="padding-left: 0;">
+              @php
+                  $info = [
+                      'Tempat' => $event['venue'],
+                      'Peserta' => $event['attendees'],
+                      'Dresscode' => $event['dresscode'],
+                  ];
+              @endphp
+
+              @foreach($info as $label => $value)
+                  <li style="display: flex; align-items: start; margin-bottom: 6px;">
+                      <div style="width: 100px;"><strong>{{ $label }}</strong></div>
+                      <div style="margin: 0 6px;">:</div>
+                      <div style="flex: 1;">{{ $value }}</div>
+                  </li>
+              @endforeach
+          </ul>
+
+
+          <div class="d-flex flex-column flex-md-row">
+              <div class="col-md-8 mb-3 mb-md-0">{!! $event['map'] !!}</div>
+              <div class="col-md-4">
+                  <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
+              </div>
+          </div>
+
 
           <div class="nested-detail">Jadwal Kegiatan</div>
           <div class="nested-detail-content">
-            <ul>
+            <!-- <ul>
               @foreach($event['schedule'] as $item)
               <li><strong>{{ $item['time'] }}:</strong> {{ $item['activity'] }}</li>
               @endforeach
-            </ul>
+            </ul> -->
+            <table style="width: 100%; border-collapse: collapse;">
+                @foreach($event['schedule'] as $item)
+                    <tr>
+                        <td style="padding: 4px 8px; vertical-align: top; width: 150px;">
+                           <strong>* {{ $item['time'] }}</strong>
+                        </td>
+                        <td style="padding: 4px 0; vertical-align: top; width: 10px;">:</td>
+                        <td style="padding: 4px 8px; vertical-align: top;">
+                            {{ $item['activity'] }}
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
+
+
           </div>
           <div class="nested-detail">Dokumentasi Kegiatan</div>
           <div>

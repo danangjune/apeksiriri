@@ -16,7 +16,7 @@ class LiveReportController extends Controller
              return DataTables::of($liveReport)
                  ->addIndexColumn()
                  ->addColumn('action', function($row){
-                     $data = '<a href="#" data-url="'.$row->link.'" class="btn btn-primary btn-copy">Copy</a> <a href="#" class="btn btn-info btn-edit">Edit</a>';
+                     $data = '<a href="#" data-url="'.$row->link.'" class="btn btn-primary btn-copy">Copy</a></button> <a href="#" class="btn btn-info btn-edit">Edit</a>';
                      return $data;
                  })
                  ->rawColumns(['action'])

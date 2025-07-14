@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="text-center">
-        <a href="{{ asset('storage/informasi-kota-kediri.pdf') }}" class="btn btn-gradient-green px-4 py-2 fw-semibold rounded-pill d-inline-flex align-items-center gap-2" download>
+        <a href="https://drive.google.com/drive/folders/1x_wUsfMGjF7C-4AFXKGP3sTXa0Wkr1fL?usp=sharing" class="btn btn-gradient-green px-4 py-2 fw-semibold rounded-pill d-inline-flex align-items-center gap-2" download>
             <i class="bi bi-download fs-5"></i>
             Download Buku Panduan Kota Kediri
         </a>
@@ -72,7 +72,8 @@
         border-radius: 18px;
     }
 
-    .btn-gradient-green, .bg-gradient-green {
+    .btn-gradient-green,
+    .bg-gradient-green {
         background: linear-gradient(90deg, #165a63 0%, #21808c 100%);
         color: #fff !important;
         border: none;

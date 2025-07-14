@@ -28,7 +28,11 @@ class ProgressHarianController extends Controller
                     return $tanggal;
                 })
                 ->addColumn('action', function($row){
-                    $data = '<a href="'.route('detail-rangkaian-acara', $row->id).'" class="btn btn-info">Detail</a>';
+                    $data = '<div class="btn-group" role="group" aria-label="Basic example">';
+                    $data .= '<a href="'.route('detail-rangkaian-acara', $row->id).'" class="btn btn-info btn-sm">Detail</a>';
+                    $data .= '<button class="btn btn-primary btn-sm btn-edit">Edit</button>';
+                    $data .= '<button class="btn btn-danger btn-sm btn-hapus">Hapus</button>';
+                    $data .= '</div>';
                     return $data;
                 })
                 ->rawColumns(['action', 'tanggal_kegiatan'])
@@ -58,7 +62,11 @@ class ProgressHarianController extends Controller
                     return $data;
                 })
                 ->addColumn('action', function($row){
-                    $data = '<a href="'.route('histori-progress', $row->id).'" class="btn btn-info">Detail</a>';
+                    $data = '<div class="btn-group" role="group" aria-label="Basic example">';
+                    $data .= '<a href="'.route('histori-progress', $row->id).'" class="btn btn-info btn-sm">Detail</a>';
+                    $data .= '<button class="btn btn-primary btn-sm btn-edit">Edit</button>';
+                    $data .= '<button class="btn btn-danger btn-sm btn-hapus">Hapus</button>';
+                    $data .= '</div>';
                     return $data;
                 })
                 ->rawColumns(['action', 'progress_persen', 'tanggal_kegiatan'])
@@ -125,5 +133,131 @@ class ProgressHarianController extends Controller
         $data = RangkaianAcara::with(["detail", "detail.progress"])->get();
         return $data;
    }
+
+   public function storeRangkaianAcara(Request $request)
+   {
+        try {
+            $validated = $request->validate([
+                'nama' => ['required'],
+                'tanggal' => ['required'],
+                'sampai' => ['required']
+            ]);
+
+            RangkaianAcara::create([
+                'nama' => $request->nama,
+                'tanggal' => $request->tanggal,
+                'opd' => $request->opd,
+                'sampai' => $request->sampai
+            ]);
+
+            toastr()->success('Berhasil Menambahkan Rangkaian Acara');
+        } catch (\Exception $e) {
+            toastr()->error('Gagal '.$e->getMessage());
+        }
+
+        return redirect()->back();
+   }
+
+   public function updateRangkaianAcara(Request $request, $id)
+   {
+        try {
+            $validated = $request->validate([
+                'nama' => ['required'],
+                'tanggal' => ['required'],
+                'sampai' => ['required']
+            ]);
+
+            RangkaianAcara::where('id', $id)->update([
+                'nama' => $request->nama,
+                'tanggal' => $request->tanggal,
+                'opd' => $request->opd,
+                'sampai' => $request->sampai
+            ]);
+
+            toastr()->success('Berhasil Mengubah Rangkaian Acara');
+        } catch (\Exception $e) {
+            toastr()->error('Gagal '.$e->getMessage());
+        }
+
+        return redirect()->back();
+   }
+
+   public function delRangkaianAcara(Request $request, $id)
+   {
+       $r = RangkaianAcara::find($id);
+       $r->delete();
+       toastr()->success('Berhasil Menghapus Rangkaian Acara');
+       return redirect()->back();
+   }
+
+   public function storeDetailRangkaianAcara(Request $request)
+   {
+        try {
+            $validated = $request->validate([
+                'mulai' => ['required'],
+                'selesai' => ['required'],
+                'kegiatan' => ['required'],
+                'tanggal' => ['required']
+            ]);
+
+            DetailRangkaianAcara::create([
+                'rangkaian_acara_id' => $request->rangkaian_acara_id,
+                'mulai' => $request->mulai,
+                'selesai' => $request->selesai,
+                'kegiatan' => $request->kegiatan,
+                'tanggal' => $request->tanggal,
+                "lokasi" => $request->lokasi,
+                "uraian" => $request->uraian,
+                "perlengkapan" => $request->perlengkapan,
+                "catatan" => $request->catatan
+            ]);
+
+            toastr()->success('Berhasil Menambahkan Detail Rangkaian Acara');
+        } catch (\Exception $e) {
+            toastr()->error('Gagal '.$e->getMessage());
+        }
+
+        return redirect()->back();
+   }
+
+   public function updateDetailRangkaianAcara(Request $request, $id)
+   {
+        try {
+            $validated = $request->validate([
+                'mulai' => ['required'],
+                'selesai' => ['required'],
+                'kegiatan' => ['required'],
+                'tanggal' => ['required']
+            ]);
+
+            DetailRangkaianAcara::where('id', $id)->update([
+                'rangkaian_acara_id' => $request->rangkaian_acara_id,
+                'mulai' => $request->mulai,
+                'selesai' => $request->selesai,
+                'kegiatan' => $request->kegiatan,
+                'tanggal' => $request->tanggal,
+                "lokasi" => $request->lokasi,
+                "uraian" => $request->uraian,
+                "perlengkapan" => $request->perlengkapan,
+                "catatan" => $request->catatan
+            ]);
+
+            toastr()->success('Berhasil Menambahkan Detail Rangkaian Acara');
+        } catch (\Exception $e) {
+            toastr()->error('Gagal '.$e->getMessage());
+        }
+
+        return redirect()->back();
+   }
+
+   public function delDetailRangkaianAcara(Request $request, $id)
+   {
+       $r = DetailRangkaianAcara::find($id);
+       $r->delete();
+       toastr()->success('Berhasil Menghapus Detail Rangkaian Acara');
+       return redirect()->back();
+   }
+
+
 
 }
