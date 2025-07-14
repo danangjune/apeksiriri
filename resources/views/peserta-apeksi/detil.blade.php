@@ -85,21 +85,35 @@
                         <!-- Video -->
                         <div class="col-md-6">
                             <div class="media-box p-3 shadow-lg rounded border border-success-subtle">
-                                <div class="ratio ratio-16x9 rounded overflow-hidden">
-                                    <iframe 
-                                        src="https://drive.google.com/file/d/1Xn-BsdusAOmrXh4nzSGORa-WrjEPmwyn/preview"
-                                        allowfullscreen
-                                        style="border: none; border-radius: 10px;">
-                                    </iframe>
-                                </div>
+                                @if(!empty($peserta['embed_video']) && $peserta['embed_video'] != '/preview')
+                                    <div class="ratio ratio-16x9 rounded overflow-hidden">
+                                        <iframe 
+                                            src="{{ $peserta['embed_video'] }}"
+                                            allowfullscreen
+                                            style="border: none; border-radius: 10px;">
+                                        </iframe>
+                                    </div>
+                                @else
+                                    <div class="text-center text-muted py-5">
+                                        <em>Video belum tersedia</em>
+                                    </div>
+                                @endif
                             </div>
+                        </div>
+
+                        <div class="col-md-6">
+
+                        </div>
+
+                        <div class="col-md-6">
+                            
                         </div>
 
                         <!-- Gambar -->
                         <div class="col-md-6">
                             <div class="media-box p-3 shadow-lg rounded border border-success-subtle text-center">
                                 <img 
-                                    src="{{ asset('storage/gambar-peserta/'.$peserta['gambar']) }}" 
+                                    src="{{ asset('storage/gambar-peserta/'.$peserta['image']) }}" 
                                     alt="Gambar Peserta" 
                                     class="img-fluid rounded"
                                     style="max-height: 300px; object-fit: cover;">
