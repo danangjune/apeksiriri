@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             RangkaianAcaraSeederV2::class,
             UserSeeder::class,
             ProfilPesertaApeksiSeeder::class,
+            BannerSeeder::class,
             // ProfilPesertaApeksi::class,
         ]);
     }
