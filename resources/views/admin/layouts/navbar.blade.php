@@ -65,7 +65,7 @@
                     </li>
                     <li>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">My Profile</a>
+                        <a class="dropdown-item" href="#" id="btnUbahPassword">Ubah Password</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">
                             <form method="POST" action="{{ route('logout') }}">

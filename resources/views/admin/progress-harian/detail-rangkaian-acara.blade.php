@@ -34,7 +34,15 @@
                     <div class="card" style="margin-top:20px;">
                         <div class="card-body" style="margin-top:20px;">
                             <h5>{{ $rangkaianAcara->nama }}</h5>
-                            <p><i class="fa fa-user"></i> {{ $rangkaianAcara->opd }}</p>
+                            <p><i class="fa fa-user"></i> {{ $rangkaianAcara->opd }}<br />
+                                <i class="fa fa-calendar"></i>
+                                @if ($rangkaianAcara->tanggal == $rangkaianAcara->sampai)
+                                    {{ App\Helpers\TanggalHelper::formatTanggalIndonesia($rangkaianAcara->tanggal) }}
+                                @else
+                                    {{ App\Helpers\TanggalHelper::formatTanggalIndonesia($rangkaianAcara->tanggal, $rangkaianAcara->sampai) }}
+                                @endif
+                                <br />
+                            </p>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped" style="width: 100%;">
                                     <thead>

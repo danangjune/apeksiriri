@@ -25,16 +25,26 @@
                             <div class="card-body">
                                 @foreach ($row->detail as $item)
                                     <h6>{{ $item->kegiatan }}</h6>
-                                    <i class="text-secondary"><span class="fa fa-clock"></span> {{ $item->mulai . '-' . $item->selesai }}</i><br />
+                                    <i class="text-secondary"><span class="fa fa-clock"></span>
+                                        {{ $item->mulai . '-' . $item->selesai }}</i><br />
                                     <i class="text-secondary"><span class="fa fa-calendar"></span>
                                         {{ App\Helpers\TanggalHelper::formatTanggalIndonesia($item->tanggal) }}</i>
-                                    <div class="progress mb-3">
-                                        <div class="progress-bar bg-success" role="progressbar"
-                                            style="width: {{ $item->progress != null ? $item->progress->progress : '0' }}%"
-                                            aria-valuenow="{{ $item->progress != null ? $item->progress->progress : '0' }}"
-                                            aria-valuemin="0" aria-valuemax="100">
-                                            {{ $item->progress != null ? $item->progress->progress . '%' : '0%' }}</div>
-                                    </div>
+                                    @if ($item->progress != null)
+                                        @if ($item->progress != null && $item->progress->progress == "100")
+                                            @php $status = "bg-success"; @endphp
+                                        @else
+                                            @php $status = "bg-danger"; @endphp
+                                        @endif
+                                        <div class="progress mt-2 mb-1">
+                                            <div class="progress-bar {{ $status }}" role="progressbar"
+                                                style="width: {{ $item->progress != null ? $item->progress->progress : '0' }}%"
+                                                aria-valuenow="{{ $item->progress != null ? $item->progress->progress : '0' }}"
+                                                aria-valuemin="0" aria-valuemax="100">
+                                                {{ $item->progress != null ? $item->progress->progress . '%' : '0%' }}</div>
+                                        </div>
+                                        <i class="text-info">Ket :
+                                            {{ $item->progress != null ? $item->progress->keterangan : '-' }}</i>
+                                    @endif
                                     <hr />
                                 @endforeach
                             </div>

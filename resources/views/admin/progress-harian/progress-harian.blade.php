@@ -50,6 +50,10 @@
                         <div class="card-body" style="margin-top:20px;">
                             <h5>{{ $rangkaianAcara->kegiatan }}</h5>
                             <p>{{ $rangkaianAcara->rangkaianAcara->nama }}</p>
+                            <p><i class="fa fa-calendar"></i>
+                                {{ App\Helpers\TanggalHelper::formatTanggalIndonesia($rangkaianAcara->tanggal) }}<br />
+                                <i class="fa fa-clock"></i> {{ $rangkaianAcara->mulai . ' - ' . $rangkaianAcara->selesai }}
+                            </p>
                             <div class="row justify-content-end mb-3">
                                 <div>
                                     <button type="button" class="btn btn-primary" id="btnTambah">
@@ -94,7 +98,7 @@
                     </div>
                     <div class="form-group">
                         <label>Keterangan</label>
-                        <textarea class="form-control" name="keterangan"></textarea>
+                        <textarea class="form-control" name="keterangan" rows="5"></textarea>
                     </div>
                     <div class="form-group">
                         <button type="button" class="btn btn-primary" id="btnSaveProgress">Simpan</button>
@@ -107,7 +111,7 @@
 
     <form method="post" id="frmDelete">
         @csrf
-        @method("DELETE")
+        @method('DELETE')
     </form>
 
     @push('datatable')
@@ -116,11 +120,11 @@
                 document.querySelector('.progress-output').textContent = value + '%';
             }
 
-            $("#btnTambah").on("click", function(){
+            $("#btnTambah").on("click", function() {
                 new bootstrap.Modal($("#modalTambah")).show();
             });
 
-            $("#btnSaveProgress").on("click", function(){
+            $("#btnSaveProgress").on("click", function() {
                 Swal.fire({
                     title: 'Konfirmasi Penyimpanan Progress',
                     confirmButtonText: 'Ya Simpan',
@@ -130,12 +134,14 @@
                     confirmButtonColor: "#3085d6",
                     cancelButtonColor: "#d33",
                     cancelButtonText: "Batal"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            $("#loadIDRangkaianAcara").append('<input type="hidden" name="detail_rangkaian_acara_id" value="{{ $rangkaianAcara->id }}" />');
-                            $('#frmSubmit').submit();
-                        }
-                    });
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $("#loadIDRangkaianAcara").append(
+                            '<input type="hidden" name="detail_rangkaian_acara_id" value="{{ $rangkaianAcara->id }}" />'
+                            );
+                        $('#frmSubmit').submit();
+                    }
+                });
             });
 
             function deleteProgress(id) {
@@ -148,12 +154,12 @@
                     confirmButtonColor: "#3085d6",
                     cancelButtonColor: "#d33",
                     cancelButtonText: "Batal"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                           $("#frmDelete").attr("action", "{{ url('del-progress') }}"+"/"+id);
-                           $("#frmDelete").submit();
-                        }
-                    });
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $("#frmDelete").attr("action", "{{ url('del-progress') }}" + "/" + id);
+                        $("#frmDelete").submit();
+                    }
+                });
             }
 
             $(function() {
