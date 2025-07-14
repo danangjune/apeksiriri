@@ -95,7 +95,7 @@
                                                             <span><strong><i class="bi bi-telephone-fill"></i></strong>
                                                                 {{ $item['telp'] }}</span>
                                                             <br>
-                                                            <a href="{{ $item['link'] }}" class="btn btn-warning mt-2"
+                                                            <a href="{{ $item['map'] }}" class="btn btn-warning mt-2"
                                                                 target="_blank">Kunjungi</a>
                                                         </div>
                                                     </div>
@@ -153,7 +153,7 @@
                                                             <span><strong><i class="bi bi-telephone-fill"></i></strong>
                                                                 {{ $item['telp'] }}</span>
                                                             <br>
-                                                            <a href="{{ $item['link'] }}" class="btn btn-warning mt-2"
+                                                            <a href="{{ $item['map'] }}" class="btn btn-warning mt-2"
                                                                 target="_blank">Kunjungi</a>
                                                         </div>
                                                     </div>

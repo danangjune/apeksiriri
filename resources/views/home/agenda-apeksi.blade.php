@@ -57,11 +57,30 @@
               <li><strong>Tempat:</strong> {{ $event['venue'] }}</li>
               <li><strong>Peserta:</strong> {{ $event['attendees'] }}</li>
               <li><strong>Dresscode:</strong> {{ $event['dresscode'] }}</li>
-              <div class="d-flex">
-                <div class="col-md-8">{!! $event['map'] !!}</div>
-                <div class="col-md-4"><img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100"></div>
+              <div class="d-flex flex-column flex-md-row">
+                <div class="col-md-5 mb-3 mb-md-0">{!! $event['map'] !!}</div>
+                <div class="col-md-4">
+                  <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
+                </div>
+                <div class="col-md-3 d-flex flex-column justify-content-center align-items-center text-center py-4">
+                  <h4 class="facility-title mb-3">Dokumentasi Kegiatan</h4>
+
+                  <div class="d-flex justify-content-center gap-3 mb-3">
+                    <div>
+                      <i class="bi bi-image-fill fs-2 text-primary"></i>
+                      <div class="small mt-1">Galeri Foto</div>
+                    </div>
+                    <div>
+                      <i class="bi bi-camera-reels-fill fs-2 text-primary"></i>
+                      <div class="small mt-1">Video</div>
+                    </div>
+                  </div>
+
+                  <a href="" class="btn btn-gradient-green" target="_blank">
+                    Lihat Selengkapnya
+                  </a>
+                </div>
               </div>
-              
             </ul>
 
           <div class="nested-detail">Jadwal Kegiatan</div>
@@ -71,6 +90,10 @@
               <li><strong>{{ $item['time'] }}:</strong> {{ $item['activity'] }}</li>
               @endforeach
             </ul>
+          </div>
+          <div class="nested-detail">Dokumentasi Kegiatan</div>
+          <div>
+
           </div>
         </div>
       </article>

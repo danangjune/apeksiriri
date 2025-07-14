@@ -24,6 +24,9 @@ class DatabaseSeeder extends Seeder
             KategoriFasilitasSeeder::class,
             SubKategoriFasilitasSeeder::class,
             FasilitasKotaSeeder::class,
+            UserSeeder::class,
+            RangkaianAcaraSeeder::class,
+            ProfilPesertaApeksiSeeder::class,
             // ProfilPesertaApeksi::class,
         ]);
     }
