@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
-    private function _appNavigation() 
+    private function _appNavigation()
     {
         return array(
             [
@@ -23,42 +24,42 @@ class AppServiceProvider extends ServiceProvider
                 'url' => '/profil',
                 'routes' => ['pesona-kediri-raya', 'tentang-kediri', 'fasilitas-kota', 'perangkat-daerah', 'kelurahan', 'penghargaan', 'detil-penghargaan/*', 'perangkat-daerah'],
                 'children' => array(
-                        [
-                            'title' => 'Pesona Kediri Raya',
-                            'description' => 'Informasi lengkap tentang tempat wisata, budaya, kuliner, hingga produk khas Kota Kediri.',
-                            'icon' => 'bi-search-heart', 
-                            'url' => '/pesona-kediri-raya'
-                        ],
-                        [
-                            'title' => 'Tentang Kediri',
-                            'description' => 'Gambaran umum tentang Kota Kediri, termasuk sejarah, visi & misi, serta profil pemimpinnya.',
-                            'icon' => 'bi-info-circle', 
-                            'url' => '/tentang-kediri'
-                        ],
-                        [
-                            'title' => 'Fasilitas Kota',
-                            'description' => 'Berbagai sarana dan prasarana yang ada di Kota Kediri.',
-                            'icon' => 'bi-building', 
-                            'url' => '/fasilitas-kota'
-                        ],
-                        [
-                            'title' => 'Perangkat Daerah',
-                            'description' => 'Struktur dan tugas perangkat daerah yang mendukung pelayanan publik.',
-                            'icon' => 'bi-diagram-3', 
-                            'url' => '/perangkat-daerah/struktur-organisasi'
-                        ],
-                        [
-                            'title' => 'Kelurahan',
-                            'description' => 'Informasi tentang pembagian wilayah kelurahan di Kota Kediri.',
-                            'icon' => 'bi-map', 
-                            'url' => '/kelurahan'
-                        ],
-                        [
-                            'title' => 'Penghargaan',
-                            'description' => 'Prestasi dan penghargaan yang telah diraih oleh Kota Kediri.',
-                            'icon' => 'bi-trophy', 
-                            'url' => '/penghargaan'
-                        ]
+                    [
+                        'title' => 'Pesona Kediri Raya',
+                        'description' => 'Informasi lengkap tentang tempat wisata, budaya, kuliner, hingga produk khas Kota Kediri.',
+                        'icon' => 'bi-search-heart',
+                        'url' => '/pesona-kediri-raya'
+                    ],
+                    [
+                        'title' => 'Tentang Kediri',
+                        'description' => 'Gambaran umum tentang Kota Kediri, termasuk sejarah, visi & misi, serta profil pemimpinnya.',
+                        'icon' => 'bi-info-circle',
+                        'url' => '/tentang-kediri'
+                    ],
+                    [
+                        'title' => 'Fasilitas Kota',
+                        'description' => 'Berbagai sarana dan prasarana yang ada di Kota Kediri.',
+                        'icon' => 'bi-building',
+                        'url' => '/fasilitas-kota'
+                    ],
+                    [
+                        'title' => 'Perangkat Daerah',
+                        'description' => 'Struktur dan tugas perangkat daerah yang mendukung pelayanan publik.',
+                        'icon' => 'bi-diagram-3',
+                        'url' => '/perangkat-daerah/struktur-organisasi'
+                    ],
+                    [
+                        'title' => 'Kelurahan',
+                        'description' => 'Informasi tentang pembagian wilayah kelurahan di Kota Kediri.',
+                        'icon' => 'bi-map',
+                        'url' => '/kelurahan'
+                    ],
+                    [
+                        'title' => 'Penghargaan',
+                        'description' => 'Prestasi dan penghargaan yang telah diraih oleh Kota Kediri.',
+                        'icon' => 'bi-trophy',
+                        'url' => '/penghargaan'
+                    ]
                 ),
             ],
             [
@@ -69,19 +70,19 @@ class AppServiceProvider extends ServiceProvider
                     [
                         'title' => 'Berita',
                         'description' => 'Berita terkini mengenai berbagai aktivitas dan program Kota Kediri',
-                        'icon' => 'bi-newspaper', 
+                        'icon' => 'bi-newspaper',
                         'url' => '/berita'
                     ],
                     [
                         'title' => 'Pengumuman',
                         'description' => 'Informasi penting yang perlu diketahui masyarakat.',
-                        'icon' => 'bi-megaphone', 
+                        'icon' => 'bi-megaphone',
                         'url' => '/pengumuman'
                     ],
                     [
                         'title' => 'Galeri',
                         'description' => 'Koleksi foto yang menggambarkan aktivitas dan keindahan Kota Kediri.',
-                        'icon' => 'bi-images', 
+                        'icon' => 'bi-images',
                         'url' => '/galeri'
                     ],
                     [
@@ -93,19 +94,19 @@ class AppServiceProvider extends ServiceProvider
                     // [
                     //     'title' => 'Kediri dalam Angka',
                     //     'description' => 'Statistik dan data penting yang menggambarkan kondisi Kota Kediri.',
-                    //     'icon' => 'bi-file-earmark-bar-graph', 
+                    //     'icon' => 'bi-file-earmark-bar-graph',
                     //     'url' => '/kediri-dalam-angka'
                     // ],
                     [
                         'title' => 'Satu Data',
                         'description' => 'Portal satu data Pemerintah Kota Kediri.',
-                        'icon' => 'bi-graph-up-arrow', 
+                        'icon' => 'bi-graph-up-arrow',
                         'url' => 'https://satudata.kedirikota.go.id'
                     ],
                     [
                         'title' => 'Dokumen',
                         'description' => 'Dokumen berisi berbagai laporan dan regulasi Pemerintah Kota Kediri.',
-                        'icon' => 'bi-file-earmark-medical', 
+                        'icon' => 'bi-file-earmark-medical',
                         'url' => '/dokumen'
                     ],
                 ),
@@ -123,7 +124,7 @@ class AppServiceProvider extends ServiceProvider
         );
     }
 
-    private function _footerNavigation() 
+    private function _footerNavigation()
     {
         return array(
             [
@@ -192,6 +193,10 @@ class AppServiceProvider extends ServiceProvider
             View::share('appNavigation', $this->_appNavigation());
             View::share('footerNavigation', $this->_footerNavigation());
             View::share('appAdminSidebar', $this->_appAdminSidebar());
+        }
+
+        if (env('APP_SCHEME') === 'https') {
+            URL::forceScheme('https');
         }
 
         View::composer('*', function ($view) {
