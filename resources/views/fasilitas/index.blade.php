@@ -294,7 +294,7 @@
                                                             <span><strong><i class="bi bi-telephone-fill"></i></strong>
                                                                 {{ $item['telp'] }}</span>
                                                             <br>
-                                                            <a href="https://wa.me/{{ str_replace('-', '', $item['telp']) }}"
+                                                            <a href="https://wa.me/62{{ substr(str_replace('-', '', $item['telp']), 1) }}"
                                                                 class="btn btn-warning mt-2" target="_blank">Hubungi via
                                                                 WA</a>
                                                         </div>
