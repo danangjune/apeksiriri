@@ -91,14 +91,14 @@
                     @csrf
                     <div id="loadIDRangkaianAcara"></div>
                     <div class="progress-container form-group">
-                        <label for="progress">Progress (%)</label>
+                        <label for="progress">Progress (%) <i class="text-danger">*</i></label>
                         <input type="range" id="progress" name="progress" min="0" max="100" value="50"
-                            oninput="updateOutput(this.value)">
+                            oninput="updateOutput(this.value)" required>
                         <div>Total : <span class="progress-output">50%</span></div>
                     </div>
                     <div class="form-group">
-                        <label>Keterangan</label>
-                        <textarea class="form-control" name="keterangan" rows="5"></textarea>
+                        <label>Keterangan <i class="text-danger">*</i></label>
+                        <textarea class="form-control" name="keterangan" rows="5" required></textarea>
                     </div>
                     <div class="form-group">
                         <button type="button" class="btn btn-primary" id="btnSaveProgress">Simpan</button>

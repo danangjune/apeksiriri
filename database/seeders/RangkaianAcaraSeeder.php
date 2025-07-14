@@ -378,7 +378,7 @@ class RangkaianAcaraSeeder extends Seeder
 
         DetailRangkaianAcara::create([
             "rangkaian_acara_id" => $rangkaianExpo->id,
-            "kegiatan" => "Loading In peserta pameran",
+            "kegiatan" => "Loading peserta pameran",
             "mulai" => "00:00:00",
             "selesai" => "07:00:00",
             "tanggal" => "2025-07-16"

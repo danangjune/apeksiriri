@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Admin - @yield('title')</title>
-    <meta
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-      name="viewport"
-    />
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link
-      rel="icon"
-      href="{{ asset('assets/images/logo.png') }}"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="{{ asset('assets/images/logo.png') }}" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
     <script>
-      WebFont.load({
-        google: { families: ["Public Sans:300,400,500,600,700"] },
-        custom: {
-          families: [
-            "Font Awesome 5 Solid",
-            "Font Awesome 5 Regular",
-            "Font Awesome 5 Brands",
-            "simple-line-icons",
-          ],
-          urls: ["{{ asset('assets/css/fonts.min.css') }}"],
-        },
-        active: function () {
-          sessionStorage.fonts = true;
-        },
-      });
+        WebFont.load({
+            google: {
+                families: ["Public Sans:300,400,500,600,700"]
+            },
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons",
+                ],
+                urls: ["{{ asset('assets/css/fonts.min.css') }}"],
+            },
+            active: function() {
+                sessionStorage.fonts = true;
+            },
+        });
     </script>
 
     <!-- CSS Files -->
@@ -40,7 +36,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/kaiadmin.min.css') }}" />
     <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.min.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}" />
@@ -54,16 +50,49 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="wrapper">
-      @include('admin.layouts.sidebar')
-      <div class="main-panel">
-        @include('admin.layouts.navbar')
-        @yield('content')
-        @include('admin.layouts.footer')
-      </div>
+        @include('admin.layouts.sidebar')
+        <div class="main-panel">
+            @include('admin.layouts.navbar')
+            @yield('content')
+            @include('admin.layouts.footer')
+        </div>
     </div>
+
+
+    {{-- Modal Edit Password --}}
+    <div class="modal fade" id="modalEditPassword" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{ url('change-password') }}" onSubmit="return checkPassword(this)" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <label>Password Lama</label>
+                        <input type="password" name="password_old" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Password Baru</label>
+                        <input type="password" name="password_new" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Konfirmasi Password</label>
+                        <input type="password" name="password_konfirmasi" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     @include('sweetalert::alert')
     <!--   Core JS Files   -->
     @stack('foto-preview')
@@ -115,83 +144,118 @@
     <script src="{{ asset('assets/tinymce/tinymce.min.js') }}"></script>
 
     <script>
-      tinymce.init({
-          selector: 'textarea#my-editor',  // Selector textarea
-          height: 500,
-          plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons accordion',
-          menubar: 'file edit view insert format tools table help',
-          toolbar_mode: 'floating',
-          toolbar: "undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl",
-          image_title: true,
-          automatic_uploads: true,
-          file_picker_types: 'image',
-          file_picker_callback: function (cb, value, meta) {
-              let input = document.createElement('input');
-              input.setAttribute('type', 'file');
-              input.setAttribute('accept', 'image/*');
-              input.onchange = function () {
-                  let file = this.files[0];
-                  let reader = new FileReader();
-                  reader.onload = function () {
-                      let id = 'blobid' + (new Date()).getTime();
-                      let blobCache = tinymce.activeEditor.editorUpload.blobCache;
-                      let base64 = reader.result.split(',')[1];
-                      let blobInfo = blobCache.create(id, file, base64);
-                      blobCache.add(blobInfo);
-                      cb(blobInfo.blobUri(), { title: file.name });
-                  };
-                  reader.readAsDataURL(file);
-              };
-              input.click();
-          }
-      });
+        tinymce.init({
+            selector: 'textarea#my-editor', // Selector textarea
+            height: 500,
+            plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons accordion',
+            menubar: 'file edit view insert format tools table help',
+            toolbar_mode: 'floating',
+            toolbar: "undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl",
+            image_title: true,
+            automatic_uploads: true,
+            file_picker_types: 'image',
+            file_picker_callback: function(cb, value, meta) {
+                let input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+                input.onchange = function() {
+                    let file = this.files[0];
+                    let reader = new FileReader();
+                    reader.onload = function() {
+                        let id = 'blobid' + (new Date()).getTime();
+                        let blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                        let base64 = reader.result.split(',')[1];
+                        let blobInfo = blobCache.create(id, file, base64);
+                        blobCache.add(blobInfo);
+                        cb(blobInfo.blobUri(), {
+                            title: file.name
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                };
+                input.click();
+            }
+        });
     </script>
     <script>
         $(document).ready(function() {
             $('.form-control-lg').select2();
         });
+
+
+        $('#btnUbahPassword').on("click", function() {
+            new bootstrap.Modal($("#modalEditPassword")).show();
+        });
+
+        function checkPassword(form) {
+            password1 = form.password_new.value;
+            password2 = form.password_konfirmasi.value;
+
+            // If password not entered 
+            if (password1 == '')
+                alert("Please enter Password");
+
+            // If confirm password not entered 
+            else if (password2 == '')
+                alert("Please enter confirm password");
+
+            // If Not same return False.     
+            else if (password1 != password2) {
+                alert("\nPassword Konfirmasi Tidak Sama, Silahkan Cek Kembali")
+                return false;
+            }
+
+            // If same return True. 
+            else {
+                return true;
+            }
+        }
     </script>
     <script>
-      $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
-        type: "line",
-        height: "70",
-        width: "100%",
-        lineWidth: "2",
-        lineColor: "#177dff",
-        fillColor: "rgba(23, 125, 255, 0.14)",
-      });
+        $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
+            type: "line",
+            height: "70",
+            width: "100%",
+            lineWidth: "2",
+            lineColor: "#177dff",
+            fillColor: "rgba(23, 125, 255, 0.14)",
+        });
 
-      $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
-        type: "line",
-        height: "70",
-        width: "100%",
-        lineWidth: "2",
-        lineColor: "#f3545d",
-        fillColor: "rgba(243, 84, 93, .14)",
-      });
+        $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
+            type: "line",
+            height: "70",
+            width: "100%",
+            lineWidth: "2",
+            lineColor: "#f3545d",
+            fillColor: "rgba(243, 84, 93, .14)",
+        });
 
-      $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
-        type: "line",
-        height: "70",
-        width: "100%",
-        lineWidth: "2",
-        lineColor: "#ffa534",
-        fillColor: "rgba(255, 165, 52, .14)",
-      });
+        $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
+            type: "line",
+            height: "70",
+            width: "100%",
+            lineWidth: "2",
+            lineColor: "#ffa534",
+            fillColor: "rgba(255, 165, 52, .14)",
+        });
     </script>
     <style>
-      /* Custom height for Select2 dropdown */
-      .select2-container--default .select2-selection--single {
-        height: 40px; /* Set custom height */
-      }
+        /* Custom height for Select2 dropdown */
+        .select2-container--default .select2-selection--single {
+            height: 40px;
+            /* Set custom height */
+        }
 
-      .select2-container--default .select2-selection--single .select2-selection__rendered {
-        line-height: 40px; /* Align text vertically */
-      }
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 40px;
+            /* Align text vertically */
+        }
 
-      .select2-container--default .select2-selection--single .select2-selection__arrow {
-        height: 40px; /* Adjust the height of the arrow */
-      }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 40px;
+            /* Adjust the height of the arrow */
+        }
     </style>
-  </body>
+</body>
+
 </html>
