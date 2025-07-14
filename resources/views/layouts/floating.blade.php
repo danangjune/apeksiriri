@@ -1,8 +1,8 @@
 <!-- Floating Share Button -->
 <div class="floating-share">
     <!-- Tombol Feedback -->
-    <button class="feedback-btn" data-label="Beri Penilaian" onclick="openFeedbackModal()">
-        <i class="bi bi-hand-thumbs-up fs-2"></i>
+    <button class="feedback-btn" data-label="Daftar Kontak LO" onclick="openFeedbackModal()">
+        <i class="bi bi-telephone fs-2"></i>
     </button>
     <button class="share-toggle" data-label="Bagikan">
         <i class="bi bi-share-fill"></i>
