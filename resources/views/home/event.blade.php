@@ -15,14 +15,14 @@
                 <div class="swiper-wrapper">
 
                     <!-- City Expo -->
-                    <div class="swiper-slide">
+                    {{-- <div class="swiper-slide">
                         <x-event-image-card
                             url=""
                             image="{{ asset('assets/images/banner/pra-muskomwil.jpg') }}"
                             day="16"
                             month="Juli"
                             title="Kediri City Expo" />
-                    </div>
+                    </div> --}}
 
 
                     <!-- Gala Dinner -->
@@ -49,7 +49,7 @@
                     <div class="swiper-slide">
                         <x-event-image-card
                             url="https://drive.google.com/file/d/1A6zJDi_X-UYiLFde1hkfoTeNMvLkie7T/view?usp=sharing"
-                            image="{{ asset('assets/images/banner/apeksi-nite-carnival') }}"
+                            image="{{ asset('assets/images/banner/apeksi-nite-carnival.jpeg') }}"
                             day="17"
                             month="Juli"
                             title="APEKSI NITE CARNIVAL" />

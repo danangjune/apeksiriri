@@ -16,6 +16,7 @@
 @include('home.wamendag')
 @include('home.fasilitas')
 @include('home.teaser-info')
+@include('home.layanan-aduan')
 
 <!-- Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
