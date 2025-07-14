@@ -4,7 +4,7 @@
             <div class="col-12 text-center">
                 <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">Kunjungan Kerja Wakil
                     Menteri Perdagangan</h2>
-                <p class="lead">dalam rangka MUSKOMWIL IV APEKSI Kota Kediri 2025</p>
+                <p class="lead">Dalam rangka MUSKOMWIL IV APEKSI Kota Kediri 2025</p>
             </div>
         </div>
 
@@ -80,7 +80,7 @@
 
     .profile-img {
         object-fit: contain;
-        height: 500px;
+        height: 600px;
         width: 100%;
         display: block;
     }
@@ -92,6 +92,15 @@
         right: 0;
         height: 40%;
         background: linear-gradient(to top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+    }
+
+    .gallery-container .swiper-slide img {
+        border-radius: 10px;
+    }
+
+    .profile-info {
+        position: relative;
+        top: -100px;
     }
 
     /* Responsive adjustments */

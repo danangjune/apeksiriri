@@ -72,7 +72,7 @@
         border-radius: 18px;
     }
 
-    .btn-gradient-green {
+    .btn-gradient-green, .bg-gradient-green {
         background: linear-gradient(90deg, #165a63 0%, #21808c 100%);
         color: #fff !important;
         border: none;
