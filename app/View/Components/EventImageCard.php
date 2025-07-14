@@ -16,6 +16,7 @@ class EventImageCard extends Component
         public $day,
         public $month,
         public $title,
+        public $url,
     ) {}
 
     /**

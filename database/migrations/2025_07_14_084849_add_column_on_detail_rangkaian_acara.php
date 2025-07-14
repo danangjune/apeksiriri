@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rangkaian_acara', function (Blueprint $table) {
-            $table->id();
-            $table->mediumText("nama");
-            $table->date("tanggal");
-            $table->string("opd", 50)->nullable();
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('detail_rangkaian_acara', function (Blueprint $table) {
+            $table->mediumText("lokasi")->nullable();
+            $table->mediumText("uraian")->nullable();
+            $table->mediumText("perlengkapan")->nullable();
+            $table->mediumText("catatan")->nullable();
         });
     }
 
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rangkaian_acara');
+        //
     }
 };

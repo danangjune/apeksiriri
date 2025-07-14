@@ -107,10 +107,23 @@
                     'detailpage' => $breadcrumb['detailpage'] ?? false
                 ])
 
-                <div class="col-md-4 py-4 text-center mb-3 mb-md-0">
-                    <img src="{{ $peserta['logo'] }}" alt="Logo" class="img-fluid" style="max-height: 150px;">
-                </div>
+               <div class="col-md-4 py-4 text-center mb-3 mb-md-0">
+                    <img src="{{ $peserta['logo'] }}" alt="Logo" class="img-fluid mb-4" style="max-height: 150px;">
 
+                    <div class="d-flex justify-content-center gap-4">
+                        @if($peserta['id'] > $firstId)
+                            <a href="{{ url('detil-peserta/' . ($peserta['id'] - 1)) }}" class="btn btn-primary btn-lg" title="Sebelumnya">
+                                <i class="bi bi-arrow-left-circle"></i>
+                            </a>
+                        @endif
+
+                        @if($peserta['id'] < $lastId)
+                            <a href="{{ url('detil-peserta/' . ($peserta['id'] + 1)) }}" class="btn btn-primary btn-lg" title="Selanjutnya">
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </a>
+                        @endif
+                    </div>
+                </div>
                 <div class="col-md-8 py-4">
                     <h4 class="mb-3 fw-bold border-bottom title-border text-left">{{ $peserta['nama'] }}</h4>
 

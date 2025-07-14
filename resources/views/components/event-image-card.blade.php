@@ -58,6 +58,7 @@
     }
 </style>
 
+<a href="{{ $url }}" target="_blank" class="text-decoration-none">
 <div class="card event-card h-100 shadow-sm">
     <div class="card-img-top position-relative">
         <img src="{{ $image }}" class="img-fluid" alt="{{ $title }}">
@@ -67,3 +68,4 @@
         </div>
     </div>
 </div>
+</a>
