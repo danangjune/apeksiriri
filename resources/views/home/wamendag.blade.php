@@ -33,27 +33,57 @@
                             <div class="swiper-wrapper">
                                 <!-- Slide 1 -->
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/images/banner/kunjungan-gg.jpg') }}" alt="Kunjungan Wamendag" class="img-fluid w-100">
+                                    <div class="slide-number">1</div>
+                                    <div class="slide-map-marker">
+                                        <a href="https://maps.app.goo.gl/g6PBzBWvtJiMc7JM7" target="_blank">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </a>
+                                    </div>
+                                    <img src="{{ asset('assets/images/banner/kunjungan-gg.jpg') }}" alt="Kunjungan Gudang Garam" class="img-fluid w-100">
                                 </div>
 
                                 <!-- Slide 2 -->
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/images/banner/kunjungan-kampung-tenun.jpg') }}" alt="Pembukaan MUSKOMWIL" class="img-fluid w-100">
+                                    <div class="slide-number">2</div>
+                                    <div class="slide-map-marker">
+                                        <a href="https://maps.app.goo.gl/HFbuQ5Na9o5h26NFA" target="_blank">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </a>
+                                    </div>
+                                    <img src="{{ asset('assets/images/banner/kunjungan-kampung-tenun.jpg') }}" alt="Kunjungan Kampung Tenun" class="img-fluid w-100">
                                 </div>
 
                                 <!-- Slide 3 -->
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/images/banner/kunjungan-pasar-ngronggo.jpg') }}" alt="Seminar Ekonomi Digital" class="img-fluid w-100">
+                                    <div class="slide-number">3</div>
+                                    <div class="slide-map-marker">
+                                        <a href="https://maps.app.goo.gl/aQxCWMpxP3Dmvpoq9" target="_blank">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </a>
+                                    </div>
+                                    <img src="{{ asset('assets/images/banner/kunjungan-pasar-ngronggo.jpg') }}" alt="Kunjungan Pasar Ngronggo" class="img-fluid w-100">
                                 </div>
 
                                 <!-- Slide 4 -->
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/images/banner/kunjungan-hotel.jpg') }}" alt="Gala Dinner APEKSI" class="img-fluid w-100">
+                                    <div class="slide-number">4</div>
+                                    <div class="slide-map-marker">
+                                        <a href="https://maps.app.goo.gl/E3AKBaqFqD1J1iGe6" target="_blank">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </a>
+                                    </div>
+                                    <img src="{{ asset('assets/images/banner/kunjungan-hotel.jpg') }}" alt="Kunjungan Hotel" class="img-fluid w-100">
                                 </div>
 
                                 <!-- Slide 5 -->
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/images/banner/kunjungan-balkot.jpg') }}" alt="Forum Dialog Perdagangan" class="img-fluid w-100">
+                                    <div class="slide-number">5</div>
+                                    <div class="slide-map-marker">
+                                        <a href="https://maps.app.goo.gl/mz9V5eKhdZZK9jf39" target="_blank">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </a>
+                                    </div>
+                                    <img src="{{ asset('assets/images/banner/kunjungan-balkot.jpg') }}" alt="Kunjungan Balai Kota" class="img-fluid w-100">
                                 </div>
                             </div>
 
@@ -73,6 +103,35 @@
 
 <!-- CSS untuk section Wamendag -->
 <style>
+    .slide-number {
+        position: absolute;
+        font-weight: bold;
+        width: 2.5rem;
+        top: 15px;
+        right: 15px;
+        background-color: rgba(70, 158, 246, 0.8);
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .slide-map-marker a {
+        position: absolute;
+        font-weight: bold;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 50px;
+        left: 55px;
+        background-color: rgba(70, 158, 246, 1);
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 100%;
+        text-align: center;
+        font-size: 1em;
+    }
+
     .profile-img-container {
         position: relative;
         overflow: hidden;
@@ -124,7 +183,7 @@
             spaceBetween: 0,
             loop: true,
             autoplay: {
-                delay: 3000,
+                delay: 5000,
                 disableOnInteraction: false,
             },
             effect: "fade",

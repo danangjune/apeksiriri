@@ -68,10 +68,7 @@
                     </div>
                 </a>
             </div>
-        </div>
 
-        <!-- Row 2: 4 Cards -->
-        <div class="row">
             <!-- Card 5 - Rekreasi -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <a href="{{ route('fasilitas-kota', ['tab' => 5]) }}" class="facility-card-link">
