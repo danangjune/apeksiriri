@@ -13,7 +13,12 @@ class DetailRangkaianAcara extends Model
         "rangkaian_acara_id",
         "mulai",
         "selesai",
-        "kegiatan"
+        "kegiatan",
+        "tanggal",
+        "lokasi",
+        "uraian",
+        "perlengkapan",
+        "catatan"
     ];
 
     public function progress()
