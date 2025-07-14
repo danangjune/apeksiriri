@@ -179,7 +179,7 @@
                                     </div>
                                 @elseif(in_array($kategori['id'], [6, 8]))
                                     <!-- Pencarian -->
-                                    <div class="row py-2">
+                                    <div class="row py-3">
                                         <form class="search-form">
                                             <div class="row g-3 align-items-center">
                                                 <div class="col-md-5">
@@ -203,40 +203,77 @@
                                             </div>
                                         </form>
 
-                                        <div class="grid-container mt-4 search-results">
-                                            @foreach ($fasilitasByKategori[$kategori['id']] as $item)
-                                                <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
-                                                    data-category="{{ $item['sub_kategori_id'] }}">
-                                                    <div class="border rounded d-flex p-3" style="height: 200px">
-                                                        <div class="flex-shrink-0 me-3">
-                                                            <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('assets/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
-                                                                alt="{{ $item['nama'] }}" loading="lazy"
-                                                                style="width: 100px;">
-                                                        </div>
-                                                        <div>
-                                                            <h5 class="card-title fw-semibold">{{ $item['nama'] }}</h5>
-                                                            <a href="{{ $item['map'] }}" target="_blank"
-                                                                class="text-decoration-none">
-                                                                <span><strong><i class="bi bi-geo-alt-fill"></i></strong>
-                                                                    {{ $item['alamat'] }}</span>
-                                                            </a>
-                                                            <br>
-                                                            @if (!empty($item['ket']))
-                                                                <span><strong><i class="bi bi-clock"></i></strong>
-                                                                    {{ $item['ket'] }}</span>
+                                        <div class="mt-4 d-block d-md-none">
+                                            <div class="grid-container">
+                                                @foreach ($fasilitasByKategori[$kategori['id']] as $item)
+                                                    <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
+                                                        data-category="{{ $item['sub_kategori_id'] }}">
+                                                        <div class="border rounded d-flex p-3">
+                                                            <div class="flex-shrink-0 me-3">
+                                                                <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('assets/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
+                                                                    alt="{{ $item['nama'] }}" loading="lazy"
+                                                                    style="width: 100px;">
+                                                            </div>
+                                                            <div>
+                                                                <h5 class="card-title fw-semibold">{{ $item['nama'] }}</h5>
+                                                                <a href="{{ $item['map'] }}" target="_blank"
+                                                                    class="text-decoration-none">
+                                                                    <span><strong><i class="bi bi-geo-alt-fill"></i></strong>
+                                                                        {{ $item['alamat'] }}</span>
+                                                                </a>
                                                                 <br>
-                                                            @endif
-                                                            @if (!empty($item['telp']))
+                                                                @if (!empty($item['ket']))
+                                                                    <span><strong><i class="bi bi-clock"></i></strong>
+                                                                        {{ $item['ket'] }}</span>
+                                                                    <br>
+                                                                @endif
                                                                 <span><strong><i class="bi bi-telephone-fill"></i></strong>
                                                                     {{ $item['telp'] }}</span>
                                                                 <br>
-                                                            @endif
-                                                            <a href="{{ $item['map'] }}" class="btn btn-warning mt-2"
+                                                                <a href="{{ $item['map'] }}" class="btn btn-warning mt-2"
                                                                 target="_blank">Kunjungi</a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            @endforeach
+                                                @endforeach
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-4 d-none d-md-block">
+                                            <div class="grid-container">
+                                                @foreach ($fasilitasByKategori[$kategori['id']] as $item)
+                                                    <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
+                                                        data-category="{{ $item['sub_kategori_id'] }}">
+                                                        <div class="border rounded d-flex p-3" style="height: 210px">
+                                                            <div class="flex-shrink-0 me-3">
+                                                                <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('assets/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
+                                                                    alt="{{ $item['nama'] }}" loading="lazy"
+                                                                    style="width: 100px;">
+                                                            </div>
+                                                            <div>
+                                                                <h5 class="card-title fw-semibold">{{ $item['nama'] }}</h5>
+                                                                <a href="{{ $item['map'] }}" target="_blank"
+                                                                    class="text-decoration-none">
+                                                                    <span><strong><i class="bi bi-geo-alt-fill"></i></strong>
+                                                                        {{ $item['alamat'] }}</span>
+                                                                </a>
+                                                                <br>
+                                                                @if (!empty($item['ket']))
+                                                                    <span><strong><i class="bi bi-clock"></i></strong>
+                                                                        {{ $item['ket'] }}</span>
+                                                                    <br>
+                                                                @endif
+                                                                <span><strong><i class="bi bi-telephone-fill"></i></strong>
+                                                                    {{ $item['telp'] }}</span>
+                                                                <br>
+                                                                <a href="https://wa.me/62{{ substr(str_replace('-', '', $item['telp']), 1) }}"
+                                                                    class="btn btn-warning mt-2" target="_blank">Hubungi via
+                                                                    WA</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
                                         </div>
                                         <div class="mt-4">
                                             {{ $fasilitasByKategori[$kategori['id']]->links('pagination::bootstrap-5') }}
@@ -244,7 +281,7 @@
                                     </div>
                                 @elseif(in_array($kategori['id'], [2]))
                                     <!-- Pencarian -->
-                                    <div class="row py-2">
+                                    <div class="row py-3">
                                         <form class="search-form">
                                             <div class="row g-3 align-items-center">
                                                 <div class="col-md-5">
@@ -268,39 +305,78 @@
                                             </div>
                                         </form>
 
-                                        <div class="grid-container mt-4 search-results">
-                                            @foreach ($fasilitasByKategori[$kategori['id']] as $item)
-                                                <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
-                                                    data-category="{{ $item['sub_kategori_id'] }}">
-                                                    <div class="border rounded d-flex p-3" style="height: 200px">
-                                                        <div class="flex-shrink-0 me-3">
-                                                            <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('assets/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
-                                                                alt="{{ $item['nama'] }}" loading="lazy"
-                                                                style="width: 100px;">
-                                                        </div>
-                                                        <div>
-                                                            <h5 class="card-title fw-semibold">{{ $item['nama'] }}</h5>
-                                                            <a href="{{ $item['map'] }}" target="_blank"
-                                                                class="text-decoration-none">
-                                                                <span><strong><i class="bi bi-geo-alt-fill"></i></strong>
-                                                                    {{ $item['alamat'] }}</span>
-                                                            </a>
-                                                            <br>
-                                                            @if (!empty($item['ket']))
-                                                                <span><strong><i class="bi bi-clock"></i></strong>
-                                                                    {{ $item['ket'] }}</span>
+                                        <div class="mt-4 d-block d-md-none">
+                                            <div class="grid-container">
+                                                @foreach ($fasilitasByKategori[$kategori['id']] as $item)
+                                                    <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
+                                                        data-category="{{ $item['sub_kategori_id'] }}">
+                                                        <div class="border rounded d-flex p-3">
+                                                            <div class="flex-shrink-0 me-3">
+                                                                <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('assets/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
+                                                                    alt="{{ $item['nama'] }}" loading="lazy"
+                                                                    style="width: 100px;">
+                                                            </div>
+                                                            <div>
+                                                                <h5 class="card-title fw-semibold">{{ $item['nama'] }}</h5>
+                                                                <a href="{{ $item['map'] }}" target="_blank"
+                                                                    class="text-decoration-none">
+                                                                    <span><strong><i class="bi bi-geo-alt-fill"></i></strong>
+                                                                        {{ $item['alamat'] }}</span>
+                                                                </a>
                                                                 <br>
-                                                            @endif
-                                                            <span><strong><i class="bi bi-telephone-fill"></i></strong>
-                                                                {{ $item['telp'] }}</span>
-                                                            <br>
-                                                            <a href="https://wa.me/62{{ substr(str_replace('-', '', $item['telp']), 1) }}"
-                                                                class="btn btn-warning mt-2" target="_blank">Hubungi via
-                                                                WA</a>
+                                                                @if (!empty($item['ket']))
+                                                                    <span><strong><i class="bi bi-clock"></i></strong>
+                                                                        {{ $item['ket'] }}</span>
+                                                                    <br>
+                                                                @endif
+                                                                <span><strong><i class="bi bi-telephone-fill"></i></strong>
+                                                                    {{ $item['telp'] }}</span>
+                                                                <br>
+                                                                <a href="https://wa.me/62{{ substr(str_replace('-', '', $item['telp']), 1) }}"
+                                                                    class="btn btn-warning mt-2" target="_blank">Hubungi via
+                                                                    WA</a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            @endforeach
+                                                @endforeach
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-4 d-none d-md-block">
+                                            <div class="grid-container">
+                                                @foreach ($fasilitasByKategori[$kategori['id']] as $item)
+                                                    <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
+                                                        data-category="{{ $item['sub_kategori_id'] }}">
+                                                        <div class="border rounded d-flex p-3" style="height: 210px">
+                                                            <div class="flex-shrink-0 me-3">
+                                                                <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('assets/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
+                                                                    alt="{{ $item['nama'] }}" loading="lazy"
+                                                                    style="width: 100px;">
+                                                            </div>
+                                                            <div>
+                                                                <h5 class="card-title fw-semibold">{{ $item['nama'] }}</h5>
+                                                                <a href="{{ $item['map'] }}" target="_blank"
+                                                                    class="text-decoration-none">
+                                                                    <span><strong><i class="bi bi-geo-alt-fill"></i></strong>
+                                                                        {{ $item['alamat'] }}</span>
+                                                                </a>
+                                                                <br>
+                                                                @if (!empty($item['ket']))
+                                                                    <span><strong><i class="bi bi-clock"></i></strong>
+                                                                        {{ $item['ket'] }}</span>
+                                                                    <br>
+                                                                @endif
+                                                                <span><strong><i class="bi bi-telephone-fill"></i></strong>
+                                                                    {{ $item['telp'] }}</span>
+                                                                <br>
+                                                                <a href="https://wa.me/62{{ substr(str_replace('-', '', $item['telp']), 1) }}"
+                                                                    class="btn btn-warning mt-2" target="_blank">Hubungi via
+                                                                    WA</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
                                         </div>
                                         <div class="mt-4">
                                             {{ $fasilitasByKategori[$kategori['id']]->links('pagination::bootstrap-5') }}
