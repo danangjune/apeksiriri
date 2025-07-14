@@ -20,11 +20,7 @@
               <button
                 type="button"
                 class="btn-profil"
-                data-bs-toggle="modal"
-                data-bs-target="#modalProfil"
-                data-nama="{{ $profil->nama }}"
-                data-logo="{{ $profil->logo }}"
-                data-deskripsi="{{ $profil->deskripsi }}">
+                onclick="location.href='/detil-peserta/{{ $profil->id }}'">
                 Lihat Profil
                 </button>
             </div>
@@ -50,7 +46,7 @@
   </div>
 </div>
 {{-- ============== MODAL PROFIL (Bootstrap) ============== --}}
-<div class="modal fade" id="modalProfil" tabindex="-1" aria-labelledby="modalProfilLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="modalProfil" tabindex="-1" aria-labelledby="modalProfilLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header border-0">
@@ -64,7 +60,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <script>
