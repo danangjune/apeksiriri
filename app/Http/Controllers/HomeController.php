@@ -31,8 +31,8 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $meta = [
-            'title' => 'Website Resmi Pemkot Kediri - Portal Informasi dan Pelayanan Publik',
-            'description' => 'Selamat datang di website resmi Pemerintah Kota Kediri. Dapatkan informasi terbaru, layanan publik online, berita pemerintahan, program unggulan, promo untuk warga, dan pengumuman penting. Kami hadir untuk memberikan pelayanan yang transparan, cepat, dan terpercaya bagi masyarakat.',
+            'title' => 'APEKSI MUSKOMWIL IV KE 13 - KOTA KEDIRI',
+            'description' => 'Kota Kediri dengan bangga menjadi tuan rumah Muskomwil IV Apeksi Tahun 2025 dengan tema "Semangat Pembangunan Berkelanjutan Menuju Kota Mapan".',
         ];
 
         $banners = Banner::where('status_enabled', 1)->get();
