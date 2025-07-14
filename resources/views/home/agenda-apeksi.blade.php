@@ -57,11 +57,12 @@
               <li><strong>Tempat:</strong> {{ $event['venue'] }}</li>
               <li><strong>Peserta:</strong> {{ $event['attendees'] }}</li>
               <li><strong>Dresscode:</strong> {{ $event['dresscode'] }}</li>
-              <div class="d-flex">
-                <div class="col-md-8">{!! $event['map'] !!}</div>
-                <div class="col-md-4"><img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100"></div>
+              <div class="d-flex flex-column flex-md-row">
+                <div class="col-md-8 mb-3 mb-md-0">{!! $event['map'] !!}</div>
+                <div class="col-md-4">
+                  <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
+                </div>
               </div>
-              
             </ul>
 
           <div class="nested-detail">Jadwal Kegiatan</div>
@@ -71,6 +72,22 @@
               <li><strong>{{ $item['time'] }}:</strong> {{ $item['activity'] }}</li>
               @endforeach
             </ul>
+          </div>
+          <div class="nested-detail">Dokumentasi Kegiatan</div>
+          <div>
+            <div class="d-flex gap-3 pt-3 ps-5">
+              <div class="d-flex">
+                <i class="bi bi-image-fill fs-2 text-primary"></i>
+                <div class="small mt-2 ms-2 text-black">Galeri Foto</div>
+              </div>
+              <div class="d-flex">
+                <i class="bi bi-camera-reels-fill fs-2 text-primary"></i>
+                <div class="small mt-2 ms-2 text-black">Video</div>
+              </div>
+              <a href="" class="btn btn-gradient-green" target="_blank">
+                  Lihat Selengkapnya
+              </a>
+            </div>    
           </div>
         </div>
       </article>

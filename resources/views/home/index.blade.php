@@ -14,25 +14,8 @@
 @include('home.profil-pemerintah')
 @include('home.event')
 @include('home.wamendag')
+@include('home.fasilitas')
 @include('home.teaser-info')
-{{-- Uncomment the sections you want to include --}}
-{{-- @include('home.teaser-info') --}}
-{{-- @include('home.countdown') --}}
-{{-- @include('home.banner') --}}
-{{-- @include('home.berita-utama') --}}
-{{-- @include('home.artikel-hero') --}}
-{{-- @include('home.layanan-hero') --}}
-{{-- @include('home.wisata-hero') --}}
-{{-- @include('home.agenda')
-  @include('home.wisata')
-  @include('home.produk')
-  @include('home.sejarah') --}}
-<!-- @include('home.pendidikan') -->
-{{-- @include('home.berita')
-  @include('home.program')
-  @include('home.layanan')
-  @include('home.dokumen') --}}
-
 
 <!-- Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">

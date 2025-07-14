@@ -8,13 +8,27 @@
             <p class="lead">dalam rangka MUSKOMWIL IV APEKSI Kota Kediri 2025</p>
         </div>
     </div>
-    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg teaser-video-box" style="max-width: 900px; margin: 0 auto;">
-        <iframe
-            src="https://drive.google.com/file/d/1VjjOSZ_TtOeuivaiaXyDLBq3GTyK36yM/preview"
-            allowfullscreen
-            frameborder="0"
-            style="transition:box-shadow 0.3s;">
-        </iframe>
+    <div class="row g-4 justify-content-center">
+        <div class="col-lg-6">
+            <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg teaser-video-box">
+                <iframe
+                    src="https://drive.google.com/file/d/1VjjOSZ_TtOeuivaiaXyDLBq3GTyK36yM/preview"
+                    allowfullscreen
+                    frameborder="0"
+                    style="transition:box-shadow 0.3s;">
+                </iframe>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg teaser-video-box">
+                <iframe
+                    src="https://drive.google.com/file/d/1eqq0bjoJrjnGXeifvl8uCTobPD59O_zB/preview"
+                    allowfullscreen
+                    frameborder="0"
+                    style="transition:box-shadow 0.3s;">
+                </iframe>
+            </div>
+        </div>
     </div>
 </div>
 <style>
@@ -24,27 +38,6 @@
         box-shadow: 0 8px 32px rgba(22, 90, 99, 0.13);
     }
 </style>
-<script>
-    // Autoplay Google Drive video on scroll (Intersection Observer)
-    document.addEventListener('DOMContentLoaded', function() {
-        const teaserVideo = document.getElementById('teaserVideo');
-        let hasPlayed = false;
-        if (teaserVideo) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !hasPlayed) {
-                        // Reload iframe to trigger autoplay
-                        teaserVideo.src += "&autoplay=1";
-                        hasPlayed = true;
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-            observer.observe(teaserVideo);
-        }
-    });
-</script>
 
 <!-- Section: Informasi Kota Kediri -->
 <div class="container informasi-kediri-modern mt-5">
@@ -79,7 +72,7 @@
         border-radius: 18px;
     }
 
-    .btn-gradient-green {
+    .btn-gradient-green, .bg-gradient-green {
         background: linear-gradient(90deg, #165a63 0%, #21808c 100%);
         color: #fff !important;
         border: none;

@@ -21,20 +21,23 @@ class FasilitasController extends Controller
 
     public function fasilitas_kota(Request $request)
     {
+        $kategori = KategoriFasilitas::where('status_enabled', 1)->get();
+        $activeTab = $request->get('tab', $kategori->first()->id);
+
+        // Cari kategori aktif
+        $activeKategori = $kategori->where('id', $activeTab)->first();
+
         $breadcrumb  = [
-            'titlemenu' => 'Mengenal Kediri',
-            'titlepage' => 'Fasilitas Kota',
+            'titlemenu' => 'Fasilitas Kota',
+            'titlepage' => $activeKategori ? $activeKategori->nama_kategori : 'Fasilitas Kota',
             'detailpage' => false
         ];
 
-        $kategori = KategoriFasilitas::where('status_enabled', 1)->get();
         $fasilitasByKategori = [];
-        $activeTab = $request->get('tab', $kategori->first()->id); // Get active tab from request or default to first
-
         foreach ($kategori as $item) {
             $fasilitasByKategori[$item->id] = FasilitasKota::where('kategori_id', $item->id)
                 ->paginate(9)
-                ->appends(['tab' => $activeTab]); // Append tab parameter to pagination links
+                ->appends(['tab' => $activeTab]);
         }
 
         return view('fasilitas.index', compact('kategori', 'breadcrumb', 'fasilitasByKategori', 'activeTab'));
