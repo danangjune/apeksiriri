@@ -50,7 +50,11 @@
               <li><strong>Tempat:</strong> {{ $event['venue'] }}</li>
               <li><strong>Peserta:</strong> {{ $event['attendees'] }}</li>
               <li><strong>Dresscode:</strong> {{ $event['dresscode'] }}</li>
-              {!! $event['map'] !!}
+              <div class="d-flex">
+                <div class="col-md-8">{!! $event['map'] !!}</div>
+                <div class="col-md-4"><img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100"></div>
+              </div>
+              
             </ul>
 
             <div class="nested-detail">Jadwal Kegiatan</div>
