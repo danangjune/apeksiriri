@@ -6,7 +6,7 @@
       width: 100%;
       background: #fff;
       border-radius: 15px;
-      padding: 20px 30px 40px 30px;
+      padding: 20px 0 40px 0;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       user-select: none;
     }
@@ -21,7 +21,7 @@
     .slides {
       display: flex;
       transition: transform 0.5s ease-in-out;
-      gap: 25px;
+      // gap: 25px;
     }
 
     /* Each slide */
@@ -258,6 +258,10 @@
       .cards-slide1 > div, .cards-slide2 > div {
         width: 100%;
         max-width: 280px;
+        height: 220px;
+      }
+      .cards-slide2{
+        height: fit-content;
       }
       .slide {
         padding-top: 10px;

@@ -10,6 +10,7 @@
     </div>
     <div class="row g-4 justify-content-center">
         <div class="col-lg-6">
+            <h5 class="text-center mb-3">TEASER MUSKOMWIL IV APEKSI</h5>
             <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg teaser-video-box">
                 <iframe
                     src="https://drive.google.com/file/d/1VjjOSZ_TtOeuivaiaXyDLBq3GTyK36yM/preview"
@@ -20,6 +21,7 @@
             </div>
         </div>
         <div class="col-lg-6">
+            <h5 class="text-center mb-3">KOTA KEDIRI NGANGENI</h5>
             <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg teaser-video-box">
                 <iframe
                     src="https://drive.google.com/file/d/1eqq0bjoJrjnGXeifvl8uCTobPD59O_zB/preview"
