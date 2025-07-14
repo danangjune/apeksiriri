@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table table-bordered" style="width: 100%;">
+                                <table class="table table-bordered table-striped" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th class="text-center">No.</th>

@@ -7,38 +7,10 @@ use App\Models\RangkaianAcara;
 use App\Models\DetailRangkaianAcara;
 use App\Models\ProgressHarian;
 use DataTables;
+use App\Helpers\TanggalHelper;
 
 class ProgressHarianController extends Controller
 {
-
-   public function formatTanggalIndonesia($tanggal1, $tanggal2 = null) {
-        // Array nama bulan Indonesia
-        $bulanIndo = [
-            1 => 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-            'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
-        ];
-
-        $tgl1 = date('d', strtotime($tanggal1));
-        $bln1 = date('n', strtotime($tanggal1));
-        $thn1 = date('Y', strtotime($tanggal1));
-
-        if ($tanggal2) {
-            $tgl2 = date('d', strtotime($tanggal2));
-            $bln2 = date('n', strtotime($tanggal2));
-            $thn2 = date('Y', strtotime($tanggal2));
-
-            // Jika bulan dan tahun sama
-            if ($bln1 == $bln2 && $thn1 == $thn2) {
-                return "{$tgl1}-{$tgl2} {$bulanIndo[$bln1]} {$thn1}";
-            } else {
-                // Jika berbeda
-                return "{$tgl1} {$bulanIndo[$bln1]} {$thn1} - {$tgl2} {$bulanIndo[$bln2]} {$thn2}";
-            }
-        }
-
-        // Jika hanya 1 tanggal
-        return "{$tgl1} {$bulanIndo[$bln1]} {$thn1}";
-    }
     
    public function rangkaianAcara(Request $request)
    {
@@ -49,9 +21,9 @@ class ProgressHarianController extends Controller
                 ->addColumn('tanggal_kegiatan', function($row){
                     $tanggal = $row->tanggal;
                     if($row->tanggal == $row->sampai){
-                        $tanggal = $this->formatTanggalIndonesia($row->tanggal);
+                        $tanggal = TanggalHelper::formatTanggalIndonesia($row->tanggal);
                     }else{
-                        $tanggal = $this->formatTanggalIndonesia($row->tanggal, $row->sampai);
+                        $tanggal = TanggalHelper::formatTanggalIndonesia($row->tanggal, $row->sampai);
                     }
                     return $tanggal;
                 })
@@ -73,6 +45,10 @@ class ProgressHarianController extends Controller
                 ->get();
             return DataTables::of($rangkaianAcara)
                 ->addIndexColumn()
+                ->addColumn('tanggal_kegiatan', function($row){
+                    $tanggal = TanggalHelper::formatTanggalIndonesia($row->tanggal);
+                    return $tanggal;
+                })
                 ->addColumn('progress_persen', function($row){
                     $status = "badge badge-primary";
                     if($row->progress != null && $row->progress->progress == 100){
@@ -85,7 +61,7 @@ class ProgressHarianController extends Controller
                     $data = '<a href="'.route('histori-progress', $row->id).'" class="btn btn-info">Detail</a>';
                     return $data;
                 })
-                ->rawColumns(['action', 'progress_persen'])
+                ->rawColumns(['action', 'progress_persen', 'tanggal_kegiatan'])
                 ->make(true);
         }
         return view('admin.progress-harian.detail-rangkaian-acara', compact("rangkaianAcara"));
@@ -142,6 +118,12 @@ class ProgressHarianController extends Controller
         $progress->delete();
         toastr()->success('Berhasil Menghapus Progress');
         return redirect()->back();
+   }
+
+   public function getDataProgress()
+   {
+        $data = RangkaianAcara::with(["detail", "detail.progress"])->get();
+        return $data;
    }
 
 }

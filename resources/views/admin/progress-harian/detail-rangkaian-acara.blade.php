@@ -36,11 +36,12 @@
                             <h5>{{ $rangkaianAcara->nama }}</h5>
                             <p><i class="fa fa-user"></i> {{ $rangkaianAcara->opd }}</p>
                             <div class="table-responsive">
-                                <table class="table table-bordered" style="width: 100%;">
+                                <table class="table table-bordered table-striped" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th class="text-center">No.</th>
                                             <th class="text-center">Kegiatan</th>
+                                            <th class="text-center">Tanggal</th>
                                             <th class="text-center">Mulai</th>
                                             <th class="text-center">Selesai</th>
                                             <th class="text-center">Progress</th>
@@ -77,6 +78,10 @@
                         {
                             data: 'kegiatan',
                             name: 'kegiatan'
+                        },
+                        {
+                            data: 'tanggal_kegiatan',
+                            name: 'tanggal_kegiatan'
                         },
                         {
                             data: 'mulai',

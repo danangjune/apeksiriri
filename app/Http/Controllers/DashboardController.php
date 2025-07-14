@@ -8,6 +8,7 @@ class DashboardController extends Controller
 {
     public function index() 
     {
-        return view('admin.dashboard.index');
+        $progress = app("App\Http\Controllers\ProgressHarianController")->getDataProgress();
+        return view('admin.dashboard.index', compact("progress"));
     }
 }

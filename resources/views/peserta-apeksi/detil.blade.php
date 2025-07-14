@@ -23,21 +23,12 @@
   box-shadow: 0 15px 30px rgb(21, 79, 71);
   border-radius: 10px;
   width: 70%;
-  height: 100%;
   z-index: 10;
 }
 @media(max-width: 756px){
   .card-hero{
     width: 90%
   }
-}
-
-.video-frame {
-    transition: transform 0.3s ease;
-}
-.video-frame:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 40px rgba(21, 79, 71, 0.5);
 }
 </style>
 
@@ -90,6 +81,38 @@
                         {!! $peserta['deskripsi'] !!}
                     </div>
                     <h4 class="mt-5 fw-bold border-bottom title-border text-left">Galeri Video dan Gambar</h4>
+                    <div class="row g-4 align-items-start mt-4">
+                        <!-- Video -->
+                        <div class="col-md-6">
+                            <div class="media-box p-3 shadow-lg rounded border border-success-subtle">
+                                <div class="ratio ratio-16x9 rounded overflow-hidden">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1Xn-BsdusAOmrXh4nzSGORa-WrjEPmwyn/preview"
+                                        allowfullscreen
+                                        style="border: none; border-radius: 10px;">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gambar -->
+                        <div class="col-md-6">
+                            <div class="media-box p-3 shadow-lg rounded border border-success-subtle text-center">
+                                <img 
+                                    src="{{ asset('storage/gambar-peserta/'.$peserta['gambar']) }}" 
+                                    alt="Gambar Peserta" 
+                                    class="img-fluid rounded"
+                                    style="max-height: 300px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tombol kembali -->
+                    <div class="text-center mt-5 pt-4">
+                        <button onclick="window.history.back()" class="btn btn-secondary px-4 py-2">
+                            Kembali
+                        </button>
+                    </div>
                 </div>
              </div>
         </div>
