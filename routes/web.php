@@ -29,6 +29,8 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ProgressHarianController;
 use App\Http\Controllers\LiveReportController;
 use App\Http\Controllers\DataPICController;
+use App\Http\Controllers\PesertaApeksiController;
+
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -49,6 +51,11 @@ Route::controller(HomeController::class)->group(function() {
     Route::get('/berita/{kategori}', 'berita_bykategori')->name('berita_bykategori');
     Route::post('/feedback', 'store_feedback')->name('feedback.store');
     Route::get('/get-content-hero', 'get_content_hero')->name('get_content_hero');
+});
+
+//*************************************** PESERTA APEKSI PAGE *************************************************    
+Route::controller(PesertaApeksiController::class)->group(function(){
+    Route::get('detil-peserta/{id}', 'index')->name('detil_peserta');
 });
 
 //*************************************** SEARCH PAGE *************************************************
