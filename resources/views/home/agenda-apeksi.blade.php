@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class="date-picker">
+  <div class="date-picker container mb-4 d-flex flex-wrap justify-content-center gap-2" role="tablist" aria-label="Agenda Dates">
     @foreach($groupedEvents as $date => $events)
     <button
       class="date-item {{ $loop->first ? 'active' : 'inactive' }}"
@@ -52,8 +52,8 @@
           {{ $event['event_name'] }}
         </header>
 
-          <div class="accordion-content" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" role="region" aria-labelledby="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
-            <!-- <ul class="text-black">
+        <div class="accordion-content" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" role="region" aria-labelledby="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
+          <!-- <ul class="text-black">
               <li><strong>Tempat:</strong> {{ $event['venue'] }}</li>
               <li><strong>Peserta:</strong> {{ $event['attendees'] }}</li>
               <li><strong>Dresscode:</strong> {{ $event['dresscode'] }}</li>
@@ -64,30 +64,30 @@
                 </div>
               </div>
             </ul> -->
-           <ul class="text-black list-unstyled" style="padding-left: 0;">
-              @php
-                  $info = [
-                      'Tempat' => $event['venue'],
-                      'Peserta' => $event['attendees'],
-                      'Dresscode' => $event['dresscode'],
-                  ];
-              @endphp
+          <ul class="text-black list-unstyled" style="padding-left: 0;">
+            @php
+            $info = [
+            'Tempat' => $event['venue'],
+            'Peserta' => $event['attendees'],
+            'Dresscode' => $event['dresscode'],
+            ];
+            @endphp
 
-              @foreach($info as $label => $value)
-                  <li style="display: flex; align-items: start; margin-bottom: 6px;">
-                      <div style="width: 100px;"><strong>{{ $label }}</strong></div>
-                      <div style="margin: 0 6px;">:</div>
-                      <div style="flex: 1;">{{ $value }}</div>
-                  </li>
-              @endforeach
+            @foreach($info as $label => $value)
+            <li style="display: flex; align-items: start; margin-bottom: 6px;">
+              <div style="width: 100px;"><strong>{{ $label }}</strong></div>
+              <div style="margin: 0 6px;">:</div>
+              <div style="flex: 1;">{{ $value }}</div>
+            </li>
+            @endforeach
           </ul>
 
 
           <div class="d-flex flex-column flex-md-row">
-              <div class="col-md-8 mb-3 mb-md-0">{!! $event['map'] !!}</div>
-              <div class="col-md-4">
-                  <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
-              </div>
+            <div class="col-md-8 mb-3 mb-md-0">{!! $event['map'] !!}</div>
+            <div class="col-md-4">
+              <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
+            </div>
           </div>
 
 
@@ -99,17 +99,17 @@
               @endforeach
             </ul> -->
             <table style="width: 100%; border-collapse: collapse;">
-                @foreach($event['schedule'] as $item)
-                    <tr>
-                        <td style="padding: 4px 8px; vertical-align: top; width: 150px;">
-                           <strong>* {{ $item['time'] }}</strong>
-                        </td>
-                        <td style="padding: 4px 0; vertical-align: top; width: 10px;">:</td>
-                        <td style="padding: 4px 8px; vertical-align: top;">
-                            {{ $item['activity'] }}
-                        </td>
-                    </tr>
-                @endforeach
+              @foreach($event['schedule'] as $item)
+              <tr>
+                <td style="padding: 4px 8px; vertical-align: top; width: 150px;">
+                  <strong>* {{ $item['time'] }}</strong>
+                </td>
+                <td style="padding: 4px 0; vertical-align: top; width: 10px;">:</td>
+                <td style="padding: 4px 8px; vertical-align: top;">
+                  {{ $item['activity'] }}
+                </td>
+              </tr>
+              @endforeach
             </table>
 
 
@@ -126,9 +126,9 @@
                 <div class="small mt-2 ms-2 text-black">Video</div>
               </div>
               <a href="{{ $event['dokumentasi'] }}" class="btn btn-gradient-green" target="_blank">
-                  Lihat Selengkapnya
+                Lihat Selengkapnya
               </a>
-            </div>    
+            </div>
           </div>
         </div>
       </article>
