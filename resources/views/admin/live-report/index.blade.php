@@ -66,7 +66,7 @@
                 <form action="{{ url('live-report') }}" id="frmSubmit" method="post">
                     @csrf
                     <div class="form-group">
-                        <label>Link</label>
+                        <label>Link <i class="text-danger">*</i></label>
                         <input type="text" class="form-control link" name="link" required />
                     </div>
                     <div class="form-group">
@@ -107,6 +107,27 @@
                     ]
                 });
 
+                $('body').on('click', '.btn-copy', function() {
+                    var url = $(this).data('url');
+
+                    navigator.clipboard.writeText(url).then(() => {
+                        Swal.fire({
+                            title: "Link berhasil disalin",
+                            icon: "success",
+                        });
+                    }).catch(err => {
+                        console.error("Copy error:", err);
+                    });
+                });
+
+                $('body').on('click', '.btn-edit', function() {
+                    new bootstrap.Modal($("#modalTambah")).show();
+                    $(".modal-title").html("Edit Link");
+                    var table = $('.table').DataTable();
+                    var data = table.row($(this).parents('tr')).data();
+                    $(".link").val(data.link);
+                });
+
             });
 
             $("#btnTambah").on("click", function() {
@@ -129,27 +150,6 @@
                         $('#frmSubmit').submit();
                     }
                 });
-            });
-
-            $('body').on('click', '.btn-copy', function() {
-                var url = $(this).data('url');
-
-                navigator.clipboard.writeText(url).then(() => {
-                    Swal.fire({
-                        title: "Link berhasil disalin",
-                        icon: "success",
-                    });
-                }).catch(err => {
-                    console.error("Copy error:", err);
-                });
-            });
-
-            $('body').on('click', '.btn-edit', function() {
-                new bootstrap.Modal($("#modalTambah")).show();
-                $(".modal-title").html("Edit Link");
-                var table = $('.table').DataTable();
-                var data = table.row($(this).parents('tr')).data();
-                $(".link").val(data.link);
             });
         </script>
     @endpush

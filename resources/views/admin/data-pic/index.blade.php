@@ -75,15 +75,15 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Nama</label>
+                        <label>Nama <i class="text-danger">*</i></label>
                         <input type="text" class="form-control nama" name="nama" required />
                     </div>
                     <div class="form-group">
-                        <label>Kontak</label>
+                        <label>Kontak <i class="text-danger">*</i></label>
                         <input type="tel" class="form-control contact" name="contact" required />
                     </div>
                     <div class="form-group">
-                        <label>Kota</label>
+                        <label>Kota <i class="text-danger">*</i></label>
                         <input type="text" class="form-control kota" name="kota" required />
                     </div>
                     <div class="form-group">
@@ -149,11 +149,44 @@
                     ]
                 });
 
+                $('body').on('click', '.btn-hapus', function() {
+                    var table = $('.table').DataTable();
+                    var data = table.row($(this).parents('tr')).data();
+                    Swal.fire({
+                        title: 'Konfirmasi Penghapusan Data',
+                        confirmButtonText: 'Ya Hapus',
+                        text: "",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        cancelButtonText: "Batal"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $("#frmDelete").attr("action", "{{ url('delete-pic') }}" + "/" + data.id);
+                            $('#frmDelete').submit();
+                        }
+                    });
+                });
+
+                $('body').on('click', '.btn-edit', function() {
+                    new bootstrap.Modal($("#modalTambah")).show();
+                    $(".modal-title").html("Edit PIC");
+                    var table = $('.table').DataTable();
+                    var data = table.row($(this).parents('tr')).data();
+                    $(".nama").val(data.nama);
+                    $(".jenis_select2").val(data.jenis);
+                    $(".contact").val(data.contact);
+                    $(".kota").val(data.kota);
+                    $("#frmSubmit").attr("action", "{{ url('update-pic') }}" + "/" + data.id);
+                });
+
             });
 
             $("#btnTambah").on("click", function() {
                 new bootstrap.Modal($("#modalTambah")).show();
                 $(".modal-title").html("Tambah PIC");
+                $("#frmSubmit")[0].reset();
                 $("#frmSubmit").attr("action", "{{ url('store-pic') }}");
             });
 
@@ -172,38 +205,6 @@
                         $('#frmSubmit').submit();
                     }
                 });
-            });
-
-            $('body').on('click', '.btn-hapus', function() {
-                var table = $('.table').DataTable();
-                var data = table.row($(this).parents('tr')).data();
-                Swal.fire({
-                    title: 'Konfirmasi Penghapusan Data',
-                    confirmButtonText: 'Ya Hapus',
-                    text: "",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    cancelButtonText: "Batal"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $("#frmDelete").attr("action", "{{ url('delete-pic') }}" + "/" + data.id);
-                        $('#frmDelete').submit();
-                    }
-                });
-            });
-
-            $('body').on('click', '.btn-edit', function() {
-                new bootstrap.Modal($("#modalTambah")).show();
-                $(".modal-title").html("Edit PIC");
-                var table = $('.table').DataTable();
-                var data = table.row($(this).parents('tr')).data();
-                $(".nama").val(data.nama);
-                $(".jenis_select2").val(data.jenis);
-                $(".contact").val(data.contact);
-                $(".kota").val(data.kota);
-                $("#frmSubmit").attr("action", "{{ url('update-pic') }}" + "/" + data.id);
             });
         </script>
     @endpush

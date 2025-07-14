@@ -1,48 +1,51 @@
 <div class="container my-5 profil-pemerintah">
-  <h2 class="countdown-title-modern mb-4 mt-4">
-    <span class="countdown-gradient">
-      PROFIL PESERTA APEKSI MUSKOMWIL IV KE 13 / 2025 - KOTA KEDIRI
-    </span>
-  </h2>
-
-  <div class="slider-container" role="region" aria-label="Government Logo and Button Slider">
-  <div class="slider">
-    <div class="slides" id="slides">
-
-      @foreach ($slides as $i => $slide)
-        <div class="slide cards-slide{{ $i + 1 }}" aria-label="Slide {{ $i + 1 }}">
-          @foreach ($slide as $profil)
-            <div class="card" tabindex="0" aria-label="Logo {{ $profil->id }}: {{ $profil->nama }}">
-              <img src="{{ $profil->logo }}" alt="Logo {{ $profil->nama }}" />
-              <h3>{{ $profil->nama }}</h3>
-
-              {{-- Tombol modal: bawa data nama + logo + deskripsi --}}
-              <button
-                type="button"
-                class="btn-profil"
-                onclick="location.href='/detil-peserta/{{ $profil->id }}'">
-                Lihat Profil
-                </button>
-            </div>
-          @endforeach
-        </div>
-      @endforeach
-
+  <div class="row mb-4">
+    <div class="col-12 text-center">
+      <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">
+        Profil Peserta APEKSI
+      </h2>
+      <p class="lead">MUSKOMWIL IV KE 13 / 2025 - KOTA KEDIRI</p>
     </div>
   </div>
 
-  <div class="nav-buttons" role="tablist" aria-label="Slide navigation">
-    @foreach ($slides as $i => $slide)
+  <div class="slider-container" role="region" aria-label="Government Logo and Button Slider">
+    <div class="slider">
+      <div class="slides" id="slides">
+
+        @foreach ($slides as $i => $slide)
+        <div class="slide cards-slide{{ $i + 1 }}" aria-label="Slide {{ $i + 1 }}">
+          @foreach ($slide as $profil)
+          <div class="card" tabindex="0" aria-label="Logo {{ $profil->id }}: {{ $profil->nama }}">
+            <img src="{{ $profil->logo }}" alt="Logo {{ $profil->nama }}" />
+            <h3>{{ $profil->nama }}</h3>
+
+            {{-- Tombol modal: bawa data nama + logo + deskripsi --}}
+            <button
+              type="button"
+              class="btn-profil"
+              onclick="location.href='/detil-peserta/{{ $profil->id }}'">
+              Lihat Profil
+            </button>
+          </div>
+          @endforeach
+        </div>
+        @endforeach
+
+      </div>
+    </div>
+
+    <div class="nav-buttons" role="tablist" aria-label="Slide navigation">
+      @foreach ($slides as $i => $slide)
       <button role="tab"
-              aria-selected="{{ $i === 0 ? 'true' : 'false' }}"
-              aria-controls="slide{{ $i + 1 }}"
-              id="btn-slide{{ $i + 1 }}"
-              class="{{ $i === 0 ? 'active' : '' }}"
-              tabindex="{{ $i === 0 ? '0' : '-1' }}">
+        aria-selected="{{ $i === 0 ? 'true' : 'false' }}"
+        aria-controls="slide{{ $i + 1 }}"
+        id="btn-slide{{ $i + 1 }}"
+        class="{{ $i === 0 ? 'active' : '' }}"
+        tabindex="{{ $i === 0 ? '0' : '-1' }}">
         {{ $i === 0 ? '<' : '>' }}
       </button>
-    @endforeach
-  </div>
+      @endforeach
+    </div>
   </div>
 </div>
 {{-- ============== MODAL PROFIL (Bootstrap) ============== --}}
@@ -64,7 +67,7 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     const slidesContainer = document.getElementById("slides");
     const slideButtons = document.querySelectorAll(".nav-buttons button");
     const slides = document.querySelectorAll(".slide");
@@ -96,7 +99,7 @@
 </script>
 <script>
   const modalProfil = document.getElementById('modalProfil');
-  modalProfil.addEventListener('show.bs.modal', function (event) {
+  modalProfil.addEventListener('show.bs.modal', function(event) {
     const button = event.relatedTarget;
     const nama = button.getAttribute('data-nama');
     const logo = button.getAttribute('data-logo');

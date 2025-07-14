@@ -51,9 +51,9 @@
     <div class="row mb-4">
         <div class="col-12 text-center">
             <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">
-                Informasi Kota Kediri
+                Buku Panduan dan Informasi Kota Kediri
             </h2>
-            <p class="lead">Dapatkan buku panduan dan informasi resmi Kota Kediri di bawah ini</p>
+            <p class="lead">Dapatkan buku panduan dan informasi resmi Kota Kediri melalui link di bawah ini</p>
         </div>
     </div>
     <div class="text-center">
@@ -79,7 +79,7 @@
         border-radius: 18px;
     }
 
-    .btn-gradient-green {
+    .btn-gradient-green, .bg-gradient-green {
         background: linear-gradient(90deg, #165a63 0%, #21808c 100%);
         color: #fff !important;
         border: none;

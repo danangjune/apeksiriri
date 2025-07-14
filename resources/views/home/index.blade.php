@@ -14,6 +14,7 @@
 @include('home.profil-pemerintah')
 @include('home.event')
 @include('home.wamendag')
+@include('home.fasilitas')
 @include('home.teaser-info')
 {{-- Uncomment the sections you want to include --}}
 {{-- @include('home.teaser-info') --}}

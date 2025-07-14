@@ -9,6 +9,7 @@ use Illuminate\Validation\Rules;
 use App\Models\User;
 use Carbon\Carbon;
 use DataTables;
+use Auth;
 
 class UserController extends Controller
 {
@@ -86,4 +87,20 @@ class UserController extends Controller
 
         return redirect('/list-user');
     }
+
+    public function changePassword(Request $request)  
+    {
+        $user = User::find(Auth::user()->id);
+        $passwordOld = $request->password_old;
+        $password = $request->password_new;
+        if(Hash::check($passwordOld, $user->password)){
+            $user->password = Hash::make($password);
+            $user->save();
+            toastr()->success('Password berhasil diganti');
+        }else{
+            toastr()->error('Password yang lama tidak sesuai');
+        }
+        return redirect()->back();
+    }
+
 }

@@ -40,16 +40,17 @@
 
             <div class="content-fasilitas">
                 <div class="container">
+                    {{-- Breadcrumb di sini, hanya sekali --}}
+                    @include('layouts.breadcrumb', [
+                        'titlemenu' => $breadcrumb['titlemenu'],
+                        'titlepage' => $breadcrumb['titlepage'],
+                        'detailpage' => $breadcrumb['detailpage'] ?? false,
+                    ])
                     <div class="tab-content">
                         @foreach ($kategori as $kategori)
                             <div class="tab-pane fade {{ request()->get('tab') == $kategori['id'] || (!request()->has('tab') && $loop->first) ? 'show active' : '' }}"
                                 id="content{{ $kategori['id'] }}">
-                                @include('layouts.breadcrumb', [
-                                    'titlemenu' => $breadcrumb['titlemenu'],
-                                    'titlepage' => $breadcrumb['titlepage'],
-                                    'detailpage' => $breadcrumb['detailpage'] ?? false,
-                                ])
-                                @if (in_array($kategori['id'], [1]))
+                                @if (in_array($kategori['id'], [1, 3, 4, 5, 7]))
                                     <div class="row py-2">
                                         <form class="search-form">
                                             <div class="row g-3 align-items-center">
@@ -80,7 +81,7 @@
                                                     data-category="{{ $item['sub_kategori_id'] }}">
                                                     <div class="border rounded">
                                                         <div class="col-md-12">
-                                                            <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('storage/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
+                                                            <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('assets/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
                                                                 alt="{{ $item['nama'] }}" loading="lazy"
                                                                 class="w-100 rounded" height="250">
                                                         </div>
@@ -95,7 +96,7 @@
                                                             <span><strong><i class="bi bi-telephone-fill"></i></strong>
                                                                 {{ $item['telp'] }}</span>
                                                             <br>
-                                                            <a href="{{ $item['link'] }}" class="btn btn-warning mt-2"
+                                                            <a href="{{ $item['map'] }}" class="btn btn-warning mt-2"
                                                                 target="_blank">Kunjungi</a>
                                                         </div>
                                                     </div>
@@ -106,7 +107,7 @@
                                             {{ $fasilitasByKategori[$kategori['id']]->links('pagination::bootstrap-5') }}
                                         </div>
                                     </div>
-                                @elseif(in_array($kategori['id'], [2, 3, 4, 5, 6, 7, 8]))
+                                @elseif(in_array($kategori['id'], [2, 6, 8]))
                                     <!-- Pencarian -->
                                     <div class="row py-2">
                                         <form class="search-form">
@@ -138,7 +139,7 @@
                                                     data-category="{{ $item['sub_kategori_id'] }}">
                                                     <div class="border rounded d-flex p-3" style="height: 200px">
                                                         <div class="flex-shrink-0 me-3">
-                                                            <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('storage/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
+                                                            <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('assets/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
                                                                 alt="{{ $item['nama'] }}" loading="lazy"
                                                                 style="width: 100px;">
                                                         </div>
@@ -153,7 +154,7 @@
                                                             <span><strong><i class="bi bi-telephone-fill"></i></strong>
                                                                 {{ $item['telp'] }}</span>
                                                             <br>
-                                                            <a href="{{ $item['link'] }}" class="btn btn-warning mt-2"
+                                                            <a href="{{ $item['map'] }}" class="btn btn-warning mt-2"
                                                                 target="_blank">Kunjungi</a>
                                                         </div>
                                                     </div>

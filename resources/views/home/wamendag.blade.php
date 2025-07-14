@@ -4,7 +4,7 @@
             <div class="col-12 text-center">
                 <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">Kunjungan Kerja Wakil
                     Menteri Perdagangan</h2>
-                <p class="lead">dalam rangka MUSKOMWIL IV APEKSI Kota Kediri 2025</p>
+                <p class="lead">Dalam rangka MUSKOMWIL IV APEKSI Kota Kediri 2025</p>
             </div>
         </div>
 
@@ -12,7 +12,10 @@
             <!-- Kolom Kiri - Foto Wamendagri dengan Background Transparan -->
             <div class="col-lg-5 position-relative">
                 <div class="profile-card">
-                    <img src="{{ asset('assets/images/people/wamendag.png') }}" alt="Wakil Menteri Perdagangan" class="img-fluid profile-img">  >
+                    <div class="profile-img-container">
+                        <img src="{{ asset('assets/images/people/wamendag.png') }}" alt="Wakil Menteri Perdagangan" class="img-fluid profile-img">
+                        <div class="profile-overlay"></div>
+                    </div>
                     <div class="profile-info text-center p-4">
                         <h3 class="fw-bold text-primary mb-2">Dyah Roro Esti, B.A., M.Sc</h3>
                         <p class="text-muted">Wakil Menteri Perdagangan Republik Indonesia</p>
@@ -70,10 +73,36 @@
 
 <!-- CSS untuk section Wamendag -->
 <style>
-    .profile-img {
-        object-fit: cover;
-        height: 500px;
+    .profile-img-container {
+        position: relative;
+        overflow: hidden;
     }
+
+    .profile-img {
+        object-fit: contain;
+        height: 600px;
+        width: 100%;
+        display: block;
+    }
+
+    .profile-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40%;
+        background: linear-gradient(to top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+    }
+
+    .gallery-container .swiper-slide img {
+        border-radius: 10px;
+    }
+
+    .profile-info {
+        position: relative;
+        top: -100px;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 992px) {
         .transform-up {
