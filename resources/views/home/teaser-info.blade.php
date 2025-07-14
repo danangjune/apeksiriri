@@ -1,6 +1,13 @@
 <!-- Section: Teaser Video -->
 <div class="container teaser-video-modern mt-5">
-    <h4 class="mb-3 fw-bold border-bottom title-border">Teaser APEKSI Kota Kediri</h4>
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">
+                Teaser APEKSI Kota Kediri
+            </h2>
+            <p class="lead">dalam rangka MUSKOMWIL IV APEKSI Kota Kediri 2025</p>
+        </div>
+    </div>
     <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg teaser-video-box" style="max-width: 900px; margin: 0 auto;">
         <iframe
             src="https://drive.google.com/file/d/1VjjOSZ_TtOeuivaiaXyDLBq3GTyK36yM/preview"
@@ -41,10 +48,14 @@
 
 <!-- Section: Informasi Kota Kediri -->
 <div class="container informasi-kediri-modern mt-5">
-    <h4 class="mb-5 fw-bold border-bottom title-border">Informasi Kota Kediri</h4>
-    <p class="mb-4 text-center" style="color:#21808c;font-size:1.08rem;">
-        Dapatkan buku panduan dan informasi resmi Kota Kediri di bawah ini:
-    </p>
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">
+                Informasi Kota Kediri
+            </h2>
+            <p class="lead">Dapatkan buku panduan dan informasi resmi Kota Kediri di bawah ini</p>
+        </div>
+    </div>
     <div class="text-center">
         <a href="{{ asset('storage/informasi-kota-kediri.pdf') }}" class="btn btn-gradient-green px-4 py-2 fw-semibold rounded-pill d-inline-flex align-items-center gap-2" download>
             <i class="bi bi-download fs-5"></i>
