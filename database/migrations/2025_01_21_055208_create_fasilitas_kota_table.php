@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('foto');
             $table->string('alamat');
             $table->string('telp');
+            $table->string('ket')->nullable();
             $table->string('link')->nullable();
             $table->string('map')->nullable();
             $table->boolean('status_enabled')->default(1);
