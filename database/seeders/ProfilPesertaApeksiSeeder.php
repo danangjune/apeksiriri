@@ -34,7 +34,7 @@ class ProfilPesertaApeksiSeeder extends Seeder
                 'deskripsi' => '<p>Mojokerto dikenal sebagai kota yang menyimpan banyak warisan sejarah Kerajaan Majapahit. Banyak situs arkeologi seperti Candi Tikus, Kolam Segaran, dan Museum Majapahit yang memperkuat identitas Mojokerto sebagai pusat sejarah Nusantara.</p>
                 <p>Kota ini juga berkembang dalam bidang UMKM dan ekonomi kreatif, serta memiliki potensi wisata edukatif yang terus digali. Kombinasi sejarah dan inovasi menjadikan Mojokerto sebagai kota yang unik dan penuh daya tarik.</p>',
                 'embed_video' => '/preview',
-                'pimpinan' => 'KOTA-MOJOKERTTO.png'
+                'pimpinan' => 'KOTA-MOJOKERTO.png'
             ],
             [
                 'nama' => 'Kota Pasuruan',
