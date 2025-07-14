@@ -1,5 +1,12 @@
 <div class="container">
-    <h4 class="mb-5 fw-bold border-bottom title-border">Event APEKSI Kota Kediri</h4>
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">
+                Event APEKSI Kota Kediri
+            </h2>
+            <p class="lead">Rangkaian acara spesial MUSKOMWIL IV APEKSI Kota Kediri 2025</p>
+        </div>
+    </div>
 
     <!-- Event Slider Section with Swiper -->
     <div class="row mb-5">
