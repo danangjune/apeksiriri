@@ -348,6 +348,14 @@ Route::middleware('auth')->group(function () {
         Route::post('/store-progress', 'storeProgress');
         Route::get('/histori-progress/{id}', 'historiProgress')->name('histori-progress');
         Route::delete('/del-progress/{id}', 'deleteProgress');
+        // CRUD Rangkaian Kegiatan
+        Route::post('/store-rangkaian-acara', 'storeRangkaianAcara');
+        Route::post('/update-rangkaian-acara/{id}', 'updateRangkaianAcara');
+        Route::delete('/del-rangkaian-acara/{id}', 'delRangkaianAcara');
+        // 
+        Route::post('/store-det-rangkaian-acara', 'storeDetailRangkaianAcara');
+        Route::post('/update-det-rangkaian-acara/{id}', 'updateDetailRangkaianAcara');
+        Route::delete('/del-det-rangkaian-acara/{id}', 'delDetailRangkaianAcara');
     });
 
     Route::controller(LiveReportController::class)->group(function(){
@@ -361,6 +369,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/update-pic/{id}', 'update');
         Route::delete('/delete-pic/{id}', 'delete');
     });
+
+    Route::get('/get-chart-progress', [DashboardController::class, 'getChartDataJsonAPIProgress']);
 
 });
 
