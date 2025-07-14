@@ -28,7 +28,7 @@ class FasilitasController extends Controller
         $activeKategori = $kategori->where('id', $activeTab)->first();
 
         $breadcrumb  = [
-            'titlemenu' => 'Mengenal Kediri',
+            'titlemenu' => 'Fasilitas Kota',
             'titlepage' => $activeKategori ? $activeKategori->nama_kategori : 'Fasilitas Kota',
             'detailpage' => false
         ];

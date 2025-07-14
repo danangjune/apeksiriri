@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('logo');
-            $table->text('deskripsi');
+            $table->text('deskripsi'); 
+            $table->string('image')->nullable();
+            $table->text('embed_video')->nullable();
+            $table->string('pimpinan')->nullable();
+            $table->string('website')->nullable();
             $table->timestamps();
         });
     }
