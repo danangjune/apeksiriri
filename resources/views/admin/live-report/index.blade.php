@@ -38,15 +38,17 @@
                                     <i class="fa fa-plus"></i> Tambah
                                 </button>
                             @endif
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">No.</th>
-                                        <th class="text-center">Link</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">No.</th>
+                                            <th class="text-center">Link</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

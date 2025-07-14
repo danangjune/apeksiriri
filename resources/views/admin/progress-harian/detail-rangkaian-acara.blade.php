@@ -35,18 +35,20 @@
                         <div class="card-body" style="margin-top:20px;">
                             <h5>{{ $rangkaianAcara->nama }}</h5>
                             <p><i class="fa fa-user"></i> {{ $rangkaianAcara->opd }}</p>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">No.</th>
-                                        <th class="text-center">Kegiatan</th>
-                                        <th class="text-center">Mulai</th>
-                                        <th class="text-center">Selesai</th>
-                                        <th class="text-center">Progress</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">No.</th>
+                                            <th class="text-center">Kegiatan</th>
+                                            <th class="text-center">Mulai</th>
+                                            <th class="text-center">Selesai</th>
+                                            <th class="text-center">Progress</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

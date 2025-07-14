@@ -33,17 +33,19 @@
                 <div class="col-lg-12">
                     <div class="card" style="margin-top:20px;">
                         <div class="card-body" style="margin-top:20px;">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">No.</th>
-                                        <th class="text-center">Nama</th>
-                                        <th class="text-center">Tanggal</th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">No.</th>
+                                            <th class="text-center">Nama</th>
+                                            <th class="text-center">Tanggal</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

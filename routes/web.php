@@ -350,7 +350,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(DataPICController::class)->group(function(){
         Route::get('/data-pic', 'dataPIC')->name('data-pic');
         Route::post('/store-pic', 'store');
-        Route::put('/update-pic/{id}', 'update');
+        Route::post('/update-pic/{id}', 'update');
         Route::delete('/delete-pic/{id}', 'delete');
     });
 
