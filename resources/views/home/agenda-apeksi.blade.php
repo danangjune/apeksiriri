@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class="date-picker">
+  <div class="date-picker container mb-4 d-flex flex-wrap justify-content-center gap-2" role="tablist" aria-label="Agenda Dates">
     @foreach($groupedEvents as $date => $events)
     <button
       class="date-item {{ $loop->first ? 'active' : 'inactive' }}"
@@ -52,18 +52,18 @@
           {{ $event['event_name'] }}
         </header>
 
-          <div class="accordion-content" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" role="region" aria-labelledby="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
-            <ul class="text-black">
-              <li><strong>Tempat:</strong> {{ $event['venue'] }}</li>
-              <li><strong>Peserta:</strong> {{ $event['attendees'] }}</li>
-              <li><strong>Dresscode:</strong> {{ $event['dresscode'] }}</li>
-              <div class="d-flex flex-column flex-md-row">
-                <div class="col-md-8 mb-3 mb-md-0">{!! $event['map'] !!}</div>
-                <div class="col-md-4">
-                  <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
-                </div>
+        <div class="accordion-content" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" role="region" aria-labelledby="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
+          <ul class="text-black">
+            <li><strong>Tempat:</strong> {{ $event['venue'] }}</li>
+            <li><strong>Peserta:</strong> {{ $event['attendees'] }}</li>
+            <li><strong>Dresscode:</strong> {{ $event['dresscode'] }}</li>
+            <div class="d-flex flex-column flex-md-row">
+              <div class="col-md-8 mb-3 mb-md-0">{!! $event['map'] !!}</div>
+              <div class="col-md-4">
+                <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
               </div>
-            </ul>
+            </div>
+          </ul>
 
           <div class="nested-detail">Jadwal Kegiatan</div>
           <div class="nested-detail-content">
@@ -85,9 +85,9 @@
                 <div class="small mt-2 ms-2 text-black">Video</div>
               </div>
               <a href="" class="btn btn-gradient-green" target="_blank">
-                  Lihat Selengkapnya
+                Lihat Selengkapnya
               </a>
-            </div>    
+            </div>
           </div>
         </div>
       </article>

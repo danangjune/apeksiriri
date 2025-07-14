@@ -93,18 +93,7 @@ class HomeController extends Controller
             //     ]
             // ],
             // 4. Kediri City Expo
-            [
-                'event_name' => 'Kediri City Expo - Loading In',
-                'venue' => 'Jl. Basuki Rahmat dan Halaman Balai Kota Kediri',
-                'date' => '15 Juli 2025',
-                'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
-                'dresscode' => 'Batik / Tenun Khas Daerah Masing Masing',
-                'image' => 'kediri-city-expo.jpg',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
-                'schedule' => [
-                    ['time' => '16:00 - 24:00', 'activity' => 'Loading In peserta pameran']
-                ]
-            ],
+
             [
                 'event_name' => 'Gala Dinner',
                 'venue' => 'Halaman Balai Kota Kediri',
