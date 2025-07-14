@@ -197,7 +197,7 @@
 
     // Dummy content titles for days
     const dayTitles = {
-      day1: "Hari Ke 1",
+      day1: "Agenda Tanggal 16 April 2025",
       day2: "Hari Ke Dua",
       day3: "Hari Ke Tiga",
       day4: "Hari Ke Empat",
