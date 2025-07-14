@@ -1,44 +1,51 @@
 @extends('layouts.app')
-
-@section('title')
-
 <style>
-    .header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-        pointer-events: none; /* Agar tidak mengganggu elemen lain */
-        z-index: 1;
-    }
 
-    .card-hero {
-      position: relative;
-     top: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: white;
-      padding: 30px;
-      box-shadow: 0 15px 30px rgb(21, 79, 71);
-      border-radius: 10px;
-      width: 70%;
-      z-index: 10;
-    }
-    @media(max-width: 756px){
-      .card-hero{
-        width: 90%
-      }
-    }
-    </style>
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+    pointer-events: none; /* Agar tidak mengganggu elemen lain */
+    z-index: 1;
+}
 
+.card-hero {
+  position: relative;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 30px;
+  box-shadow: 0 15px 30px rgb(21, 79, 71);
+  border-radius: 10px;
+  width: 70%;
+  height: 100%;
+  z-index: 10;
+}
+@media(max-width: 756px){
+  .card-hero{
+    width: 90%
+  }
+}
+
+.video-frame {
+    transition: transform 0.3s ease;
+}
+.video-frame:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(21, 79, 71, 0.5);
+}
+</style>
+
+@section('title', empty($titlepage) ? '' : $titlepage)
 @section('content')
 <div class="min-vh-50">
-    
     <section id="about" class="about pt-0 position-relative">
-        <div class="header-waves header-perangkat">
+        <div class="header-waves header-apeksi">
             <!--Content before waves-->
             <div class="inner-header flex"></div>
         
@@ -71,30 +78,21 @@
             </div>
             <!--Waves end-->
         </div>
-        <div class="my-5">
-            <div class="card-hero">
-                <div class="row">
-                <div class="col-md-3 py-4">
-                    <!-- Tab list -->
-
+        <div class="card-hero">
+             <div class="row">
+                @include('layouts.breadcrumb', ['titlemenu' => $breadcrumb['titlemenu'], 'titlepage' => $breadcrumb['titlepage'], 'detailpage' => $breadcrumb['detailpage'] ?? false])
+                <div class="col-md-4 py-4 text-center">
+                    <img src="{{ $peserta['logo'] }}" alt="Pemkot Kediri TV" loading="lazy" height="15%">
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-8 py-4">
+                    <h4 class="mb-3 fw-bold border-bottom title-border text-left">{{ $peserta['nama'] }}</h4>
+                    <div class="col-md-12">
+                        {!! $peserta['deskripsi'] !!}
+                    </div>
+                    <h4 class="mt-5 fw-bold border-bottom title-border text-left">Galeri Video dan Gambar</h4>
                 </div>
-            </div>
+             </div>
         </div>
     </section>
 </div>
-
-<script>
-   $(document).ready(function(){
-        $(".search-opd").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $(".opd-card").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-            });
-        });
-    });
-</script>
-
-
 @endsection
