@@ -17,6 +17,7 @@
                     <!-- City Expo -->
                     <div class="swiper-slide">
                         <x-event-image-card
+                            url=""
                             image="{{ asset('assets/images/banner/pra-muskomwil.jpg') }}"
                             day="16"
                             month="Juli"
@@ -27,6 +28,7 @@
                     <!-- Gala Dinner -->
                     <div class="swiper-slide">
                         <x-event-image-card
+                            url="https://drive.google.com/file/d/19sCiHqcE-jDFHuuPvukM4IxSr9JJCDDP/view?usp=sharing"
                             image="{{ asset('assets/images/banner/gala-dinner.jpg') }}"
                             day="16"
                             month="Juli"
@@ -36,15 +38,27 @@
                     <!-- Muskomwil -->
                     <div class="swiper-slide">
                         <x-event-image-card
+                            url="https://drive.google.com/file/d/1QX-tYANXoQZGHNqHdVMrCg_DJ2Pkkxhn/view?usp=sharing"
                             image="{{ asset('assets/images/banner/muskomwil-iv.jpg') }}"
                             day="17"
                             month="Juli"
-                            title="MUSKOMWIL VII" />
+                            title="MUSKOMWIL IV" />
+                    </div>
+
+                    <!-- Apeksi Nite Carnival -->
+                    <div class="swiper-slide">
+                        <x-event-image-card
+                            url="https://drive.google.com/file/d/1A6zJDi_X-UYiLFde1hkfoTeNMvLkie7T/view?usp=sharing"
+                            image="{{ asset('assets/images/banner/apeksi-nite-carnival') }}"
+                            day="17"
+                            month="Juli"
+                            title="APEKSI NITE CARNIVAL" />
                     </div>
 
                     <!-- Kediri City Expo -->
                     <div class="swiper-slide">
                         <x-event-image-card
+                            url=""
                             image="{{ asset('assets/images/banner/kediri-city-expo.jpg') }}"
                             day="16-18"
                             month="Juli"
@@ -54,6 +68,7 @@
                     <!-- City Tour & Ladies Program -->
                     <div class="swiper-slide">
                         <x-event-image-card
+                            url="https://drive.google.com/file/d/1bGtH57dPcfxgV9kZe9HsI6t3tO_jf_sx/view?usp=sharing"
                             image="{{ asset('assets/images/banner/city-tour-ladies-program.jpg') }}"
                             day="17"
                             month="Juli"
@@ -63,6 +78,7 @@
                     <!-- Tanam Pohon Tebar Benih -->
                     <div class="swiper-slide">
                         <x-event-image-card
+                            url="https://drive.google.com/file/d/1FUSzFk7Japu8Fb-e7zJ3jUvskT4OQdZT/view?usp=sharing"
                             image="{{ asset('assets/images/banner/tanam-pohon-tebar-benih.jpg') }}"
                             day="18"
                             month="Juli"

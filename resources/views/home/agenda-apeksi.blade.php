@@ -34,7 +34,7 @@
       aria-selected="{{ $loop->first ? 'true' : 'false' }}"
       aria-controls="day{{ $loop->index + 1 }}"
       id="tab{{ $loop->index + 1 }}">
-      <span>{{ \Carbon\Carbon::parse($date)->format('j M') }}</span>
+      <span>{{ \Carbon\Carbon::parse($date)->format('j F') }}</span>
       <span>{{ \Carbon\Carbon::parse($date)->translatedFormat('l') }}</span>
     </button>
     @endforeach
@@ -84,7 +84,7 @@
                 <i class="bi bi-camera-reels-fill fs-2 text-primary"></i>
                 <div class="small mt-2 ms-2 text-black">Video</div>
               </div>
-              <a href="" class="btn btn-gradient-green" target="_blank">
+              <a href="{{ $event['dokumentasi'] }}" class="btn btn-gradient-green" target="_blank">
                   Lihat Selengkapnya
               </a>
             </div>    
