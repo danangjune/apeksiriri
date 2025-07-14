@@ -297,48 +297,51 @@
         view_render: function () {
           console.log("Kalender sudah siap dirender.");
 
-          document.querySelectorAll('.calendar-month-navigation').forEach(el => {
-            if (el.id.endsWith('_nav-prev')) {
-              el.innerHTML = '<i class="bi bi-chevron-left fs-4 text-dark"></i>';
-            } else if (el.id.endsWith('_nav-next')) {
-              el.innerHTML = '<i class="bi bi-chevron-right fs-4 text-dark"></i>';
-            }
-          });
+                    document.querySelectorAll('.calendar-month-navigation').forEach(el => {
+                        if (el.id.endsWith('_nav-prev')) {
+                            el.innerHTML = '<i class="bi bi-chevron-left fs-4 text-dark"></i>';
+                        } else if (el.id.endsWith('_nav-next')) {
+                            el.innerHTML = '<i class="bi bi-chevron-right fs-4 text-dark"></i>';
+                        }
+                    });
 
-          // Periksa kalender terinisialisasi
-          const zabuto = calendar.data("zabuto_calendar");
-          if (zabuto) {
-            console.log("Zabuto calendar siap!");
-          } else {
-            console.error("Zabuto calendar belum terinisialisasi.");
-          }
+                    // Periksa kalender terinisialisasi
+                    const zabuto = calendar.data("zabuto_calendar");
+                    if (zabuto) {
+                        console.log("Zabuto calendar siap!");
+                    } else {
+                        console.error("Zabuto calendar belum terinisialisasi.");
+                    }
+                }
+            });
+        });
+
+        // Fungsi load kartu agenda
+        function loadAgendaCards(month, year) {
+            $.ajax({
+                url: '/events-card',
+                method: 'GET',
+                data: {
+                    month,
+                    year
+                },
+                success: function(data) {
+                    $('#event-card-container').html(data.html);
+                    bindModalEvents();
+                },
+                error: function() {
+                    $('#event-card-container').html('<p class="text-danger text-center">Gagal memuat agenda.</p>');
+                }
+            });
         }
-      });
-    });
 
-    // Fungsi load kartu agenda
-    function loadAgendaCards(month, year) {
-      $.ajax({
-        url: '/events-card',
-        method: 'GET',
-        data: { month, year },
-        success: function (data) {
-          $('#event-card-container').html(data.html);
-          bindModalEvents();
-        },
-        error: function () {
-          $('#event-card-container').html('<p class="text-danger text-center">Gagal memuat agenda.</p>');
-        }
-      });
-    }
+        function bindModalEvents() {
+            $('.open-modal').click(function() {
+                const id = $(this).data('id');
+                $('#modal-content').html('<p>Loading...</p>');
 
-    function bindModalEvents() {
-      $('.open-modal').click(function () {
-        const id = $(this).data('id');
-        $('#modal-content').html('<p>Loading...</p>');
-
-        $.getJSON(`/detil-agenda/${id}`, function (data) {
-          $('#modal-content').html(`
+                $.getJSON(`/detil-agenda/${id}`, function(data) {
+                    $('#modal-content').html(`
             <table>
               <tr>
                 <td style="text-align:center;">
