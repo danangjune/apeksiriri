@@ -150,6 +150,7 @@ Route::middleware('auth')->group(function () {
         Route::get('list-user', 'list_user')->name('list_user');
         Route::get('value-user/{id}', 'value_user')->name('value_user');
         Route::post('update-user', 'update_user')->name('update_user');
+        Route::post('change-password', 'changePassword');
     });    
 
     //*************************************** LANDING PAGE *************************************************    
