@@ -77,7 +77,7 @@ class HomeController extends Controller
             //     'date' => '16 April 2025',
             //     'attendees' => 'Anggota KOMWIL IV APEKSI',
             //     'dresscode' => 'Batik / Tenun Khas Daerah Anggota Komwil IV APEKSI',
-            //     'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+            //     'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
             //     'schedule' => [
             //         ['time' => '07:00 - 08:00', 'activity' => 'Registrasi Peserta'],
             //         ['time' => '08:00 - 08:10', 'activity' => 'Tarian Pembuka'],
@@ -99,7 +99,8 @@ class HomeController extends Controller
                 'date' => '16 Juli 2025',
                 'attendees' => 'Pejabat Pemerintah Pusat, Gubernur Jawa Timur, Kepala Daerah Anggota KOMWIL IV APEKSI, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, 3 Pendamping Delegasi KOMWIL IV APEKSI, Wakil Walikota Kediri, FORKOPIMDA Kota Kediri, Sekretaris Daerah Kota Kediri, Kepala OPD Kota Kediri',
                 'dresscode' => 'Tenun Khas Kota Kediri',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'image' => 'gala-dinner.jpg',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '17:00 - 18:00', 'activity' => 'Tukar cinderamata di Depan Photo Booth Pintu Masuk VVIP'],
                     ['time' => '18:00 - 19:00', 'activity' => 'Looping Video Profil 13 Kota Peserta Muskomwil'],
@@ -128,7 +129,8 @@ class HomeController extends Controller
                 'date' => '17 Juli 2025',
                 'attendees' => 'Pejabat Pemerintah Pusat, Kepala Daerah Anggota KOMWIL IV APEKSI, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Wakil Walikota Kediri, Sekretaris Daerah Kota Kediri, Kepala OPD Kota Kediri, 2 Orang Pendamping Delegasi KOMWIL IV APEKSI',
                 'dresscode' => 'Batik / Tenun Khas Daerah Masing Masing',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'image' => 'muskomwil-iv.jpg',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '07:00 - 08:00', 'activity' => 'Peserta memasuki ruangan'],
                     ['time' => '08:00 - 08:15', 'activity' => 'Salam dan Tarian pembuka'],
@@ -152,7 +154,8 @@ class HomeController extends Controller
                 'date' => '15 Juli 2025',
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
                 'dresscode' => 'Batik / Tenun Khas Daerah Masing Masing',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                 'image' => 'kediri-city-expo.jpg',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '16:00 - 24:00', 'activity' => 'Loading In peserta pameran']
                 ]
@@ -165,7 +168,8 @@ class HomeController extends Controller
                 'date' => '16 Juli 2025',
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
                 'dresscode' => 'Batik / Tenun Khas Daerah Masing Masing',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                 'image' => 'kediri-city-expo.jpg',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '00:00 - 07:00', 'activity' => 'Loading peserta pameran'],
                     ['time' => '07:00 - 18:00', 'activity' => 'Soft Launching Kediri City Expo'],
@@ -180,7 +184,8 @@ class HomeController extends Controller
                 'date' => '17 Juli 2025',
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
                 'dresscode' => 'Batik / Tenun Khas Daerah Masing Masing',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                 'image' => 'kediri-city-expo.jpg',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '08:00 - 22:00', 'activity' => 'Pameran Kediri City Expo']
                 ]
@@ -192,7 +197,8 @@ class HomeController extends Controller
                 'date' => '18 Juli 2025',
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
                 'dresscode' => 'Batik / Tenun Khas Daerah Masing Masing',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                 'image' => 'kediri-city-expo.jpg',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '08:00 - 22:00', 'activity' => 'Pameran Kediri City Expo'],
                     ['time' => '22:00 - 24:00', 'activity' => 'Loading Out Kediri City Expo']
@@ -206,7 +212,8 @@ class HomeController extends Controller
                 'date' => '17 Juli 2025',
                 'attendees' => 'Istri Kepala Daerah dan Ibu Ketua TP PKK Kota Kediri, Kepala OPD terkait Kota Kediri beserta 2 Orang Pendamping Delegasi KOMWIL IV APEKSI',
                 'dresscode' => 'Batik / Tenun Khas Daerah masing-masing',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                 'image' => 'city-tour-ladies-program.jpg',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '07:30 - 08:00', 'activity' => 'Penjemputan di Hotel Grand Surya menuju Kampoeng Tenun “Medali Mas” Bandar Kidul'],
                     ['time' => '08:00 - 09:30', 'activity' => 'City Tour Kampoeng Tenun “Medali Mas” Bandar Kidul'],
@@ -226,7 +233,8 @@ class HomeController extends Controller
                 'date' => '17 Juli 2025',
                 'attendees' => 'Pejabat Pemerintah Pusat, Kepala Daerah beserta Pasangan, Wakil Walikota, Sekretaris Daerah, FORKOPIMDA, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Kepala OPD, dan Peserta Pawai Khas Daerah',
                 'dresscode' => 'Pakaian Khas Daerah Masing-masing',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                 'image' => 'kediri-nite-carnival.jpg',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '17:00 - 18:00', 'activity' => 'Clear Area - Registrasi Peserta'],
                     ['time' => '18:00 - 18:30', 'activity' => 'Registrasi'],
@@ -249,7 +257,8 @@ class HomeController extends Controller
                 'date' => '18 Juli 2025',
                 'attendees' => 'Walikota Anggota KOMWIL IV APEKSI Sarimbit beserta 2 Pendamping, Wakil Walikota Kota Kediri, Forkopimda Kota Kediri, Sekretaris Daerah Kota Kediri, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Kepala OPD Kota Kediri',
                 'dresscode' => 'Kaos Olahraga',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                 'image' => 'tanam-pohon-tebar-benih.jpg',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d126489.25957110072!2d111.93201276797652!3d-7.8121087205627395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x2e785708e9c75897%3A0xb9c1ee25f7b49e27!2s52Q7%2B5Q3%2C%20Pocanan%2C%20Kota%2C%20Kota%20Kediri%2C%20East%20Java%2064129!3m2!1d-7.812106099999999!2d112.01437279999999!5e0!3m2!1sen!2sid!4v1752421834184!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '05:00 - 05:30', 'activity' => 'Persiapan'],
                     ['time' => '05:30 - 06:30', 'activity' => 'Menuju lokasi mulai dari Jl. Dhoho – Jl. Kyai Mojo – Jl. Walter Monginsidi – Jl. Yos Sudarso – Taman Brantas'],
