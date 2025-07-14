@@ -12,4 +12,9 @@ class RangkaianAcara extends Model
         "tanggal",
         "opd"
     ];
+
+    public function detail()
+    {
+        return $this->hasMany(DetailRangkaianAcara::class, 'rangkaian_acara_id', 'id'); 
+    }
 }

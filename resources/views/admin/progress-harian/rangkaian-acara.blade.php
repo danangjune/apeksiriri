@@ -34,7 +34,7 @@
                     <div class="card" style="margin-top:20px;">
                         <div class="card-body" style="margin-top:20px;">
                             <div class="table-responsive">
-                                <table class="table table-bordered" style="width: 100%;">
+                                <table class="table table-bordered table-striped" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th class="text-center">No.</th>
