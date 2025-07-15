@@ -57,7 +57,7 @@ class HomeController extends Controller
                 'attendees' => 'Pejabat Pemerintah Pusat, Gubernur Jawa Timur, Kepala Daerah Anggota Komwil IV APEKSI, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, 3 Pendamping Delegasi Komwil IV APEKSI, Wakil Walikota Kediri, FORKOPIMDA Kota Kediri, Sekretaris Daerah Kota Kediri, Kepala OPD Kota Kediri',
                 'dresscode' => 'Tenun Khas Kota Kediri',
                 'image' => 'gala-dinner.jpg',
-                'image-lokasi' => 'peta-gala-dinner.jpg',
+                'image-lokasi' => 'peta-jalan.png',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
                 'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7905.572679133412!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752472541335!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
@@ -116,7 +116,7 @@ class HomeController extends Controller
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
                 'dresscode' => 'Bebas rapi',
                 'image' => 'kediri-city-expo.jpg',
-                'image-lokasi' => 'layout-kediri-city-expo.jpeg',
+                'image-lokasi' => 'expo-denah.png',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
                 'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
@@ -134,7 +134,7 @@ class HomeController extends Controller
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
                 'dresscode' => 'Bebas rapi',
                 'image' => 'kediri-city-expo.jpg',
-                'image-lokasi' => 'layout-kediri-city-expo.jpeg',
+                'image-lokasi' => 'expo-denah.png',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
                 'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
@@ -150,7 +150,7 @@ class HomeController extends Controller
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
                 'dresscode' => 'Bebas rapi',
                 'image' => 'kediri-city-expo.jpg',
-                'image-lokasi' => 'layout-kediri-city-expo.jpeg',
+                'image-lokasi' => 'expo-denah.png',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
                 'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
@@ -166,7 +166,7 @@ class HomeController extends Controller
                 'date' => '17 Juli 2025',
                 'attendees' => 'Istri Kepala Daerah dan Ibu Ketua TP PKK Kota Kediri, Kepala OPD terkait Kota Kediri beserta 2 Orang Pendamping Delegasi KOMWIL IV APEKSI, Pengurus TP PKK Kota Kediri',
                 'dresscode' => 'Batik / Tenun Khas Daerah masing-masing',
-                'image' => 'city-tour-ladies-program.jpg',
+                'image' => 'citytour-rute.png',
                 'image-lokasi' => 'alur-city-tour.jpeg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
                 'map' => '<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1XijEsw4CyfFI9f5zAOIZeOz4jhkgY9A&ehbc=2E312F&noprof=1"></iframe>',
@@ -190,7 +190,7 @@ class HomeController extends Controller
                 'attendees' => 'Pejabat Pemerintah Pusat, Kepala Daerah beserta Pasangan, Wakil Walikota, Sekretaris Daerah, FORKOPIMDA, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Kepala OPD, dan Peserta Pawai Khas Daerah',
                 'dresscode' => 'Pakaian Khas Daerah Masing-masing',
                 'image' => 'apeksi-nite-carnival.jpeg',
-                'image-lokasi' => 'rute-apeksi-nite-carnival.jpg',
+                'image-lokasi' => 'rute-nite.png',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
                 'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.735812659736!2d112.0105873116563!3d-7.817764142170372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857107a9b0e79%3A0x31a5250470d9f02b!2sGrand%20Surya%20Hotel%20Kediri!5e0!3m2!1sen!2sid!4v1752480821382!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
@@ -390,14 +390,13 @@ class HomeController extends Controller
 
         $data = StandBooth::when($q, function ($query, $q) {
             return $query->where('kategori', 'like', "%$q%")
-                        ->orWhere('no_stand', 'like', "%$q%")
-                        ->orWhere('nama_stand', 'like', "%$q%")
-                        ->orWhere('nama_perusahaan', 'like', "%$q%")
-                        ->orWhere('jenis_produk', 'like', "%$q%")
-                        ->orWhere('pic', 'like', "%$q%");
+                ->orWhere('no_stand', 'like', "%$q%")
+                ->orWhere('nama_stand', 'like', "%$q%")
+                ->orWhere('nama_perusahaan', 'like', "%$q%")
+                ->orWhere('jenis_produk', 'like', "%$q%")
+                ->orWhere('pic', 'like', "%$q%");
         })->orderBy('id')->limit($limit)->get();
 
         return response()->json($data);
     }
-
 }
