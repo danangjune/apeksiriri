@@ -54,101 +54,104 @@ class HomeController extends Controller
                 'event_name' => 'Gala Dinner',
                 'venue' => 'Halaman Balai Kota Kediri',
                 'date' => '16 Juli 2025',
-                'attendees' => 'Pejabat Pemerintah Pusat, Gubernur Jawa Timur, Kepala Daerah Anggota KOMWIL IV APEKSI, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, 3 Pendamping Delegasi KOMWIL IV APEKSI, Wakil Walikota Kediri, FORKOPIMDA Kota Kediri, Sekretaris Daerah Kota Kediri, Kepala OPD Kota Kediri',
+                'attendees' => 'Pejabat Pemerintah Pusat, Gubernur Jawa Timur, Kepala Daerah Anggota Komwil IV APEKSI, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, 3 Pendamping Delegasi Komwil IV APEKSI, Wakil Walikota Kediri, FORKOPIMDA Kota Kediri, Sekretaris Daerah Kota Kediri, Kepala OPD Kota Kediri',
                 'dresscode' => 'Tenun Khas Kota Kediri',
                 'image' => 'gala-dinner.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7905.572679133412!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752472541335!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7905.572679133412!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752472541335!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
-                    ['time' => '17:00 - 18:00', 'activity' => 'Tukar cinderamata di Depan Photo Booth Pintu Masuk VVIP'],
-                    ['time' => '18:00 - 19:00', 'activity' => 'Looping Video Profil 13 Kota Peserta Muskomwil'],
-                    ['time' => '19:00 - 19:15', 'activity' => 'Pembukaan oleh MC'],
-                    ['time' => '19:15 - 19:30', 'activity' => 'Santunan Anak Yatim oleh Gubernur Jatim, Walikota Kediri dan 12 KDH Delegasi APEKSI'],
-                    ['time' => '19:30 - 19:40', 'activity' => 'Menyanyikan lagu Indonesia Raya & Mars APEKSI'],
-                    ['time' => '19:40 - 19:50', 'activity' => 'Tarian pembuka'],
-                    ['time' => '19:50 - 20:00', 'activity' => 'Pembacaan Do’a'],
-                    ['time' => '20:00 - 20:15', 'activity' => 'Sambutan Selamat Datang Walikota Kediri'],
-                    ['time' => '20:15 - 20:30', 'activity' => 'Sambutan Ketua Komwil IV Kota Mojokerto'],
-                    ['time' => '20:30 - 20:45', 'activity' => 'Sambutan Ketua APEKSI Wilayah Kota Surabaya'],
-                    ['time' => '20:45 - 21:00', 'activity' => 'Sambutan Gubernur Jawa Timur'],
-                    ['time' => '21:00 - 21:15', 'activity' => 'Sambutan Pejabat Pemerintah Pusat'],
-                    ['time' => '21:15 - 21:25', 'activity' => 'Opening Ceremony oleh Pejabat Pusat, Gubernur Jatim, Ketua APEKSI, Ketua Komwil dan Walikota Kediri'],
-                    ['time' => '21:25 - 21:35', 'activity' => 'Foto bersama - Sesi 1 (13 KDH, Pejabat Pusat & Gubernur Jatim)'],
-                    ['time' => '21:35 - 21:45', 'activity' => 'Foto bersama - Sesi 2 (13 KDH, Pejabat Pusat & Gubernur Jatim beserta undangan)'],
-                    ['time' => '21:45 - 22:00', 'activity' => 'Kunjungan ke Booth Pameran (Optional)'],
-                    ['time' => '22:00 - 22:30', 'activity' => 'Hiburan Guest Star dan Makan Malam']
+                    ['time' => '18:30 - 19:30', 'activity' => 'Tukar cinderamata di Depan Photo Booth Pintu Masuk VVIP'],
+                    ['time' => '19:30 - 19:35', 'activity' => 'Looping Video Profil 13 Kota Peserta Muskomwil'],
+                    ['time' => '19:30 - 19:55', 'activity' => 'Santunan Anak Yatim oleh Gubernur Jatim, Walikota Kediri, Ketua APEKSI dan Ketua Komwil IV'],
+                    ['time' => '19:55 - 20:05', 'activity' => 'Menyanyikan lagu Indonesia Raya & Mars APEKSI'],
+                    ['time' => '20:05 - 20:15', 'activity' => 'Tarian pembuka'],
+                    ['time' => '20:15 - 20:20', 'activity' => 'Opening MC'],
+                    ['time' => '20:20 - 20:25', 'activity' => 'Pembacaan Do’a'],
+                    ['time' => '20:25 - 20:32', 'activity' => 'Sambutan Selamat Datang Wali Kota Kediri'],
+                    ['time' => '20:32 - 20:39', 'activity' => 'Sambutan Gubernur Jawa Timur'],
+                    ['time' => '20:39 - 20:49', 'activity' => 'Sambutan Pejabat Pemerintah Pusat'],
+                    ['time' => '20:49 - 20:54', 'activity' => 'Opening Ceremony'],
+                    ['time' => '20:54 - 21:04', 'activity' => 'Foto Bersama'],
+                    ['time' => '21:04 - 21:49', 'activity' => 'Hiburan Guest Star'],
+                    ['time' => '21:49 - 22:19', 'activity' => 'Kunjungan ke Booth Pameran (Optional)'],
+                    ['time' => '22:19 - 22:24', 'activity' => 'Closing'],
                 ]
             ],
 
             // 3. MUSKOMWIL
             [
                 'event_name' => 'MUSKOMWIL',
-                'venue' => 'Hotel Grand Surya - Kediri',
+                'venue' => 'Hotel Grand Surya (Tegowangi Ballroom) - Kediri',
                 'date' => '17 Juli 2025',
-                'attendees' => 'Pejabat Pemerintah Pusat, Kepala Daerah Anggota KOMWIL IV APEKSI, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Wakil Walikota Kediri, Sekretaris Daerah Kota Kediri, Kepala OPD Kota Kediri, 2 Orang Pendamping Delegasi KOMWIL IV APEKSI',
-                'dresscode' => 'Batik / Tenun Khas Daerah Masing Masing',
+                'attendees' => 'Pejabat Pemerintah Pusat, Kepala Daerah Anggota KOMWIL IV APEKSI, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Wakil Walikota Kediri, Sekretaris Daerah, Asisten, Staf Ahli, Kepala OPD Kota Kediri, 2 Orang Pendamping Delegasi KOMWIL IV APEKSI',
+                'dresscode' => 'Batik / Tenun Formal',
                 'image' => 'muskomwil-iv.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7363539829644!2d112.0106326116563!3d-7.817706992170442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857107a9b0e79%3A0x31a5250470d9f02b!2sGrand%20Surya%20Hotel%20Kediri!5e0!3m2!1sen!2sid!4v1752472970048!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7363539829644!2d112.0106326116563!3d-7.817706992170442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857107a9b0e79%3A0x31a5250470d9f02b!2sGrand%20Surya%20Hotel%20Kediri!5e0!3m2!1sen!2sid!4v1752472970048!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
-                    ['time' => '07:00 - 08:00', 'activity' => 'Peserta memasuki ruangan'],
-                    ['time' => '08:00 - 08:15', 'activity' => 'Salam dan Tarian pembuka'],
-                    ['time' => '08:15 - 08:30', 'activity' => 'Menyanyikan lagu Indonesia Raya & Mars APEKSI'],
-                    ['time' => '08:30 - 08:40', 'activity' => 'Pembacaan Do’a'],
-                    ['time' => '08:40 - 08:45', 'activity' => 'Pemutaran Video Profil Kota Kediri'],
-                    ['time' => '08:45 - 08:55', 'activity' => 'Sambutan Wali Kota Kediri'],
-                    ['time' => '08:55 - 09:10', 'activity' => 'Sambutan Ketua Dewan Pengurus APEKSI'],
-                    ['time' => '09:10 - 09:25', 'activity' => 'Prosesi Pembukaan'],
-                    ['time' => '09:25 - 09:45', 'activity' => 'Keynote Speaker oleh Pejabat Pemerintah Pusat'],
-                    ['time' => '09:45 - 10:45', 'activity' => 'Pleno Penunjukan Tuan Rumah MUSKOMWIL IV APEKSI 2026, Pemilihan Pengurus dan Pelantikan Pengurus KOMWIL IV APEKSI Tahun 2025 - 2028'],
-                    ['time' => '10:45 - 11:00', 'activity' => 'Menyanyikan Hymne APEKSI dilanjutkan Foto Bersama'],
-                    ['time' => '11:00 - 12:00', 'activity' => 'Ramah tamah']
+                    ['time' => '07:00 - 08:00', 'activity' => 'Persiapan Peserta'],
+                    ['time' => '08:00 - 08:05', 'activity' => 'Menyanyikan lagu Indonesia Raya & Mars APEKSI'],
+                    ['time' => '08:05 - 08:20', 'activity' => 'Opening MC'],
+                    ['time' => '08:20 - 08:30', 'activity' => 'Pembacaan Do’a'],
+                    ['time' => '08:30 - 08:35', 'activity' => 'Penayangan Video Profil Kota Kediri'],
+                    ['time' => '08:35 - 08:50', 'activity' => 'Sambutan Wali Kota Kediri'],
+                    ['time' => '08:50 - 09:05', 'activity' => 'Penayangan Video 13 Kota'],
+                    ['time' => '09:05 - 09:15', 'activity' => 'Sambutan Ketua Komwil IV APEKSI'],
+                    ['time' => '09:15 - 09:30', 'activity' => 'Sambutan Ketua Dewan Pengurus APEKSI'],
+                    ['time' => '09:30 - 10:50', 'activity' => 'Pleno Penunjukan Tuan Rumah MUSKOMWIL IV APEKSI 2026, Pleno Pemilihan Pengurus dan Pelantikan Pengurus KOMWIL IV APEKSI Tahun 2025 - 2028'],
+                    ['time' => '10:50 - 11:00', 'activity' => 'Pengukuhan'],
+                    ['time' => '11:00 - 11:10', 'activity' => 'Keynote Speech Pejabat Pemerintah Pusat'],
+                    ['time' => '11:10 - 11:20', 'activity' => 'Foto Bersama'],
+                    ['time' => '11:20 - 11:30', 'activity' => 'Menyanyikan Hymne APEKSI'],
+                    ['time' => '11:30 - 12:00', 'activity' => 'Ramah Tamah']
                 ]
             ],
-            // 4. Kediri City Expo
+
+            // 2. Kediri City Expo - Pembukaan
             [
                 'event_name' => 'Kediri City Expo - Pembukaan',
                 'venue' => 'Jl. Basuki Rahmat dan Halaman Balai Kota Kediri',
                 'date' => '16 Juli 2025',
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
-                'dresscode' => 'Batik / Tenun Khas Daerah Masing Masing',
+                'dresscode' => 'Bebas rapi',
                 'image' => 'kediri-city-expo.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7905.572679133412!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752472541335!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '00:00 - 07:00', 'activity' => 'Loading peserta pameran'],
-                    ['time' => '07:00 - 18:00', 'activity' => 'Soft Launching Kediri City Expo'],
-                    ['time' => '18:00 - 20:00', 'activity' => 'Persiapan pembukaan Kediri City Expo'],
-                    ['time' => '20:00 - 21:00', 'activity' => 'Pembukaan Kediri City Expo']
+                    ['time' => '10:00 - 12:00', 'activity' => 'Pembukaan Kediri City Expo (*tentatif/dapat berubah)'],
+                    ['time' => '12:00 - 22:00', 'activity' => 'Pameran Kediri City Expo']
                 ]
             ],
-            // 4. Kediri City Expo
+
+            // 3. Kediri City Expo - Pameran Hari Kedua
             [
-                'event_name' => 'Kediri City Expo - Pameran',
+                'event_name' => 'Kediri City Expo - Pameran Hari Kedua',
                 'venue' => 'Jl. Basuki Rahmat dan Halaman Balai Kota Kediri',
                 'date' => '17 Juli 2025',
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
-                'dresscode' => 'Batik / Tenun Khas Daerah Masing Masing',
+                'dresscode' => 'Bebas rapi',
                 'image' => 'kediri-city-expo.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
-                    ['time' => '08:00 - 22:00', 'activity' => 'Pameran Kediri City Expo']
+                    ['time' => '10:00 - 22:00', 'activity' => 'Pameran Kediri City Expo']
                 ]
             ],
-            // 4. Kediri City Expo
+
+            // 4. Kediri City Expo - Penutupan
             [
                 'event_name' => 'Kediri City Expo - Penutupan',
                 'venue' => 'Jl. Basuki Rahmat dan Halaman Balai Kota Kediri',
                 'date' => '18 Juli 2025',
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota KOMWIL IV APEKSI',
-                'dresscode' => 'Batik / Tenun Khas Daerah Masing Masing',
+                'dresscode' => 'Bebas rapi',
                 'image' => 'kediri-city-expo.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
-                    ['time' => '08:00 - 22:00', 'activity' => 'Pameran Kediri City Expo'],
-                    ['time' => '22:00 - 24:00', 'activity' => 'Loading Out Kediri City Expo']
+                    ['time' => '10:00 - 22:00', 'activity' => 'Pameran Kediri City Expo'],
+                    ['time' => '22:00 - 24:00', 'activity' => 'Loading Out Peserta Pameran']
                 ]
             ],
 
@@ -157,45 +160,43 @@ class HomeController extends Controller
                 'event_name' => 'City Tour & Ladies Program',
                 'venue' => 'Kampoeng Tenun, Pabrik Gudang Garam, Bandara Dhoho, Pusat Oleh-oleh Tahu Poo – Kota Kediri',
                 'date' => '17 Juli 2025',
-                'attendees' => 'Istri Kepala Daerah dan Ibu Ketua TP PKK Kota Kediri, Kepala OPD terkait Kota Kediri beserta 2 Orang Pendamping Delegasi KOMWIL IV APEKSI',
+                'attendees' => 'Istri Kepala Daerah dan Ibu Ketua TP PKK Kota Kediri, Kepala OPD terkait Kota Kediri beserta 2 Orang Pendamping Delegasi KOMWIL IV APEKSI, Pengurus TP PKK Kota Kediri',
                 'dresscode' => 'Batik / Tenun Khas Daerah masing-masing',
                 'image' => 'city-tour-ladies-program.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1XijEsw4CyfFI9f5zAOIZeOz4jhkgY9A&ehbc=2E312F&noprof=1" width="700" height="450"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1XijEsw4CyfFI9f5zAOIZeOz4jhkgY9A&ehbc=2E312F&noprof=1"></iframe>',
                 'schedule' => [
-                    ['time' => '07:30 - 08:00', 'activity' => 'Penjemputan di Hotel Grand Surya menuju Kampoeng Tenun “Medali Mas” Bandar Kidul'],
-                    ['time' => '08:00 - 09:30', 'activity' => 'City Tour Kampoeng Tenun “Medali Mas” Bandar Kidul'],
-                    ['time' => '09:30 - 10:00', 'activity' => 'Perjalanan ke Pabrik Gudang Garam'],
-                    ['time' => '10:00 - 11:00', 'activity' => 'City Tour Pabrik Gudang Garam Unit VIII'],
-                    ['time' => '11:00 - 11:30', 'activity' => 'Perjalanan ke Bandara Dhoho Kota Kediri'],
-                    ['time' => '11:30 - 12:00', 'activity' => 'City Tour Bandara Dhoho Kota Kediri'],
-                    ['time' => '12:00 - 12:45', 'activity' => 'Perjalanan ke Pusat Oleh-oleh Tahu Poo Kota Kediri'],
-                    ['time' => '12:45 - 13:30', 'activity' => 'City Tour ke Pusat Oleh-oleh Tahu Poo Kota Kediri']
+                    ['time' => '08:00 - 08:15', 'activity' => 'Penjemputan di Hotel Grand Surya menuju Kampoeng Tenun “Medali Mas” Bandar Kidul'],
+                    ['time' => '08:15 - 09:30', 'activity' => 'City Tour Kampoeng Tenun “Medali Mas” Bandar Kidul'],
+                    ['time' => '09:30 - 09:45', 'activity' => 'Perjalanan ke Pabrik PT. Gudang Garam'],
+                    ['time' => '09:45 - 11:00', 'activity' => 'City Tour Pabrik PT. Gudang Garam Unit VIII'],
+                    ['time' => '11:00 - 11:15', 'activity' => 'Perjalanan ke Bandara Dhoho Kota Kediri'],
+                    ['time' => '11:15 - 12:30', 'activity' => 'City Tour Bandara Dhoho Kota Kediri'],
+                    ['time' => '12:30 - 12:50', 'activity' => 'Perjalanan ke Pusat Oleh-oleh Tahu Poo Kota Kediri'],
+                    ['time' => '12:50 - 13:50', 'activity' => 'City Tour ke Pusat Oleh-oleh Tahu Poo Kota Kediri']
                 ]
             ],
 
-            // 6. Kediri Night Carnival
+            // 6. APEKSI Nite Carnival
             [
-                'event_name' => 'Kediri Night Carnival',
-                'venue' => 'Jl. Dhoho Kota Kediri – Start di selatan Hotel Grand Surya',
+                'event_name' => 'APEKSI Nite Carnival',
+                'venue' => 'Start: Pertigaan Jl. Stasiun – Finish: Simpang Bank Indonesia, Jl. Dhoho Kota Kediri',
                 'date' => '17 Juli 2025',
                 'attendees' => 'Pejabat Pemerintah Pusat, Kepala Daerah beserta Pasangan, Wakil Walikota, Sekretaris Daerah, FORKOPIMDA, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Kepala OPD, dan Peserta Pawai Khas Daerah',
                 'dresscode' => 'Pakaian Khas Daerah Masing-masing',
-                'image' => 'kediri-nite-carnival.jpg',
+                'image' => 'apeksi-nite-carnival.jpeg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.735812659736!2d112.0105873116563!3d-7.817764142170372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857107a9b0e79%3A0x31a5250470d9f02b!2sGrand%20Surya%20Hotel%20Kediri!5e0!3m2!1sen!2sid!4v1752480821382!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.735812659736!2d112.0105873116563!3d-7.817764142170372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857107a9b0e79%3A0x31a5250470d9f02b!2sGrand%20Surya%20Hotel%20Kediri!5e0!3m2!1sen!2sid!4v1752480821382!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
-                    ['time' => '17:00 - 18:00', 'activity' => 'Clear Area - Registrasi Peserta'],
-                    ['time' => '18:00 - 18:30', 'activity' => 'Registrasi'],
-                    ['time' => '18:30 - 18:35', 'activity' => 'Opening MC'],
+                    ['time' => '17:00 - 18:30', 'activity' => 'Persiapan'],
+                    ['time' => '18:30 - 18:35', 'activity' => 'Pembukaan MC'],
                     ['time' => '18:35 - 18:40', 'activity' => 'Menyanyikan lagu Indonesia Raya'],
-                    ['time' => '18:40 - 18:45', 'activity' => 'Menyanyikan Mars APEKSI'],
-                    ['time' => '18:45 - 18:50', 'activity' => 'Pembacaan Do’a'],
-                    ['time' => '18:50 - 19:00', 'activity' => 'Pelepasan peserta Kediri Night Carnival APEKSI 2025'],
-                    ['time' => '19:00 - 19:15', 'activity' => 'Tarian Kolosal – Romansa Sekartaji'],
-                    ['time' => '19:15 - 19:30', 'activity' => 'Barisan OPD'],
-                    ['time' => '19:30 - 19:45', 'activity' => 'Karnaval Budaya – Perwakilan Delegasi Kota Kediri'],
-                    ['time' => '19:45 - 21:45', 'activity' => 'Karnaval Budaya – Perwakilan Delegasi Komwil IV APEKSI']
+                    ['time' => '18:40 - 18:45', 'activity' => 'Pembacaan Doa'],
+                    ['time' => '18:45 - 18:50', 'activity' => 'Pelepasan Peserta Pawai Budaya'],
+                    ['time' => '18:50 - 19:05', 'activity' => 'Tarian Kolosal – Romansa Sekartaji'],
+                    ['time' => '19:05 - 19:15', 'activity' => 'Barisan OPD'],
+                    ['time' => '19:15 - 21:30', 'activity' => 'Karnaval Budaya – Delegasi Komwil IV APEKSI'],
+                    ['time' => '21:30 - 00:20', 'activity' => 'Karnaval Budaya – Partisipan Kota Kediri']
                 ]
             ],
 
@@ -205,18 +206,18 @@ class HomeController extends Controller
                 'venue' => 'Taman Brantas Kota Kediri',
                 'date' => '18 Juli 2025',
                 'attendees' => 'Walikota Anggota KOMWIL IV APEKSI Sarimbit beserta 2 Pendamping, Wakil Walikota Kota Kediri, Forkopimda Kota Kediri, Sekretaris Daerah Kota Kediri, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Kepala OPD Kota Kediri',
-                'dresscode' => 'Kaos Olahraga',
+                'dresscode' => 'Kaos Olahraga Muskomwil IV APEKSI ke-13',
                 'image' => 'tanam-pohon-tebar-benih.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786880996013!2d112.00600051165615!3d-7.812370792175646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857227dcc0931%3A0x1cff71ab45598392!2sBrantas%20Park!5e0!3m2!1sen!2sid!4v1752480914442!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786880996013!2d112.00600051165615!3d-7.812370792175646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857227dcc0931%3A0x1cff71ab45598392!2sBrantas%20Park!5e0!3m2!1sen!2sid!4v1752480914442!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '05:00 - 05:30', 'activity' => 'Persiapan'],
-                    ['time' => '05:30 - 06:30', 'activity' => 'Menuju lokasi mulai dari Jl. Dhoho – Jl. Kyai Mojo – Jl. Walter Monginsidi – Jl. Yos Sudarso – Taman Brantas'],
-                    ['time' => '06:30 - 06:45', 'activity' => 'Coffee Break'],
-                    ['time' => '06:45 - 07:15', 'activity' => 'Penanaman Pohon'],
-                    ['time' => '07:15 - 07:45', 'activity' => 'Penyebaran Benih Ikan'],
-                    ['time' => '07:45 - 09:15', 'activity' => 'Makan pagi dan ramah tamah'],
-                    ['time' => '09:15 - 10:00', 'activity' => 'Kembali ke hotel']
+                    ['time' => '05:30 - 06:30', 'activity' => 'Gowes Bareng dari Grand Surya Hotel menuju Taman Brantas'],
+                    ['time' => '06:30 - 06:45', 'activity' => 'Memberi Makan Burung Merpati'],
+                    ['time' => '06:45 - 07:15', 'activity' => 'Penyebaran Benih Ikan'],
+                    ['time' => '07:15 - 07:45', 'activity' => 'Penanaman Pohon'],
+                    ['time' => '07:45 - 09:15', 'activity' => 'Makan Pagi dan Ramah Tamah'],
+                    ['time' => '09:15 - 10:00', 'activity' => 'Kembali ke Hotel']
                 ]
             ],
         ];

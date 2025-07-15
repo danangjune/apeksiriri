@@ -84,9 +84,12 @@
 
 
           <div class="d-flex flex-column flex-md-row">
-            <div class="col-md-8 mb-3 mb-md-0">{!! $event['map'] !!}</div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3 mb-md-0 p-2">{!! $event['map'] !!}</div>
+            <div class="col-md-4 p-2">
               <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
+            </div>
+            <div class="col-md-4 p-2">
+               <img src="{{ asset('assets/images/gambar-lokasi/layout-kediri-city-expo.jpeg') }}" alt="" class="w-100">
             </div>
           </div>
 
@@ -100,31 +103,53 @@
             </ul> -->
             <table style="width: 100%; border-collapse: collapse;">
               @foreach($event['schedule'] as $item)
-              <tr>
-                <td style="padding: 4px 8px; vertical-align: top; width: 150px;">
-                  <strong>* {{ $item['time'] }}</strong>
-                </td>
-                <td style="padding: 4px 0; vertical-align: top; width: 10px;">:</td>
-                <td style="padding: 4px 8px; vertical-align: top;">
-                  {{ $item['activity'] }}
-                </td>
-              </tr>
+                @php
+                    // Pisahkan waktu berdasarkan ' - '
+                    [$start, $end] = explode(' - ', $item['time']);
+                @endphp
+                <tr>
+                  <!-- Bullet -->
+                  <td style="width: 20px; padding: 4px; vertical-align: top;">•</td>
+
+                  <!-- Jam mulai -->
+                  <td style="width: 70px; padding: 4px; vertical-align: top; text-align: right; font-family: monospace;">
+                    <strong>{{ $start }}</strong>
+                  </td>
+
+                  <!-- Strip pemisah waktu -->
+                  <td style="width: 10px; padding: 4px; vertical-align: top; text-align: center;">–</td>
+
+                  <!-- Jam selesai -->
+                  <td style="width: 70px; padding: 4px; vertical-align: top; font-family: monospace;">
+                    <strong>{{ $end }}</strong>
+                  </td>
+
+                  <!-- Titik dua -->
+                  <td style="width: 10px; padding: 4px; vertical-align: top;">:</td>
+
+                  <!-- Aktivitas -->
+                  <td style="padding: 4px 8px; vertical-align: top;">
+                    {{ $item['activity'] }}
+                  </td>
+                </tr>
               @endforeach
             </table>
-
-
           </div>
           <div class="nested-detail">Dokumentasi Kegiatan</div>
           <div>
-            <div class="d-flex gap-3 pt-3 ps-5">
-              <div class="d-flex">
-                <i class="bi bi-image-fill fs-2 text-primary"></i>
-                <div class="small mt-2 ms-2 text-black">Galeri Foto</div>
+            <div class="d-flex flex-column flex-md-row align-items-center gap-3 pt-3 ps-md-5 ps-3">
+              <div class="d-flex justify-content-center gap-4">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-image-fill fs-2 text-primary"></i>
+                  <div class="small ms-2 text-black">Galeri Foto</div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-camera-reels-fill fs-2 text-primary"></i>
+                  <div class="small ms-2 text-black">Video</div>
+                </div>
               </div>
-              <div class="d-flex">
-                <i class="bi bi-camera-reels-fill fs-2 text-primary"></i>
-                <div class="small mt-2 ms-2 text-black">Video</div>
-              </div>
+
+              <!-- Tombol -->
               <a href="{{ $event['dokumentasi'] }}" class="btn btn-gradient-green" target="_blank">
                 Lihat Selengkapnya
               </a>
