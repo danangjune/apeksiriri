@@ -79,7 +79,7 @@
                     <div class="swiper-slide">
                         <x-event-image-card
                             url="https://drive.google.com/file/d/1FUSzFk7Japu8Fb-e7zJ3jUvskT4OQdZT/view?usp=sharing"
-                            image="{{ asset('assets/images/banner/tanam-pohon-tebar-benih.jpg') }}"
+                            image="{{ asset('assets/images/banner/tanam-pohon-tebar-benih2.jpg') }}"
                             day="18"
                             month="Juli"
                             title="Tanam Pohon Tebar Benih" />

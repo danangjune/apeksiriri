@@ -214,7 +214,7 @@ class HomeController extends Controller
                 'date' => '18 Juli 2025',
                 'attendees' => 'Wali Kota Anggota Komwil IV APEKSI Sarimbit beserta 2 (dua) Pendamping Delegasi, Ketua Dewan Pengurus APEKSI, Wakil Wali Kota Kediri, Forkopimda Kota Kediri, Sekretaris Daerah Kota Kediri, Direktur Eksekutif APEKSI, Asisten, Staf Ahli, Kepala OPD Kota Kediri',
                 'dresscode' => 'Kaos Olahraga',
-                'image' => 'tanam-pohon-tebar-benih.jpg',
+                'image' => 'tanam-pohon-tebar-benih2.jpg',
                 'image-lokasi' => 'ikan-benih2.png',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
                 'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786880996013!2d112.00600051165615!3d-7.812370792175646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857227dcc0931%3A0x1cff71ab45598392!2sBrantas%20Park!5e0!3m2!1sen!2sid!4v1752480914442!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
