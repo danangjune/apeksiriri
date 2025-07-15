@@ -58,6 +58,22 @@
         </a>
     </div>
 </div>
+<div class="container informasi-kediri-modern mt-5 mb-5">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">
+                Rekayasa Lalu Lintas APEKSI Kota Kediri
+            </h2>
+            <p class="lead">Silahkan unduh PDF Rekayasa Lalu Lintas APEKSI Kota Kediri melalui link di bawah ini</p>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="https://drive.google.com/file/d/1V4-0gmBYfa-RQrdknMTTh07Uu2B7ygRG/view?usp=sharing" class="btn btn-gradient-green px-4 py-2 fw-semibold rounded-pill d-inline-flex align-items-center gap-2" download>
+            <i class="bi bi-download fs-5"></i>
+            Download Buku Panduan Kota Kediri
+        </a>
+    </div>
+</div>
 <style>
     .title-border {
         border-bottom: 4px solid #165a63;
