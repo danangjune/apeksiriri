@@ -114,7 +114,7 @@
                                             {{ $fasilitasByKategori[$kategori['id']]->links('pagination::bootstrap-5') }}
                                         </div>
                                     </div>
-                                @elseif (in_array($kategori['id'], [3, 4, 5, 7]))
+                                @elseif (in_array($kategori['id'], [3, 4, 5, 6, 7, 8]))
                                     <div class="row py-2">
                                         <form class="search-form">
                                             <div class="row g-3 align-items-center">
@@ -511,39 +511,41 @@
         </section>
     </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll(".search-form").forEach((form) => {
-            const searchInput = form.querySelector(".search-keyword");
-            const filterSelect = form.querySelector(".search-filter");
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".search-form").forEach((form) => {
+                const searchInput = form.querySelector(".search-keyword");
+                const filterSelect = form.querySelector(".search-filter");
 
-            const tabPane = form.closest(".tab-pane");
-            const searchResults = tabPane.querySelectorAll(".search-results");
+                const tabPane = form.closest(".tab-pane");
+                const searchResults = tabPane.querySelectorAll(".search-results");
 
-            searchResults.forEach(results => {
-                const searchItems = results.querySelectorAll(".search-item");
+                searchResults.forEach(results => {
+                    const searchItems = results.querySelectorAll(".search-item");
 
-                function filterItems() {
-                    let keyword = searchInput.value.toLowerCase();
-                    let selectedCategory = filterSelect.value;
+                    function filterItems() {
+                        let keyword = searchInput.value.toLowerCase();
+                        let selectedCategory = filterSelect.value;
 
-                    searchItems.forEach(item => {
-                        let name = item.getAttribute("data-name");
-                        let category = item.getAttribute("data-category");
+                        searchItems.forEach(item => {
+                            let name = item.getAttribute("data-name");
+                            let category = item.getAttribute("data-category");
 
-                        let matchesKeyword = keyword === "" || name.includes(keyword);
-                        let matchesCategory = selectedCategory === "" || category === selectedCategory;
+                            let matchesKeyword = keyword === "" || name.includes(keyword);
+                            let matchesCategory = selectedCategory === "" || category ===
+                                selectedCategory;
 
-                        item.style.display = (matchesKeyword && matchesCategory) ? "block" : "none";
-                    });
-                }
+                            item.style.display = (matchesKeyword && matchesCategory) ?
+                                "block" : "none";
+                        });
+                    }
 
-                searchInput.addEventListener("input", filterItems);
-                filterSelect.addEventListener("change", filterItems);
+                    searchInput.addEventListener("input", filterItems);
+                    filterSelect.addEventListener("change", filterItems);
+                });
             });
         });
-    });
-</script>
+    </script>
 
 
 @endsection
