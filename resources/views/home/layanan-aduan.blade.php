@@ -15,8 +15,8 @@
                         <img src="{{ asset('assets/icons/112-ig.png') }}" alt="Instagram">
                     </div>
                 </a>
-                <h4 class="aduan-title mt-4">Instagram</h4>
-                <p class="aduan-subtitle">@lapormbakwali112</p>
+                <h4 class="aduan-title mt-4">@lapormbakwali112</h4>
+                <p class="aduan-subtitle">Instagram Aduan</p>
             </div>
 
             <!-- WhatsApp Button -->
@@ -26,8 +26,8 @@
                         <img src="{{ asset('assets/icons/112-wa.png') }}" alt="WhatsApp">
                     </div>
                 </a>
-                <h4 class="aduan-title mt-4">WhatsApp ChatBot</h4>
-                <p class="aduan-subtitle">Lapor Mbak Wali</p>
+                <h4 class="aduan-title mt-4">Lapor Mbak Wali</h4>
+                <p class="aduan-subtitle">WhatsApp Aduan</p>
             </div>
 
             <div class="col-md-3 text-center">
@@ -36,8 +36,8 @@
                         <img src="{{ asset('assets/icons/112-sodok.png') }}" alt="WhatsApp">
                     </div>
                 </a>
-                <h4 class="aduan-title mt-4">WhatsApp ChatBot</h4>
-                <p class="aduan-subtitle">Sobat Dokter</p>
+                <h4 class="aduan-title mt-4">Sobat Dokter</h4>
+                <p class="aduan-subtitle">WhatsApp Konsultasi Kesehatan</p>
             </div>
 
             <!-- Telepon Button -->
@@ -47,8 +47,8 @@
                         <img src="{{ asset('assets/icons/112.png') }}" alt="112">
                     </div>
                 </a>
-                <h4 class="aduan-title mt-4">Call Center</h4>
-                <p class="aduan-subtitle">Layanan Darurat</p>
+                <h4 class="aduan-title mt-4">Layanan Darurat 112</h4>
+                <p class="aduan-subtitle">Call Center Darurat</p>
             </div>
         </div>
     </div>
