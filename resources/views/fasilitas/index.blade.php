@@ -203,7 +203,7 @@
                                             </div>
                                         </form>
 
-                                        <div class="mt-4 d-block d-md-none">
+                                        <div class="mt-4 d-block d-md-none search-results">
                                             <div class="grid-container">
                                                 @foreach ($fasilitasByKategori[$kategori['id']] as $item)
                                                     <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
@@ -239,7 +239,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="mt-4 d-none d-md-block">
+                                        <div class="mt-4 d-none d-md-block search-results">
                                             <div class="grid-container">
                                                 @foreach ($fasilitasByKategori[$kategori['id']] as $item)
                                                     <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
@@ -305,7 +305,7 @@
                                             </div>
                                         </form>
 
-                                        <div class="mt-4 d-block d-md-none">
+                                        <div class="mt-4 d-block d-md-none search-results">
                                             <div class="grid-container">
                                                 @foreach ($fasilitasByKategori[$kategori['id']] as $item)
                                                     <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
@@ -342,7 +342,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="mt-4 d-none d-md-block">
+                                        <div class="mt-4 d-none d-md-block search-results">
                                             <div class="grid-container">
                                                 @foreach ($fasilitasByKategori[$kategori['id']] as $item)
                                                     <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
@@ -392,13 +392,17 @@
         </section>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".search-form").forEach((form) => {
-                const searchInput = form.querySelector(".search-keyword");
-                const filterSelect = form.querySelector(".search-filter");
-                const searchResults = form.closest(".row.py-2").querySelector(".search-results");
-                const searchItems = searchResults.querySelectorAll(".search-item");
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".search-form").forEach((form) => {
+            const searchInput = form.querySelector(".search-keyword");
+            const filterSelect = form.querySelector(".search-filter");
+
+            const tabPane = form.closest(".tab-pane");
+            const searchResults = tabPane.querySelectorAll(".search-results");
+
+            searchResults.forEach(results => {
+                const searchItems = results.querySelectorAll(".search-item");
 
                 function filterItems() {
                     let keyword = searchInput.value.toLowerCase();
@@ -409,14 +413,9 @@
                         let category = item.getAttribute("data-category");
 
                         let matchesKeyword = keyword === "" || name.includes(keyword);
-                        let matchesCategory = selectedCategory === "" || category ===
-                            selectedCategory;
+                        let matchesCategory = selectedCategory === "" || category === selectedCategory;
 
-                        if (matchesKeyword && matchesCategory) {
-                            item.style.display = "block";
-                        } else {
-                            item.style.display = "none";
-                        }
+                        item.style.display = (matchesKeyword && matchesCategory) ? "block" : "none";
                     });
                 }
 
@@ -424,6 +423,8 @@
                 filterSelect.addEventListener("change", filterItems);
             });
         });
-    </script>
+    });
+</script>
+
 
 @endsection
