@@ -6,7 +6,7 @@
                 <h6 class="fw-semibold text-white">APEKSI MUSKOMWIL IV KE 13 - KOTA KEDIRI</h6>
                 <div class="row">
                     <div class="d-flex text-white align-items-center">
-                        <p class="m-0 text-justify">
+                        <p class="me-4" style="text-align: justify;">
                             Kota Kediri dengan bangga menjadi tuan rumah Muskomwil IV Apeksi Tahun 2025 dengan tema
                             "Semangat Pembangunan Berkelanjutan Menuju Kota Mapan". Kami menyambut hangat peserta dari
                             seluruh kota di Indonesia untuk berdiskusi, berbagi ide, dan berkolaborasi dalam
