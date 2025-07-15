@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\StandBooth;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ProfilPesertaApeksiSeeder::class,
             BannerSeeder::class,
+            StandBoothSeeder::class,
             // ProfilPesertaApeksi::class,
         ]);
     }
