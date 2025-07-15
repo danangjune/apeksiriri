@@ -16,8 +16,9 @@
 @include('home.wamendag')
 @include('home.fasilitas')
 @include('home.teaser-info')
-@include('home.layanan-aduan')
 @include('home.stand-booth')
+@include('home.layanan-aduan')
+
 
 <!-- Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -462,13 +463,16 @@
   });
 </script>
 <script>
-  $('#liveSearch').on('keyup', function () {
+  $('#liveSearch').on('keyup', function() {
     let query = $(this).val();
 
     $.ajax({
       url: '{{ route("standbooth.search") }}',
-      data: { q: query, limit: 5 },
-      success: function (res) {
+      data: {
+        q: query,
+        limit: 5
+      },
+      success: function(res) {
         let html = '';
         if (res.length > 0) {
           html += `<div class="table-card">
