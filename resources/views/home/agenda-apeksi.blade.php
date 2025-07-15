@@ -100,15 +100,35 @@
             </ul> -->
             <table style="width: 100%; border-collapse: collapse;">
               @foreach($event['schedule'] as $item)
-              <tr>
-                <td style="padding: 4px 8px; vertical-align: top; width: 150px;">
-                  <strong>* {{ $item['time'] }}</strong>
-                </td>
-                <td style="padding: 4px 0; vertical-align: top; width: 10px;">:</td>
-                <td style="padding: 4px 8px; vertical-align: top;">
-                  {{ $item['activity'] }}
-                </td>
-              </tr>
+                @php
+                    // Pisahkan waktu berdasarkan ' - '
+                    [$start, $end] = explode(' - ', $item['time']);
+                @endphp
+                <tr>
+                  <!-- Bullet -->
+                  <td style="width: 20px; padding: 4px; vertical-align: top;">•</td>
+
+                  <!-- Jam mulai -->
+                  <td style="width: 70px; padding: 4px; vertical-align: top; text-align: right; font-family: monospace;">
+                    <strong>{{ $start }}</strong>
+                  </td>
+
+                  <!-- Strip pemisah waktu -->
+                  <td style="width: 10px; padding: 4px; vertical-align: top; text-align: center;">–</td>
+
+                  <!-- Jam selesai -->
+                  <td style="width: 70px; padding: 4px; vertical-align: top; font-family: monospace;">
+                    <strong>{{ $end }}</strong>
+                  </td>
+
+                  <!-- Titik dua -->
+                  <td style="width: 10px; padding: 4px; vertical-align: top;">:</td>
+
+                  <!-- Aktivitas -->
+                  <td style="padding: 4px 8px; vertical-align: top;">
+                    {{ $item['activity'] }}
+                  </td>
+                </tr>
               @endforeach
             </table>
 
