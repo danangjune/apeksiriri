@@ -16,6 +16,15 @@
   .nested-detail.open+.nested-detail-content {
     display: block;
   }
+  .custom-flex-container {
+      height: auto;
+    }
+
+    @media (min-width: 768px) {
+      .custom-flex-container {
+        height: 450px;
+      }
+    }
 </style>
 <div class="container agenda-apeksi">
   <div class="row mb-4 mt-4">
@@ -81,16 +90,30 @@
             </li>
             @endforeach
           </ul>
+          @php
+            $hasLokasiImage = !empty($event['image-lokasi']);
+          @endphp
 
-
-          <div class="d-flex flex-column flex-md-row">
-            <div class="col-md-8 mb-3 mb-md-0">{!! $event['map'] !!}</div>
-            <div class="col-md-4">
-              <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
+          <div class="d-flex flex-column flex-md-row custom-flex-container">
+            <!-- MAP -->
+            <div class="{{ $hasLokasiImage ? 'col-md-4' : 'col-md-8' }} mb-3 mb-md-0 p-2">
+              <div class="ratio ratio-4x3 h-100">
+                {!! $event['map'] !!}
+              </div>
             </div>
+
+            <!-- IMAGE UTAMA -->
+            <div class="{{ $hasLokasiImage ? 'col-md-4' : 'col-md-4' }} p-2">
+              <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100 h-100 object-fit-cover">
+            </div>
+
+            <!-- IMAGE LOKASI (JIKA ADA) -->
+            @if($hasLokasiImage)
+              <div class="col-md-4 p-2">
+                <img src="{{ asset('assets/images/gambar-lokasi/' . $event['image-lokasi']) }}" alt="" class="w-100 h-100 object-fit-cover">
+              </div>
+            @endif
           </div>
-
-
           <div class="nested-detail">Jadwal Kegiatan</div>
           <div class="nested-detail-content">
             <!-- <ul>
@@ -131,20 +154,22 @@
                 </tr>
               @endforeach
             </table>
-
-
           </div>
           <div class="nested-detail">Dokumentasi Kegiatan</div>
           <div>
-            <div class="d-flex gap-3 pt-3 ps-5">
-              <div class="d-flex">
-                <i class="bi bi-image-fill fs-2 text-primary"></i>
-                <div class="small mt-2 ms-2 text-black">Galeri Foto</div>
+            <div class="d-flex flex-column flex-md-row align-items-center gap-3 pt-3 ps-md-5 ps-3">
+              <div class="d-flex justify-content-center gap-4">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-image-fill fs-2 text-primary"></i>
+                  <div class="small ms-2 text-black">Galeri Foto</div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-camera-reels-fill fs-2 text-primary"></i>
+                  <div class="small ms-2 text-black">Video</div>
+                </div>
               </div>
-              <div class="d-flex">
-                <i class="bi bi-camera-reels-fill fs-2 text-primary"></i>
-                <div class="small mt-2 ms-2 text-black">Video</div>
-              </div>
+
+              <!-- Tombol -->
               <a href="{{ $event['dokumentasi'] }}" class="btn btn-gradient-green" target="_blank">
                 Lihat Selengkapnya
               </a>

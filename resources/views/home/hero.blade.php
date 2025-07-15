@@ -18,9 +18,9 @@
 <div class="banner-home d-flex flex-column align-items-center justify-content-end position-relative overflow-hidden">
     <!-- Background image -->
     @foreach ($banners as $key => $banner)
-        <img src="{{ asset('banner/' . $banner->gambar) }}"
-            class="banner-slide {{ $key == 0 ? 'active' : '' }} position-absolute w-100 h-75 object-fit-cover"
-            style="object-position: bottom;" alt="Pemerintah Kota Kediri">
+    <img src="{{ asset('banner/' . $banner->gambar) }}"
+        class="banner-slide {{ $key == 0 ? 'active' : '' }} position-absolute w-100 h-75 object-fit-cover"
+        style="object-position: bottom;" alt="Pemerintah Kota Kediri">
     @endforeach
 
     <!-- <div class="banner-content text-center">
@@ -448,7 +448,7 @@
         }
     </style>
     <script>
-        const eventDate = new Date("2025-07-15T23:59:59").getTime();
+        const eventDate = new Date("2025-07-16T18:29:59").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();

@@ -16,7 +16,9 @@
 @include('home.wamendag')
 @include('home.fasilitas')
 @include('home.teaser-info')
+@include('home.stand-booth')
 @include('home.layanan-aduan')
+
 
 <!-- Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
@@ -457,6 +459,56 @@
         modalImage.src = imgSrc;
         imageModal.show();
       });
+    });
+  });
+</script>
+<script>
+  $('#liveSearch').on('keyup', function() {
+    let query = $(this).val();
+
+    $.ajax({
+      url: '{{ route("standbooth.search") }}',
+      data: {
+        q: query,
+        limit: 5
+      },
+      success: function(res) {
+        let html = '';
+        if (res.length > 0) {
+          html += `<div class="table-card">
+                    <table class="table align-middle mb-0">
+                      <thead class="table-light">
+                        <tr>
+                          <th>Kategori</th>
+                          <th>Stand</th>
+                          <th>Nama</th>
+                          <th>Perusahaan</th>
+                          <th>Produk</th>
+                          <th>PIC</th>
+                          <th>No. Telp</th>
+                        </tr>
+                      </thead>
+                      <tbody>`;
+
+          res.forEach(item => {
+            html += `<tr>
+                      <td data-label="Kategori">${item.kategori}</td>
+                      <td data-label="Stand">${item.no_stand}</td>
+                      <td data-label="Nama">${item.nama_stand}</td>
+                      <td data-label="Perusahaan">${item.nama_perusahaan}</td>
+                      <td data-label="Produk">${item.jenis_produk}</td>
+                      <td data-label="PIC">${item.pic}</td>
+                      <td data-label="No. Telp"><a href="tel:${item.no_telp}">${item.no_telp}</a></td>
+                    </tr>`;
+          });
+
+          html += `</tbody></table></div>`;
+        } else {
+          html = `<div class="text-center text-muted py-4">Tidak ada hasil ditemukan</div>`;
+        }
+
+        $('#standResults').html(html);
+      }
     });
   });
 </script>
