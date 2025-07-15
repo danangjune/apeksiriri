@@ -23,11 +23,11 @@
             <div class="col-md-4 text-center">
                 <a href="https://lapormbakwali.kedirikota.go.id/api/chatbot-link" target="_blank" class="aduan-card whatsapp-card">
                     <div class="aduan-icon-large">
-                        <img src="{{ asset('assets/icons/112-wa.png') }}" alt="WhatsApp">
+                        <img src="{{ asset('assets/icons/112-wa-sodok.png') }}" alt="WhatsApp">
                     </div>
                 </a>
-                <h4 class="aduan-title mt-4">WhatsApp</h4>
-                <p class="aduan-subtitle">Chat Bot</p>
+                <h4 class="aduan-title mt-4">WhatsApp ChatBot</h4>
+                <p class="aduan-subtitle">Lapor Mbak Wali & Sobat Dokter</p>
             </div>
 
             <!-- Telepon Button -->
@@ -94,8 +94,8 @@
     }
 
     .aduan-icon-large {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
         border-radius: 25px;
         display: flex;
         align-items: center;
