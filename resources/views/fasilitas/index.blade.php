@@ -423,7 +423,7 @@
                                                 @foreach ($fasilitasByKategori[$kategori['id']] as $item)
                                                     <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
                                                         data-category="{{ $item['sub_kategori_id'] }}">
-                                                        <div class="border rounded d-flex p-3">
+                                                        <div class="border rounded d-flex p-3" style="height: 240px">
                                                             <div class="flex-shrink-0 me-3">
                                                                 <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('assets/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
                                                                     alt="{{ $item['nama'] }}" loading="lazy"
@@ -463,7 +463,7 @@
                                                 @foreach ($fasilitasByKategori[$kategori['id']] as $item)
                                                     <div class="search-item" data-name="{{ strtolower($item['nama']) }}"
                                                         data-category="{{ $item['sub_kategori_id'] }}">
-                                                        <div class="border rounded d-flex p-3" style="height: 210px">
+                                                        <div class="border rounded d-flex p-3" style="height: 240px">
                                                             <div class="flex-shrink-0 me-3">
                                                                 <img src="{{ !empty($item['foto']) ? (Str::startsWith($item['foto'], 'http') ? $item['foto'] : asset('assets/fasilitas/' . $item['foto'])) : asset('assets/images/noimage2.png') }}"
                                                                     alt="{{ $item['nama'] }}" loading="lazy"

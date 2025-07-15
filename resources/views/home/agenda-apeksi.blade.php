@@ -16,15 +16,24 @@
   .nested-detail.open+.nested-detail-content {
     display: block;
   }
-  .custom-flex-container {
-      height: auto;
-    }
 
-    @media (min-width: 768px) {
-      .custom-flex-container {
-        height: 450px;
-      }
+  .custom-flex-container {
+    height: auto;
+  }
+
+  @media (min-width: 768px) {
+    .custom-flex-container {
+      height: 450px;
     }
+  }
+
+  .rotate-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-header.open .rotate-icon {
+    transform: rotate(180deg);
+  }
 </style>
 <div class="container agenda-apeksi">
   <div class="row mb-4 mt-4">
@@ -57,9 +66,18 @@
 
       @foreach($events as $event)
       <article class="accordion-item mb-2">
-        <header class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
-          {{ $event['event_name'] }}
+        <header
+          class="accordion-header d-flex justify-content-between align-items-center"
+          role="button"
+          tabindex="0"
+          aria-expanded="false"
+          aria-controls="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}"
+          id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
+          <span>{{ $event['event_name'] }}</span>
+          <i class="bi bi-chevron-down rotate-icon"></i>
         </header>
+
+
 
         <div class="accordion-content" id="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}" role="region" aria-labelledby="detail{{ $loop->parent->index + 1 }}_{{ $loop->index }}header">
           <!-- <ul class="text-black">
@@ -91,7 +109,7 @@
             @endforeach
           </ul>
           @php
-            $hasLokasiImage = !empty($event['image-lokasi']);
+          $hasLokasiImage = !empty($event['image-lokasi']);
           @endphp
 
           <div class="d-flex flex-column flex-md-row custom-flex-container">
@@ -109,9 +127,9 @@
 
             <!-- IMAGE LOKASI (JIKA ADA) -->
             @if($hasLokasiImage)
-              <div class="col-md-4 p-2">
-                <img src="{{ asset('assets/images/gambar-lokasi/' . $event['image-lokasi']) }}" alt="" class="w-100 h-100 object-fit-cover">
-              </div>
+            <div class="col-md-4 p-2">
+              <img src="{{ asset('assets/images/gambar-lokasi/' . $event['image-lokasi']) }}" alt="" class="w-100 h-100 object-fit-cover">
+            </div>
             @endif
           </div>
           <div class="nested-detail">Jadwal Kegiatan</div>
@@ -123,35 +141,35 @@
             </ul> -->
             <table style="width: 100%; border-collapse: collapse;">
               @foreach($event['schedule'] as $item)
-                @php
-                    // Pisahkan waktu berdasarkan ' - '
-                    [$start, $end] = explode(' - ', $item['time']);
-                @endphp
-                <tr>
-                  <!-- Bullet -->
-                  <td style="width: 20px; padding: 4px; vertical-align: top;">•</td>
+              @php
+              // Pisahkan waktu berdasarkan ' - '
+              [$start, $end] = explode(' - ', $item['time']);
+              @endphp
+              <tr>
+                <!-- Bullet -->
+                <td style="width: 20px; padding: 4px; vertical-align: top;">•</td>
 
-                  <!-- Jam mulai -->
-                  <td style="width: 70px; padding: 4px; vertical-align: top; text-align: right; font-family: monospace;">
-                    <strong>{{ $start }}</strong>
-                  </td>
+                <!-- Jam mulai -->
+                <td style="width: 70px; padding: 4px; vertical-align: top; text-align: right; font-family: monospace;">
+                  <strong>{{ $start }}</strong>
+                </td>
 
-                  <!-- Strip pemisah waktu -->
-                  <td style="width: 10px; padding: 4px; vertical-align: top; text-align: center;">–</td>
+                <!-- Strip pemisah waktu -->
+                <td style="width: 10px; padding: 4px; vertical-align: top; text-align: center;">–</td>
 
-                  <!-- Jam selesai -->
-                  <td style="width: 70px; padding: 4px; vertical-align: top; font-family: monospace;">
-                    <strong>{{ $end }}</strong>
-                  </td>
+                <!-- Jam selesai -->
+                <td style="width: 70px; padding: 4px; vertical-align: top; font-family: monospace;">
+                  <strong>{{ $end }}</strong>
+                </td>
 
-                  <!-- Titik dua -->
-                  <td style="width: 10px; padding: 4px; vertical-align: top;">:</td>
+                <!-- Titik dua -->
+                <td style="width: 10px; padding: 4px; vertical-align: top;">:</td>
 
-                  <!-- Aktivitas -->
-                  <td style="padding: 4px 8px; vertical-align: top;">
-                    {{ $item['activity'] }}
-                  </td>
-                </tr>
+                <!-- Aktivitas -->
+                <td style="padding: 4px 8px; vertical-align: top;">
+                  {{ $item['activity'] }}
+                </td>
+              </tr>
               @endforeach
             </table>
           </div>
