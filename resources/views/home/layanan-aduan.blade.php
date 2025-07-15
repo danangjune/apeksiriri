@@ -9,7 +9,7 @@
 
         <div class="row g-4">
             <!-- Instagram Button -->
-            <div class="col-md-4 text-center">
+            <div class="col-md-3 text-center">
                 <a href="https://www.instagram.com/lapormbakwali112/" target="_blank" class="aduan-card instagram-card">
                     <div class="aduan-icon-large">
                         <img src="{{ asset('assets/icons/112-ig.png') }}" alt="Instagram">
@@ -20,18 +20,28 @@
             </div>
 
             <!-- WhatsApp Button -->
-            <div class="col-md-4 text-center">
+            <div class="col-md-3 text-center">
                 <a href="https://lapormbakwali.kedirikota.go.id/api/chatbot-link" target="_blank" class="aduan-card whatsapp-card">
                     <div class="aduan-icon-large">
-                        <img src="{{ asset('assets/icons/112-wa-sodok.png') }}" alt="WhatsApp">
+                        <img src="{{ asset('assets/icons/112-wa.png') }}" alt="WhatsApp">
                     </div>
                 </a>
                 <h4 class="aduan-title mt-4">WhatsApp ChatBot</h4>
-                <p class="aduan-subtitle">Lapor Mbak Wali & Sobat Dokter</p>
+                <p class="aduan-subtitle">Lapor Mbak Wali</p>
+            </div>
+
+            <div class="col-md-3 text-center">
+                <a href="https://lapormbakwali.kedirikota.go.id/api/chatbot-link" target="_blank" class="aduan-card whatsapp-card">
+                    <div class="aduan-icon-large">
+                        <img src="{{ asset('assets/icons/112-sodok.png') }}" alt="WhatsApp">
+                    </div>
+                </a>
+                <h4 class="aduan-title mt-4">WhatsApp ChatBot</h4>
+                <p class="aduan-subtitle">Sobat Dokter</p>
             </div>
 
             <!-- Telepon Button -->
-            <div class="col-md-4 text-center">
+            <div class="col-md-3 text-center">
                 <a href="tel:112" class="aduan-card telepon-card">
                     <div class="aduan-icon-large">
                         <img src="{{ asset('assets/icons/112.png') }}" alt="112">
