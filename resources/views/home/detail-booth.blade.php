@@ -37,6 +37,7 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
             background: white;
             border: none;
+            text-transform: uppercase;
         }
 
         #liveSearch {
@@ -103,11 +104,11 @@
 @section('content')
 
     <div class="svg-header">
-        <h1>Stand Booth MUSKOMWIL IV APEKSI Kota Kediri 2025</h1>
+        <h1>Peserta City Expo MUSKOMWIL IV APEKSI Kota Kediri 2025</h1>
     </div>
 
     <div class="container section-title" style="margin-top: -70px;">
-        <h2>Daftar Stand</h2>
+        <h2>Daftar Peserta</h2>
         <p class="text-muted">Temukan berbagai stand dari delegasi kota dan UMKM unggulan.</p>
     </div>
 

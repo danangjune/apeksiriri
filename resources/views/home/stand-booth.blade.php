@@ -6,6 +6,7 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             overflow-x: auto;
             padding: 1rem;
+            text-transform: uppercase;
         }
 
         .show-more-btn {
@@ -102,8 +103,8 @@
     <div class="container">
         <div class="row mb-2">
             <div class="col-12 text-center">
-                <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">Stand Booth</h2>
-                <p class="lead text-muted">Daftar Stand Booth yang Tersedia di MUSKOMWIL IV APEKSI Kota Kediri 2025</p>
+                <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">Peserta City Expo</h2>
+                <p class="lead text-muted">Daftar Peserta City Expo di MUSKOMWIL IV APEKSI Kota Kediri 2025</p>
             </div>
         </div>
         <div class="row mb-5">
