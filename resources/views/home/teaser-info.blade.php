@@ -57,7 +57,7 @@
             <div class="card text-center shadow-sm p-4 h-100">
                 <i class="bi bi-file-earmark-pdf fs-1 text-danger mb-3"></i>
                 <h5 class="fw-semibold mb-3">Buku Panduan APEKSI Kota Kediri</h5>
-                <a href="https://drive.google.com/drive/folders/1x_wUsfMGjF7C-4AFXKGP3sTXa0Wkr1fL?usp=sharing"
+                <a href="https://drive.google.com/file/d/1hwY3ILIUwBMT12soIenIvA79fjnFvjm7/view?usp=sharing"
                     class="btn btn-gradient-green px-4 py-2 fw-semibold rounded-pill d-inline-flex align-items-center gap-2" download>
                     <i class="bi bi-download fs-5"></i>
                     Download Buku Panduan APEKSI
