@@ -15,14 +15,14 @@
                 <div class="swiper-wrapper">
 
                     <!-- City Expo -->
-                    {{-- <div class="swiper-slide">
+                    <div class="swiper-slide">
                         <x-event-image-card
                             url=""
-                            image="{{ asset('assets/images/banner/pra-muskomwil.jpg') }}"
+                            image="{{ asset('assets/images/banner/pramus.jpg') }}"
                             day="16"
                             month="Juli"
                             title="Kediri City Expo" />
-                    </div> --}}
+                    </div>
 
 
                     <!-- Gala Dinner -->
