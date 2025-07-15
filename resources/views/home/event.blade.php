@@ -32,7 +32,7 @@
                             image="{{ asset('assets/images/banner/gala-dinner.jpg') }}"
                             day="16"
                             month="Juli"
-                            title="City Expo" />
+                            title="Gala Dinner" />
                     </div>
 
                     <!-- Muskomwil -->

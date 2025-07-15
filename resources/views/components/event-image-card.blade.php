@@ -58,14 +58,14 @@
     }
 </style>
 
-<a href="{{ $url }}" target="_blank" class="text-decoration-none">
-<div class="card event-card h-100 shadow-sm">
-    <div class="card-img-top position-relative">
-        <img src="{{ $image }}" class="img-fluid" alt="{{ $title }}">
-        <div class="event-date">
-            <span class="day">{{ $day }}</span>
-            <span class="month">{{ $month }}</span>
+<a href="{{ $url }}" onclick="{{ $url == '' ? 'return false' : 'return true' }}" target="_blank" class="text-decoration-none">
+    <div class="event-card h-100 shadow-sm">
+        <div class="card-img-top position-relative">
+            <img src="{{ $image }}" class="img-fluid" alt="{{ $title }}">
+            <div class="event-date">
+                <span class="day">{{ $day }}</span>
+                <span class="month">{{ $month }}</span>
+            </div>
         </div>
     </div>
-</div>
 </a>
