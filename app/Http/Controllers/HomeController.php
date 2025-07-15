@@ -176,9 +176,9 @@ class HomeController extends Controller
                 ]
             ],
 
-            // 6. Kediri Night Carnival
+            // 6. APEKSI Nite Carnival
             [
-                'event_name' => 'Kediri Night Carnival',
+                'event_name' => 'APEKSI Nite Carnival',
                 'venue' => 'Start: Pertigaan Jl. Stasiun – Finish: Simpang Bank Indonesia, Jl. Dhoho Kota Kediri',
                 'date' => '17 Juli 2025',
                 'attendees' => 'Pejabat Pemerintah Pusat, Kepala Daerah beserta Pasangan, Wakil Walikota, Sekretaris Daerah, FORKOPIMDA, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Kepala OPD, dan Peserta Pawai Khas Daerah',
