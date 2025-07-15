@@ -6,7 +6,7 @@
                 <h6 class="fw-semibold text-white">APEKSI MUSKOMWIL IV KE 13 - KOTA KEDIRI</h6>
                 <div class="row">
                     <div class="d-flex text-white align-items-center">
-                        <p class="m-0 text-justify">
+                        <p class="me-4" style="text-align: justify;">
                             Kota Kediri dengan bangga menjadi tuan rumah Muskomwil IV Apeksi Tahun 2025 dengan tema
                             "Semangat Pembangunan Berkelanjutan Menuju Kota Mapan". Kami menyambut hangat peserta dari
                             seluruh kota di Indonesia untuk berdiskusi, berbagi ide, dan berkolaborasi dalam
@@ -78,13 +78,22 @@
                     </div>
                     <div class="d-flex text-white align-items-center">
                         <i class="bi bi-envelope-fill fs-6"></i>
-                        <span class="ms-2">info@kedirikota.go.id</span>
+                        <span class="ms-2">kediri@kedirikota.go.id</span>
                     </div>
-                    <div class="col-10 d-flex justify-content-between mt-2">
-                        @foreach (['instagram', 'facebook', 'youtube', 'twitter-x'] as $item)
-                            <div class="">
-                                <a href="/" class="text-decoration-none text-white" target="_blank"
-                                    rel="noopener noreferrer">
+                    <div class="col-10 d-flex justify-content-between mt-3">
+                        @php
+                            $socialLinks = [
+                                'instagram' => 'https://www.instagram.com/pemkotkediri/',
+                                'facebook' => 'https://www.facebook.com/kotakediri/',
+                                'youtube' => 'https://youtube.com/@pemkotkediritv?si=oM2enajVbV0UpkR1',
+                                'twitter-x' => 'https://x.com/pemkot_kediri',
+                                'tiktok' => 'https://www.tiktok.com/@pemkotkediri?is_from_webapp=1&sender_device=pc',
+                            ];
+                        @endphp
+
+                        @foreach (['instagram', 'facebook', 'youtube', 'twitter-x', 'tiktok'] as $item)
+                            <div>
+                                <a href="{{ $socialLinks[$item] }}" class="text-decoration-none text-white" target="_blank" rel="noopener noreferrer">
                                     <i class="bi bi-{{ $item }} fs-4"></i>
                                 </a>
                             </div>
