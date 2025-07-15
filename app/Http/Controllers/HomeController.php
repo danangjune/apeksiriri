@@ -166,8 +166,8 @@ class HomeController extends Controller
                 'date' => '17 Juli 2025',
                 'attendees' => 'Istri Kepala Daerah dan Ibu Ketua TP PKK Kota Kediri, Kepala OPD terkait Kota Kediri beserta 2 Orang Pendamping Delegasi KOMWIL IV APEKSI, Pengurus TP PKK Kota Kediri',
                 'dresscode' => 'Batik / Tenun Khas Daerah masing-masing',
-                'image' => 'citytour-rute.png',
-                'image-lokasi' => 'alur-city-tour.jpeg',
+                'image' => 'city-tour-ladies-program.jpg',
+                'image-lokasi' => 'citytour-rute.png',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
                 'map' => '<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1XijEsw4CyfFI9f5zAOIZeOz4jhkgY9A&ehbc=2E312F&noprof=1"></iframe>',
                 'schedule' => [
@@ -214,7 +214,7 @@ class HomeController extends Controller
                 'attendees' => 'Walikota Anggota KOMWIL IV APEKSI Sarimbit beserta 2 Pendamping, Wakil Walikota Kota Kediri, Forkopimda Kota Kediri, Sekretaris Daerah Kota Kediri, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Kepala OPD Kota Kediri',
                 'dresscode' => 'Kaos Olahraga Muskomwil IV APEKSI ke-13',
                 'image' => 'tanam-pohon-tebar-benih.jpg',
-                'image-lokasi' => 'rute-penanaman-pohon.jpg',
+                'image-lokasi' => 'ikan-benih.png',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
                 'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786880996013!2d112.00600051165615!3d-7.812370792175646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857227dcc0931%3A0x1cff71ab45598392!2sBrantas%20Park!5e0!3m2!1sen!2sid!4v1752480914442!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
