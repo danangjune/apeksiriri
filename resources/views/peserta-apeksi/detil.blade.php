@@ -36,6 +36,21 @@
     box-shadow: 0 20px 40px rgba(21, 79, 71, 0.3);
 }
 
+.media-equal {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.media-equal iframe,
+.media-equal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 /* Responsive */
 @media(max-width: 768px) {
     .card-hero {
@@ -144,46 +159,41 @@
                     <div class="row g-4 align-items-start mt-3">
                         <!-- Video -->
                         <div class="col-md-6">
-                            <div class="media-box p-3 shadow-lg rounded border-3 border-primary">
+                            <div class="media-box p-3 shadow-lg rounded border-3 border-primary media-equal">
                                 @if(!empty($peserta['embed_video']) && $peserta['embed_video'] != '/preview')
-                                    <div class="ratio ratio-16x9 rounded overflow-hidden">
-                                        <iframe 
-                                            src="{{ $peserta['embed_video'] }}"
-                                            allowfullscreen
-                                            style="border: none; border-radius: 10px;">
-                                        </iframe>
-                                    </div>
+                                    <iframe 
+                                        src="{{ $peserta['embed_video'] }}"
+                                        allowfullscreen
+                                        style="border: none;">
+                                    </iframe>
                                 @else
-                                    <div class="text-center text-muted py-5">
+                                    <div class="text-center text-muted">
                                         <em>Video belum tersedia</em>
                                     </div>
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-6"></div>
-                        <div class="col-md-6"></div>
+
                         <!-- Gambar -->
                         <div class="col-md-6">
-                            <div class="media-box p-3 shadow-lg rounded border-3 border-primary text-center">
+                            <div class="media-box p-3 shadow-lg rounded border-3 border-primary media-equal">
                                 @if(!empty($peserta['image']))
-                                        <img 
-                                            src="{{ asset('gambar-peserta/'.$peserta['image']) }}" 
-                                            alt="Gambar Peserta" 
-                                            class="img-fluid rounded"
-                                            style="max-height: 300px; object-fit: cover;">
+                                    <img 
+                                        src="{{ $peserta['image'] }}" 
+                                        alt="Gambar Peserta" 
+                                        class="img-fluid">
                                 @else
-                                    <div class="text-center text-muted py-5">
+                                    <div class="text-center text-muted">
                                         <em>Gambar belum tersedia</em>
                                     </div>
                                 @endif
                             </div>
                         </div>
                     </div>
-
                     <!-- Tombol kembali -->
                     <div class="text-center mt-5 pt-4">
-                        <button onclick="window.history.back()" class="btn btn-secondary px-4 py-2 fs-6">
-                            <i class="bi bi-arrow-left me-2"></i> Kembali
+                        <button onclick="window.open('{{ $peserta['website'] }}', '_blank')" class="btn btn-primary px-4 py-3 fs-6">
+                            <i class="bi bi-browser-edge me-2"></i> Kunjungi Website {{ $peserta['nama'] }}
                         </button>
                     </div>
                 </div>
