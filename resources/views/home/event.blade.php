@@ -20,7 +20,7 @@
                             url=""
                             image="{{ asset('assets/images/banner/pramus.jpg') }}"
                             day="16"
-                            month="Juli"
+                            month="April"
                             title="Kediri City Expo" />
                     </div>
 
