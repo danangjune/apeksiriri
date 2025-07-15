@@ -41,39 +41,46 @@
     }
 </style>
 
-<!-- Section: Informasi Kota Kediri -->
-<div class="container informasi-kediri-modern mt-5">
-    <div class="row mb-4">
-        <div class="col-12 text-center">
+<div class="container informasi-kediri-modern mt-5 mb-5">
+    <div class="row mb-4 text-center">
+        <div class="col-12">
             <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">
                 Buku Panduan dan Informasi Kota Kediri
             </h2>
-            <p class="lead">Dapatkan buku panduan dan informasi resmi Kota Kediri melalui link di bawah ini</p>
+            <p class="lead">Dapatkan buku panduan dan dokumen rekayasa lalu lintas resmi Kota Kediri melalui link di bawah ini.</p>
         </div>
     </div>
-    <div class="text-center">
-        <a href="https://drive.google.com/drive/folders/1x_wUsfMGjF7C-4AFXKGP3sTXa0Wkr1fL?usp=sharing" class="btn btn-gradient-green px-4 py-2 fw-semibold rounded-pill d-inline-flex align-items-center gap-2" download>
-            <i class="bi bi-download fs-5"></i>
-            Download Buku Panduan Kota Kediri
-        </a>
-    </div>
-</div>
-<div class="container informasi-kediri-modern mt-5 mb-5">
-    <div class="row mb-4">
-        <div class="col-12 text-center">
-            <h2 class="fw-bold mb-3 border-bottom border-3 border-primary d-inline-block pb-2">
-                Rekayasa Lalu Lintas APEKSI Kota Kediri
-            </h2>
-            <p class="lead">Silahkan unduh PDF Rekayasa Lalu Lintas APEKSI Kota Kediri melalui link di bawah ini</p>
+
+    <div class="row g-4 justify-content-center">
+        <!-- Card 1 -->
+        <div class="col-md-5">
+            <div class="card text-center shadow-sm p-4 h-100">
+                <i class="bi bi-file-earmark-pdf fs-1 text-danger mb-3"></i>
+                <h5 class="fw-semibold mb-3">Buku Panduan APEKSI Kota Kediri</h5>
+                <a href="https://drive.google.com/drive/folders/1x_wUsfMGjF7C-4AFXKGP3sTXa0Wkr1fL?usp=sharing"
+                    class="btn btn-gradient-green px-4 py-2 fw-semibold rounded-pill d-inline-flex align-items-center gap-2" download>
+                    <i class="bi bi-download fs-5"></i>
+                    Download Buku Panduan APEKSI
+                </a>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-5">
+            <div class="card text-center shadow-sm p-4 h-100">
+                <i class="bi bi-file-earmark-pdf fs-1 text-danger mb-3"></i>
+                <h5 class="fw-semibold mb-3">Rekayasa Lalu Lintas APEKSI Kota Kediri</h5>
+                <a href="https://drive.google.com/file/d/1V4-0gmBYfa-RQrdknMTTh07Uu2B7ygRG/view?usp=sharing"
+                    class="btn btn-gradient-green px-4 py-2 fw-semibold rounded-pill d-inline-flex align-items-center gap-2" download>
+                    <i class="bi bi-download fs-5"></i>
+                    Download Rekayasa Lalin APEKSI
+                </a>
+            </div>
         </div>
     </div>
-    <div class="text-center">
-        <a href="https://drive.google.com/file/d/1V4-0gmBYfa-RQrdknMTTh07Uu2B7ygRG/view?usp=sharing" class="btn btn-gradient-green px-4 py-2 fw-semibold rounded-pill d-inline-flex align-items-center gap-2" download>
-            <i class="bi bi-download fs-5"></i>
-            Download Buku Panduan Kota Kediri
-        </a>
-    </div>
 </div>
+
+
 <style>
     .title-border {
         border-bottom: 4px solid #165a63;
