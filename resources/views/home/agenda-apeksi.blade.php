@@ -16,6 +16,15 @@
   .nested-detail.open+.nested-detail-content {
     display: block;
   }
+  .custom-flex-container {
+      height: auto;
+    }
+
+    @media (min-width: 768px) {
+      .custom-flex-container {
+        height: 450px;
+      }
+    }
 </style>
 <div class="container agenda-apeksi">
   <div class="row mb-4 mt-4">
@@ -81,19 +90,30 @@
             </li>
             @endforeach
           </ul>
+          @php
+            $hasLokasiImage = !empty($event['image-lokasi']);
+          @endphp
 
+          <div class="d-flex flex-column flex-md-row custom-flex-container">
+            <!-- MAP -->
+            <div class="{{ $hasLokasiImage ? 'col-md-4' : 'col-md-8' }} mb-3 mb-md-0 p-2">
+              <div class="ratio ratio-4x3 h-100">
+                {!! $event['map'] !!}
+              </div>
+            </div>
 
-          <div class="d-flex flex-column flex-md-row">
-            <div class="col-md-4 mb-3 mb-md-0 p-2">{!! $event['map'] !!}</div>
-            <div class="col-md-4 p-2">
-              <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100">
+            <!-- IMAGE UTAMA -->
+            <div class="{{ $hasLokasiImage ? 'col-md-4' : 'col-md-4' }} p-2">
+              <img src="{{ asset('assets/images/banner/' . $event['image']) }}" alt="" class="w-100 h-100 object-fit-cover">
             </div>
-            <div class="col-md-4 p-2">
-               <img src="{{ asset('assets/images/gambar-lokasi/layout-kediri-city-expo.jpeg') }}" alt="" class="w-100">
-            </div>
+
+            <!-- IMAGE LOKASI (JIKA ADA) -->
+            @if($hasLokasiImage)
+              <div class="col-md-4 p-2">
+                <img src="{{ asset('assets/images/gambar-lokasi/' . $event['image-lokasi']) }}" alt="" class="w-100 h-100 object-fit-cover">
+              </div>
+            @endif
           </div>
-
-
           <div class="nested-detail">Jadwal Kegiatan</div>
           <div class="nested-detail-content">
             <!-- <ul>
