@@ -94,8 +94,8 @@
     }
 
     .aduan-icon-large {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
         border-radius: 25px;
         display: flex;
         align-items: center;
