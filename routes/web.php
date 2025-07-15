@@ -36,6 +36,8 @@ Route::controller(HomeController::class)->group(function() {
     Route::get('/berita/{kategori}', 'berita_bykategori')->name('berita_bykategori');
     Route::post('/feedback', 'store_feedback')->name('feedback.store');
     Route::get('/get-content-hero', 'get_content_hero')->name('get_content_hero');
+    Route::get('/standbooth/search', 'searchStandBooth')->name('standbooth.search');
+    Route::get('/standbooth', 'detailStandBooth');
 });
 
 //*************************************** PESERTA APEKSI PAGE *************************************************    

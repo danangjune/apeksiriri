@@ -10,6 +10,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use App\Models\Banner;
 use App\Models\ProfilPesertaApeksi;
+use App\Models\StandBooth;
 use Illuminate\Support\Str;
 use DataTables;
 
@@ -234,12 +235,15 @@ class HomeController extends Controller
         $profil_apeksi = ProfilPesertaApeksi::all();
         $slides = $profil_apeksi->chunk(7);
 
+        $standBooth = StandBooth::limit(5)->get();
+
         return view('home.index', compact(
             'groupedEvents',
             'profil_apeksi',
             'slides',
             'meta',
             'banners',
+            'standBooth'
         ));
     }
 
@@ -367,4 +371,33 @@ class HomeController extends Controller
             'message' => $message,
         ]);
     }
+
+    public function detailStandBooth()
+    {
+        $standBooth = StandBooth::all();
+        $breadcrumb  = [
+            'titlemenu' => 'Standbooth',
+            'titlepage' => 'Daftar Standbooth',
+            'detailpage' => false
+        ];
+        return view('home.detail-booth', compact('standBooth', 'breadcrumb'));
+    }
+
+    public function searchStandBooth(Request $request)
+    {
+        $q = $request->q;
+        $limit = $request->limit;
+
+        $data = StandBooth::when($q, function ($query, $q) {
+            return $query->where('kategori', 'like', "%$q%")
+                        ->orWhere('no_stand', 'like', "%$q%")
+                        ->orWhere('nama_stand', 'like', "%$q%")
+                        ->orWhere('nama_perusahaan', 'like', "%$q%")
+                        ->orWhere('jenis_produk', 'like', "%$q%")
+                        ->orWhere('pic', 'like', "%$q%");
+        })->orderBy('id')->limit($limit)->get();
+
+        return response()->json($data);
+    }
+
 }
