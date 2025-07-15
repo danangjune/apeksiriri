@@ -117,19 +117,33 @@
         font-size: 1.5em;
     }
 
-    .slide-map-marker a {
+    /* Map Marker */
+    .slide-map-marker {
         position: absolute;
-        font-weight: bold;
-        width: 2.5rem;
-        height: 2.5rem;
-        top: 50px;
-        left: 55px;
-        background-color: rgba(70, 158, 246, 1);
-        color: #ffffff;
-        padding: 10px;
-        border-radius: 100%;
-        text-align: center;
-        font-size: 1em;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+    }
+
+    .slide-map-marker a {
+        width: 45px;
+        height: 45px;
+        background: rgba(220, 38, 38, 0.9);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .slide-map-marker a:hover {
+        background: rgba(220, 38, 38, 1);
+        transform: scale(1.1);
+        color: white;
     }
 
     .profile-img-container {
