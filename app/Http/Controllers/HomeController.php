@@ -57,7 +57,7 @@ class HomeController extends Controller
                 'dresscode' => 'Tenun Khas Kota Kediri',
                 'image' => 'gala-dinner.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7905.572679133412!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752472541335!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7905.572679133412!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752472541335!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '18:30 - 19:30', 'activity' => 'Tukar cinderamata di Depan Photo Booth Pintu Masuk VVIP'],
                     ['time' => '19:30 - 19:35', 'activity' => 'Looping Video Profil 13 Kota Peserta Muskomwil'],
@@ -86,7 +86,7 @@ class HomeController extends Controller
                 'dresscode' => 'Batik / Tenun Formal',
                 'image' => 'muskomwil-iv.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7363539829644!2d112.0106326116563!3d-7.817706992170442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857107a9b0e79%3A0x31a5250470d9f02b!2sGrand%20Surya%20Hotel%20Kediri!5e0!3m2!1sen!2sid!4v1752472970048!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7363539829644!2d112.0106326116563!3d-7.817706992170442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857107a9b0e79%3A0x31a5250470d9f02b!2sGrand%20Surya%20Hotel%20Kediri!5e0!3m2!1sen!2sid!4v1752472970048!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '07:00 - 08:00', 'activity' => 'Persiapan Peserta'],
                     ['time' => '08:00 - 08:05', 'activity' => 'Menyanyikan lagu Indonesia Raya & Mars APEKSI'],
@@ -115,7 +115,7 @@ class HomeController extends Controller
                 'dresscode' => 'Bebas rapi',
                 'image' => 'kediri-city-expo.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '00:00 - 07:00', 'activity' => 'Loading peserta pameran'],
                     ['time' => '10:00 - 12:00', 'activity' => 'Pembukaan Kediri City Expo (*tentatif/dapat berubah)'],
@@ -132,7 +132,7 @@ class HomeController extends Controller
                 'dresscode' => 'Bebas rapi',
                 'image' => 'kediri-city-expo.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '10:00 - 22:00', 'activity' => 'Pameran Kediri City Expo']
                 ]
@@ -147,7 +147,7 @@ class HomeController extends Controller
                 'dresscode' => 'Bebas rapi',
                 'image' => 'kediri-city-expo.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '10:00 - 22:00', 'activity' => 'Pameran Kediri City Expo'],
                     ['time' => '22:00 - 24:00', 'activity' => 'Loading Out Peserta Pameran']
@@ -163,7 +163,7 @@ class HomeController extends Controller
                 'dresscode' => 'Batik / Tenun Khas Daerah masing-masing',
                 'image' => 'city-tour-ladies-program.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1XijEsw4CyfFI9f5zAOIZeOz4jhkgY9A&ehbc=2E312F&noprof=1" width="700" height="450"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1XijEsw4CyfFI9f5zAOIZeOz4jhkgY9A&ehbc=2E312F&noprof=1"></iframe>',
                 'schedule' => [
                     ['time' => '08:00 - 08:15', 'activity' => 'Penjemputan di Hotel Grand Surya menuju Kampoeng Tenun “Medali Mas” Bandar Kidul'],
                     ['time' => '08:15 - 09:30', 'activity' => 'City Tour Kampoeng Tenun “Medali Mas” Bandar Kidul'],
@@ -183,9 +183,9 @@ class HomeController extends Controller
                 'date' => '17 Juli 2025',
                 'attendees' => 'Pejabat Pemerintah Pusat, Kepala Daerah beserta Pasangan, Wakil Walikota, Sekretaris Daerah, FORKOPIMDA, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Kepala OPD, dan Peserta Pawai Khas Daerah',
                 'dresscode' => 'Pakaian Khas Daerah Masing-masing',
-                'image' => 'kediri-nite-carnival.jpg',
+                'image' => 'apeksi-nite-carnival.jpeg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.735812659736!2d112.0105873116563!3d-7.817764142170372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857107a9b0e79%3A0x31a5250470d9f02b!2sGrand%20Surya%20Hotel%20Kediri!5e0!3m2!1sen!2sid!4v1752480821382!5m2!1sen!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.735812659736!2d112.0105873116563!3d-7.817764142170372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857107a9b0e79%3A0x31a5250470d9f02b!2sGrand%20Surya%20Hotel%20Kediri!5e0!3m2!1sen!2sid!4v1752480821382!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '17:00 - 18:30', 'activity' => 'Persiapan'],
                     ['time' => '18:30 - 18:35', 'activity' => 'Pembukaan MC'],
@@ -208,7 +208,7 @@ class HomeController extends Controller
                 'dresscode' => 'Kaos Olahraga Muskomwil IV APEKSI ke-13',
                 'image' => 'tanam-pohon-tebar-benih.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786880996013!2d112.00600051165615!3d-7.812370792175646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857227dcc0931%3A0x1cff71ab45598392!2sBrantas%20Park!5e0!3m2!1sen!2sid!4v1752480914442!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786880996013!2d112.00600051165615!3d-7.812370792175646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857227dcc0931%3A0x1cff71ab45598392!2sBrantas%20Park!5e0!3m2!1sen!2sid!4v1752480914442!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
                     ['time' => '05:00 - 05:30', 'activity' => 'Persiapan'],
                     ['time' => '05:30 - 06:30', 'activity' => 'Gowes Bareng dari Grand Surya Hotel menuju Taman Brantas'],
