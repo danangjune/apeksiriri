@@ -513,7 +513,7 @@
             slides[index].classList.add("active"); // Tampilkan gambar baru
         }
 
-        setInterval(changeSlide, 4000); // Ganti gambar setiap 4 detik
+        setInterval(changeSlide, 8000); // Ganti gambar setiap 4 detik
     });
 </script>
 

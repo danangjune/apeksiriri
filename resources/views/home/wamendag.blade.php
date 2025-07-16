@@ -31,30 +31,8 @@
                         <!-- Image Slider -->
                         <div class="swiper wamendagSwiper">
                             <div class="swiper-wrapper">
-                                <!-- Slide 1 -->
-                                <div class="swiper-slide">
-                                    <div class="slide-number">1</div>
-                                    <div class="slide-map-marker">
-                                        <a href="https://maps.app.goo.gl/g6PBzBWvtJiMc7JM7" target="_blank">
-                                            <i class="bi bi-geo-alt-fill"></i>
-                                        </a>
-                                    </div>
-                                    <img src="{{ asset('assets/images/banner/kunjungan-gg.jpg') }}" alt="Kunjungan Gudang Garam" class="img-fluid w-100">
-                                </div>
-
-                                <!-- Slide 2 -->
-                                <div class="swiper-slide">
-                                    <div class="slide-number">2</div>
-                                    <div class="slide-map-marker">
-                                        <a href="https://maps.app.goo.gl/HFbuQ5Na9o5h26NFA" target="_blank">
-                                            <i class="bi bi-geo-alt-fill"></i>
-                                        </a>
-                                    </div>
-                                    <img src="{{ asset('assets/images/banner/kunjungan-kampung-tenun.jpg') }}" alt="Kunjungan Kampung Tenun" class="img-fluid w-100">
-                                </div>
-
                                 <!-- Slide 3 -->
-                                <div class="swiper-slide">
+                                {{-- <div class="swiper-slide">
                                     <div class="slide-number">3</div>
                                     <div class="slide-map-marker">
                                         <a href="https://maps.app.goo.gl/aQxCWMpxP3Dmvpoq9" target="_blank">
@@ -62,11 +40,22 @@
                                         </a>
                                     </div>
                                     <img src="{{ asset('assets/images/banner/kunjungan-pasar-ngronggo.jpg') }}" alt="Kunjungan Pasar Ngronggo" class="img-fluid w-100">
+                                </div> --}}
+
+                                <!-- Balkot -->
+                                <div class="swiper-slide">
+                                    <div class="slide-number">1</div>
+                                    <div class="slide-map-marker">
+                                        <a href="https://maps.app.goo.gl/mz9V5eKhdZZK9jf39" target="_blank">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </a>
+                                    </div>
+                                    <img src="{{ asset('assets/images/banner/kunjungan-balkot.jpg') }}" alt="Kunjungan Balai Kota" class="img-fluid w-100">
                                 </div>
 
-                                <!-- Slide 4 -->
+                                <!-- Hotel -->
                                 <div class="swiper-slide">
-                                    <div class="slide-number">4</div>
+                                    <div class="slide-number">2</div>
                                     <div class="slide-map-marker">
                                         <a href="https://maps.app.goo.gl/E3AKBaqFqD1J1iGe6" target="_blank">
                                             <i class="bi bi-geo-alt-fill"></i>
@@ -75,15 +64,37 @@
                                     <img src="{{ asset('assets/images/banner/kunjungan-hotel.jpg') }}" alt="Kunjungan Hotel" class="img-fluid w-100">
                                 </div>
 
-                                <!-- Slide 5 -->
+                                <!-- GG -->
                                 <div class="swiper-slide">
-                                    <div class="slide-number">5</div>
+                                    <div class="slide-number">3</div>
                                     <div class="slide-map-marker">
-                                        <a href="https://maps.app.goo.gl/mz9V5eKhdZZK9jf39" target="_blank">
+                                        <a href="https://maps.app.goo.gl/g6PBzBWvtJiMc7JM7" target="_blank">
                                             <i class="bi bi-geo-alt-fill"></i>
                                         </a>
                                     </div>
-                                    <img src="{{ asset('assets/images/banner/kunjungan-balkot.jpg') }}" alt="Kunjungan Balai Kota" class="img-fluid w-100">
+                                    <img src="{{ asset('assets/images/banner/kunjungan-gg.jpg') }}" alt="Kunjungan Gudang Garam" class="img-fluid w-100">
+                                </div>
+
+                                <!-- Kampung Tenun -->
+                                <div class="swiper-slide">
+                                    <div class="slide-number">4</div>
+                                    <div class="slide-map-marker">
+                                        <a href="https://maps.app.goo.gl/HFbuQ5Na9o5h26NFA" target="_blank">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </a>
+                                    </div>
+                                    <img src="{{ asset('assets/images/banner/kunjungan-kampung-tenun.jpg') }}" alt="Kunjungan Kampung Tenun" class="img-fluid w-100">
+                                </div>
+
+                                <!-- POO -->
+                                <div class="swiper-slide">
+                                    <div class="slide-number">5</div>
+                                    <div class="slide-map-marker">
+                                        <a href="https://maps.app.goo.gl/haEXuUcBxgoWojBL8" target="_blank">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </a>
+                                    </div>
+                                    <img src="{{ asset('assets/images/banner/kunjungan-poo.jpg') }}" alt="Kunjungan Pusat Oleh-oleh" class="img-fluid w-100">
                                 </div>
                             </div>
 
