@@ -48,8 +48,8 @@ class HomeController extends Controller
             //         ['time' => '10:00 - 11:00', 'activity' => 'Penutupan dan ramah tamah']
             //     ]
             // ],
-            // 4. Kediri City Expo
 
+            // 1. Gala Dinner
             [
                 'event_name' => 'Gala Dinner',
                 'venue' => 'Halaman Balai Kota Kediri',
@@ -75,6 +75,24 @@ class HomeController extends Controller
                     ['time' => '21:05 - 21:50', 'activity' => 'Hiburan Guest Star'],
                     ['time' => '21:50 - 22:20', 'activity' => 'Kunjungan ke Booth Pameran (Optional)'],
                     ['time' => '22:20 - 22:30', 'activity' => 'Closing'],
+                ]
+            ],
+
+            // 2. Kediri City Expo - Pembukaan
+            [
+                'event_name' => 'Kediri City Expo - Pembukaan',
+                'venue' => 'Jl. Jend. Basuki Rakhmad dan Halaman Balai Kota Kediri',
+                'date' => '17 Juli 2025',
+                'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota Komwil IV APEKSI',
+                'dresscode' => 'Batik / Tenun / Bebas Rapi',
+                'image' => 'kediri-city-expo.jpg',
+                'image-lokasi' => 'expo-denah.png',
+                'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
+                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                'schedule' => [
+                    ['time' => '00:00 - 07:00', 'activity' => 'Loading peserta pameran'],
+                    ['time' => '10:00 - 12:00', 'activity' => 'Pembukaan Kediri City Expo (Dresscode: Batik / Tenun)'],
+                    ['time' => '12:00 - 22:00', 'activity' => 'Pameran Kediri City Expo']
                 ]
             ],
 
@@ -107,23 +125,7 @@ class HomeController extends Controller
                 ]
             ],
 
-            // 2. Kediri City Expo - Pembukaan
-            [
-                'event_name' => 'Kediri City Expo - Pembukaan',
-                'venue' => 'Jl. Jend. Basuki Rakhmad dan Halaman Balai Kota Kediri',
-                'date' => '16 Juli 2025',
-                'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota Komwil IV APEKSI',
-                'dresscode' => 'Batik / Tenun / Bebas Rapi',
-                'image' => 'kediri-city-expo.jpg',
-                'image-lokasi' => 'expo-denah.png',
-                'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
-                'schedule' => [
-                    ['time' => '00:00 - 07:00', 'activity' => 'Loading peserta pameran'],
-                    ['time' => '10:00 - 12:00', 'activity' => 'Pembukaan Kediri City Expo (Dresscode: Batik / Tenun)'],
-                    ['time' => '12:00 - 22:00', 'activity' => 'Pameran Kediri City Expo']
-                ]
-            ],
+
 
             // 3. Kediri City Expo - Pameran Hari Kedua
             [
