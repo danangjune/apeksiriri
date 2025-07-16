@@ -125,11 +125,9 @@ class HomeController extends Controller
                 ]
             ],
 
-
-
             // 3. Kediri City Expo - Pameran Hari Kedua
             [
-                'event_name' => 'Kediri City Expo - Pameran Hari Kedua',
+                'event_name' => 'Kediri City Expo - Pameran',
                 'venue' => 'Jl. Jend. Basuki Rakhmad dan Halaman Balai Kota Kediri',
                 'date' => '17 Juli 2025',
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota Komwil IV APEKSI',
