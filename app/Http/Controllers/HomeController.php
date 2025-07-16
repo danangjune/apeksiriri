@@ -51,7 +51,7 @@ class HomeController extends Controller
 
             // 1. Gala Dinner
             [
-                'event_name' => 'Gala Dinner',
+                'event_name' => 'Gala Dinner dan Pembukaan City Expo',
                 'venue' => 'Halaman Balai Kota Kediri',
                 'date' => '16 Juli 2025',
                 'attendees' => 'Gubernur Jawa Timur, Kepala Daerah Anggota Komwil IV APEKSI, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, 3 (tiga) Pendamping Delegasi Komwil IV APEKSI, Wakil Wali Kota Kediri, Forkopimda Kota Kediri, Sekretaris Daerah Kota Kediri, Kepala OPD Kota Kediri',
@@ -78,27 +78,27 @@ class HomeController extends Controller
                 ]
             ],
 
-            // 2. Kediri City Expo - Pembukaan
-            [
-                'event_name' => 'Kediri City Expo - Pembukaan',
-                'venue' => 'Jl. Jend. Basuki Rakhmad dan Halaman Balai Kota Kediri',
-                'date' => '17 Juli 2025',
-                'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota Komwil IV APEKSI',
-                'dresscode' => 'Batik / Tenun / Bebas Rapi',
-                'image' => 'kediri-city-expo.jpg',
-                'image-lokasi' => 'expo-denah.png',
-                'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
-                'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
-                'schedule' => [
-                    ['time' => '00:00 - 07:00', 'activity' => 'Loading peserta pameran'],
-                    ['time' => '10:00 - 12:00', 'activity' => 'Pembukaan Kediri City Expo (Dresscode: Batik / Tenun)'],
-                    ['time' => '12:00 - 22:00', 'activity' => 'Pameran Kediri City Expo']
-                ]
-            ],
+            // // 2. Kediri City Expo - Pembukaan
+            // [
+            //     'event_name' => 'Kediri City Expo - Pembukaan',
+            //     'venue' => 'Jl. Jend. Basuki Rakhmad dan Halaman Balai Kota Kediri',
+            //     'date' => '17 Juli 2025',
+            //     'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota Komwil IV APEKSI',
+            //     'dresscode' => 'Batik / Tenun / Bebas Rapi',
+            //     'image' => 'kediri-city-expo.jpg',
+            //     'image-lokasi' => 'expo-denah.png',
+            //     'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
+            //     'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.786339566706!2d112.01167171165619!3d-7.812427992175574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785717d7cb3c5f%3A0xd11484a904dded86!2sCity%20Hall%20of%20Kediri!5e0!3m2!1sen!2sid!4v1752473170825!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+            //     'schedule' => [
+            //         ['time' => '00:00 - 07:00', 'activity' => 'Loading peserta pameran'],
+            //         ['time' => '10:00 - 12:00', 'activity' => 'Pembukaan Kediri City Expo (Dresscode: Batik / Tenun)'],
+            //         ['time' => '12:00 - 22:00', 'activity' => 'Pameran Kediri City Expo']
+            //     ]
+            // ],
 
             // 3. MUSKOMWIL
             [
-                'event_name' => 'MUSKOMWIL',
+                'event_name' => 'MUSKOMWIL IV',
                 'venue' => 'Hotel Grand Surya (Tegowangi Ballroom)',
                 'date' => '17 Juli 2025',
                 'attendees' => 'Wakil Menteri Perdagangan RI, Kepala Daerah Anggota Komwil IV APEKSI, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Wakil Wali Kota Kediri, Sekretaris Daerah, Asisten, Staf Ahli, Kepala OPD Kota Kediri, 2 (dua) Pendamping Delegasi Komwil IV APEKSI',
