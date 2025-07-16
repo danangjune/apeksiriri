@@ -143,7 +143,7 @@ class HomeController extends Controller
 
             // 4. Kediri City Expo - Penutupan
             [
-                'event_name' => 'Kediri City Expo - Penutupan',
+                'event_name' => 'Kediri City Expo - Pameran',
                 'venue' => 'Jl. Jend. Basuki Rakhmad dan Halaman Balai Kota Kediri',
                 'date' => '18 Juli 2025',
                 'attendees' => 'UMKM Peserta Kediri City Expo dan Delegasi Anggota Komwil IV APEKSI',
