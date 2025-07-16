@@ -103,7 +103,7 @@ class HomeController extends Controller
                 'date' => '17 Juli 2025',
                 'attendees' => 'Wakil Menteri Perdagangan RI, Kepala Daerah Anggota Komwil IV APEKSI, Ketua Dewan Eksekutif APEKSI, Direktur Eksekutif APEKSI, Wakil Wali Kota Kediri, Sekretaris Daerah, Asisten, Staf Ahli, Kepala OPD Kota Kediri, 2 (dua) Pendamping Delegasi Komwil IV APEKSI',
                 'dresscode' => 'Batik / Tenun',
-                'image' => 'muskomwil-iv.jpg',
+                'image' => 'muskomwil-iv2.jpg',
                 'dokumentasi' => 'https://bit.ly/dokumentasimuskomwil4apeksi2025',
                 'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7363539829644!2d112.0106326116563!3d-7.817706992170442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857107a9b0e79%3A0x31a5250470d9f02b!2sGrand%20Surya%20Hotel%20Kediri!5e0!3m2!1sen!2sid!4v1752472970048!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 'schedule' => [
