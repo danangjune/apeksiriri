@@ -39,7 +39,7 @@
                     <div class="swiper-slide">
                         <x-event-image-card
                             url="https://drive.google.com/file/d/1QX-tYANXoQZGHNqHdVMrCg_DJ2Pkkxhn/view?usp=sharing"
-                            image="{{ asset('assets/images/banner/muskomwil-iv.jpg') }}"
+                            image="{{ asset('assets/images/banner/muskomwil-iv2.jpg') }}"
                             day="17"
                             month="Juli"
                             title="MUSKOMWIL IV" />
