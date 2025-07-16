@@ -190,6 +190,31 @@
                             </div>
                         </div>
                     </div>
+                    @if ($peserta['id'] == 1)
+                    <h4 class="mt-5 fw-bold border-bottom title-border text-left">Video Ucapan</h4>
+                    <div class="row g-4 align-items-start mt-3">
+                        <div class="row g-4 align-items-start mt-2">
+                        @foreach ($videos as $video)
+                        <div class="col-md-6">
+                            <div class="media-box p-3 shadow-lg rounded border-3 border-primary media-equal">
+                                @if(!empty($video['link_video']) && $video['link_video'] != '/preview')
+                                    <iframe 
+                                        src="{{ $video['link_video'] }}"
+                                        allowfullscreen
+                                        style="border: none;">
+                                    </iframe>
+                                @else
+                                    <div class="text-center text-muted">
+                                        <em>Video belum tersedia</em>
+                                    </div>
+                                @endif
+                            </div>
+                            <p class="lead mt-3 text-center">{{ $video['jabatan']}}</p>
+                        </div>
+                        @endforeach
+                    </div>
+                    </div>
+                    @endif
                     <!-- Tombol kembali -->
                     <div class="text-center mt-5 pt-4">
                         <button onclick="window.open('{{ $peserta['website'] }}', '_blank')" class="btn btn-primary px-4 py-3 fs-6">
