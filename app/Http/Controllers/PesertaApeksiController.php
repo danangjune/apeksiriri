@@ -46,6 +46,10 @@ class PesertaApeksiController extends Controller
             'jabatan' => 'Komandan Brigif 16/Wira Yudha',
             'link_video' => 'https://drive.google.com/file/d/1u3MGXL4D2pXGGlm79LkR5VuZWUMV0UbI/preview'
         ],
+        [
+            'jabatan' => 'SATGAS YONIF 521/DY',
+            'link_video' => 'https://drive.google.com/file/d/1SdepYNeZe1OFCeDtMf5oKPlc9UP0sdv_/preview'
+        ],
     ];
 
         return view ('peserta-apeksi.detil', compact('titlepage', 'breadcrumb', 'peserta', 'firstId', 'lastId', 'videos'));
