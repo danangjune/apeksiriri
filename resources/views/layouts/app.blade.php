@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}" />
+  <link rel="icon" href="{{ asset('logos.ico') }}" type="image/x-icon">
+  <link rel="shortcut icon" href="{{ asset('logos.ico') }}" type="image/x-icon">
   <title>@yield('title')</title>
   <meta name="description" content="@yield('meta_description')">
   <link rel="stylesheet" href="{{ asset('assets/animate/animate.min.css') }}">
@@ -38,14 +40,14 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZN4GZBF0B"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
 
-    gtag('config', 'G-WZN4GZBF0B');
+  gtag('config', 'G-WZN4GZBF0B');
 </script>
 
 <body>
@@ -68,18 +70,18 @@
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.global.min.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
       @if(Route::currentRouteName() == 'landing')
-        var iklanModal = new bootstrap.Modal(document.getElementById('iklanModal'), {
-          backdrop: 'static', // Agar tidak bisa ditutup dengan klik di luar modal
-          keyboard: false // Nonaktifkan tombol ESC untuk menutup
-        });
+      var iklanModal = new bootstrap.Modal(document.getElementById('iklanModal'), {
+        backdrop: 'static', // Agar tidak bisa ditutup dengan klik di luar modal
+        keyboard: false // Nonaktifkan tombol ESC untuk menutup
+      });
 
-        // setTimeout(() => {
-        //   iklanModal.show();
-        // }, 2000); // Muncul setelah 2 detik (bisa diubah)
+      // setTimeout(() => {
+      //   iklanModal.show();
+      // }, 2000); // Muncul setelah 2 detik (bisa diubah)
 
-        iklanModal.show(); // Langsung tampil tanpa delay
+      iklanModal.show(); // Langsung tampil tanpa delay
       @endif
     });
   </script>
@@ -100,26 +102,26 @@
 
     // AJAX Form Submission
     $(document).ready(function() {
-        $('#searchForm').on('submit', function(e) {
-            e.preventDefault();
-            $.ajax({
-                url: $(this).attr('action'),
-                method: $(this).attr('method'),
-                data: $(this).serialize(),
-                success: function(response) {
-                    toastr.success('Search completed successfully!');
-                },
-                error: function(xhr) {
-                    if (xhr.status === 422) {
-                        toastr.error('Data Gagal Dimuat. Hubungi Programmer!!');
-                    }
-                }
-            });
+      $('#searchForm').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+          url: $(this).attr('action'),
+          method: $(this).attr('method'),
+          data: $(this).serialize(),
+          success: function(response) {
+            toastr.success('Search completed successfully!');
+          },
+          error: function(xhr) {
+            if (xhr.status === 422) {
+              toastr.error('Data Gagal Dimuat. Hubungi Programmer!!');
+            }
+          }
         });
+      });
     });
 
     // Slider Navigation
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
       const restaurantContainer = document.querySelector(".card-slider");
       const leftRButton = document.querySelector(".restaurant-arrow-left");
       const rightRButton = document.querySelector(".restaurant-arrow-right");
@@ -131,14 +133,14 @@
           restaurantContainer.scrollWidth;
       }
 
-      leftRButton.onclick = function () {
+      leftRButton.onclick = function() {
         restaurantContainer.scrollBy({
           left: -restaurantContainer.offsetWidth / 2,
           behavior: "smooth",
         });
       };
 
-      rightRButton.onclick = function () {
+      rightRButton.onclick = function() {
         restaurantContainer.scrollBy({
           left: restaurantContainer.offsetWidth / 2,
           behavior: "smooth",
@@ -148,11 +150,10 @@
       restaurantContainer.addEventListener("scroll", updateButtonState);
       updateButtonState();
     });
-
   </script>
 
-<script>
-    (function(d){
+  <script>
+    (function(d) {
       var s = d.createElement("script");
       /* uncomment the following line to override default position*/
       s.setAttribute("data-position", 3);
@@ -174,8 +175,9 @@
       s.setAttribute("src", "https://cdn.userway.org/widget.js");
       (d.body || d.head).appendChild(s);
     })(document)
-    </script>
-    <noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
+  </script>
+  <noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
   @stack('scripts')
 </body>
+
 </html>
